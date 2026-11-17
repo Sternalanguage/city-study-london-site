@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+Disallow: /brand.html
+
+Sitemap: https://sternalanguage.github.io/city-study-london-site/sitemap.xml

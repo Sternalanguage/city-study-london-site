@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="zh-CN" id="top">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>外汇入门与交易方法课｜用白话读懂汇率和每一条市场信息 - 金融城研学社</title>
+<meta name="description" content="想做外汇交易，先学会读懂汇率：央行议息、非农数据怎样影响美元、英镑和黄金，杠杆亏损怎么算，外汇骗局怎么认。伦敦专家中文直播，每周四免费公开课。不开户、不荐单、不带单。">
+<link rel="canonical" href="https://sternalanguage.github.io/city-study-london-site/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="金融城研学社 City Study London">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="外汇入门与交易方法课｜用白话读懂汇率和每一条市场信息 - 金融城研学社">
+<meta property="og:description" content="想做外汇交易，先学会读懂汇率：央行议息、非农数据怎样影响美元、英镑和黄金，杠杆亏损怎么算，外汇骗局怎么认。伦敦专家中文直播，每周四免费公开课。不开户、不荐单、不带单。">
+<meta property="og:url" content="https://sternalanguage.github.io/city-study-london-site/">
+<meta property="og:image" content="https://sternalanguage.github.io/city-study-london-site/images/thamescity.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B1E3F">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>:root {
+  --bg: #FBFBFA;
+  --surface: #F2F2EF;
+  --li: #F3F2EF;
+  --stone: #E6E4DF;
+  --stone-2: #D9D5CC;
+  --ink: #0B1E3F;
+  --muted: #4B5770;
+  --accent: #B3122E;
+  --accent-strong: #8F0E25;
+  --navy-2: #16305C;
+  --on-navy: #FFFFFF;
+  --on-navy-muted: #C9D1E0;
+  --m: 32px;
+  --gap: 24px;
+  --t-display: clamp(60px, 9.8vw, 150px);
+  --t-h2: clamp(32px, 3.6vw, 52px);
+  --t-lead: clamp(19px, 1.55vw, 22px);
+  --t-body: 17px;
+  --t-small: 14px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Geist','Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif; font-size: var(--t-body); line-height: 1.6; text-rendering: optimizeLegibility; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration-thickness: 0.07em; text-underline-offset: 0.22em; }
+h1, h2, h3, p, dl, dd, figure, ol, ul { margin: 0; }
+ol, ul { padding: 0; list-style: none; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+::selection { background: var(--ink); color: var(--on-navy); }
+.skip { position: absolute; left: var(--m); top: -100px; z-index: 50; padding: 12px 20px; background: var(--ink); color: var(--on-navy); text-decoration: none; }
+.skip:focus { top: 12px; }
+.g { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap); padding-inline: var(--m); max-width: 1600px; margin-inline: auto; }
+.h2 { font-size: var(--t-h2); line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; text-wrap: balance; }
+.lead { font-size: var(--t-lead); line-height: 1.45; }
+.small { font-size: var(--t-small); line-height: 1.55; }
+.muted { color: var(--muted); }
+.sec { padding-block: 152px; }
+.pic { background: var(--stone-2); overflow: clip; }
+.pic img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+
+/* buttons: one shape, square corners */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 28px; background: var(--accent); color: var(--on-navy); font-size: var(--t-body); font-weight: 700; text-decoration: none; transition: transform 140ms var(--ease-out), background-color 180ms ease; }
+.btn:active { transform: scale(0.97); }
+.btn svg { width: 18px; height: 18px; transition: transform 240ms var(--ease-out); }
+.lnk { text-decoration: underline; text-decoration-color: transparent; transition: text-decoration-color 180ms ease, color 180ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover { background: var(--accent-strong); }
+  .btn:hover svg { transform: translateX(4px); }
+  .lnk:hover { text-decoration-color: currentColor; }
+}
+
+/* ---------- hero: narrow talk, wide headline ---------- */
+.hero { padding-top: 28px; }
+.hero-top { grid-template-rows: auto auto auto; align-items: start; }
+.brand { grid-column: 1 / 5; grid-row: 1; display: inline-flex; width: max-content; text-decoration: none; }
+.brand svg { display: block; height: 48px; width: auto; }
+.nav { grid-column: 5 / 13; grid-row: 1; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 36px; min-height: 48px; }
+.nav a { font-size: var(--t-body); text-decoration: none; padding: 6px 0; }
+.nav a[lang] { margin-left: auto; }
+.menu-btn { display: none; }
+.hero h1 { grid-column: 5 / 13; grid-row: 2; margin-top: clamp(40px, 9svh, 110px); font-size: var(--t-display); font-weight: 700; line-height: 1; letter-spacing: -0.03em; }
+.lines .line { display: block; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.lines [data-line] { display: block; }
+.hero-talk { grid-column: 1 / 5; grid-row: 2 / 4; margin-top: calc(clamp(40px, 9svh, 110px) + 12px); }
+.hero-talk .lead { max-width: 19em; margin-bottom: 32px; text-wrap: pretty; }
+.hero-pic { grid-column: 5 / 13; grid-row: 3; margin-top: 56px; height: 62svh; min-height: 380px; }
+.hero-pic img { object-position: 50% 64%; }
+/* the next open class: the hero's one action */
+.next { background: #AD112B; color: var(--on-navy); padding: 32px 32px 28px; display: grid; gap: 12px; }
+.next-h { font-size: var(--t-lead); line-height: 1.3; font-weight: 700; }
+.next-when { display: grid; font-size: var(--t-h2); line-height: 1.08; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; margin-top: 4px; }
+.next-meta, .next-topic { font-size: var(--t-body); line-height: 1.6; text-wrap: pretty; }
+.next-count { font-size: var(--t-lead); line-height: 1.3; font-variant-numeric: tabular-nums; margin-top: 4px; }
+.next-count b { font-weight: 700; }
+.next-acts { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 12px; }
+.btn-light { background: var(--bg); color: var(--accent); }
+.next-more { color: var(--on-navy); font-size: var(--t-body); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+@media (hover: hover) and (pointer: fine) { .btn.btn-light:hover { background: var(--surface); } .next-more:hover { text-decoration-color: transparent; } }
+
+/* ---------- decode: square plate, spare text ---------- */
+.dec { background: var(--stone); }
+.dec .g { min-height: 88svh; padding-block: 96px; align-items: center; }
+.dec-figs { grid-column: 1 / 7; padding-right: 16px; }
+.dec-fig { aspect-ratio: 1; }
+.dec-fig figcaption { margin-top: 12px; font-size: var(--t-small); color: var(--muted); }
+.dec-fig .pic { aspect-ratio: 1; }
+.dec-side { grid-column: 7 / 13; align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; gap: 40px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px 32px; }
+.tab { appearance: none; border: 0; background: none; padding: 6px 0; font: inherit; font-size: var(--t-lead); color: var(--muted); cursor: pointer; transition: color 180ms ease; }
+.tab[aria-selected="true"] { color: var(--ink); font-weight: 700; }
+.tab[aria-selected="true"]::before { content: ""; display: inline-block; width: 0.42em; height: 0.42em; margin-right: 0.4em; vertical-align: 0.12em; background: var(--accent); }
+@media (hover: hover) and (pointer: fine) { .tab:hover { color: var(--ink); } }
+.dec-text .h2 { margin-bottom: 28px; }
+.flash { max-width: 34em; font-size: var(--t-lead); line-height: 1.5; font-weight: 500; padding: 18px 22px; background: var(--bg); }
+.plain { margin-top: 28px; display: grid; gap: 18px; max-width: 36em; }
+.plain dt { font-weight: 700; }
+.plain dd { margin-top: 2px; }
+.dec-acts { display: grid; grid-template-columns: 1fr 1fr; }
+.dec-acts a { display: flex; align-items: center; min-height: 72px; padding: 0 24px; font-weight: 700; text-decoration: none; transition: background-color 180ms ease, transform 140ms var(--ease-out); }
+.dec-acts a:active { transform: scale(0.98); }
+.dec-acts a:first-child { background: var(--ink); color: var(--on-navy); }
+.dec-acts a:last-child { background: var(--stone-2); color: var(--ink); }
+@media (hover: hover) and (pointer: fine) { .dec-acts a:first-child:hover { background: var(--navy-2); } .dec-acts a:last-child:hover { background: #D2CABA; } }
+.js .dec-fig:not(.on), .js .dec-panel:not(.on) { display: none; }
+
+/* ---------- method: many into one ---------- */
+.how-head { grid-column: 1 / 6; }
+.how-text { grid-column: 7 / 12; align-self: end; max-width: 32em; }
+.how-fig { grid-column: 1 / -1; margin-top: 64px; }
+.how-fig svg { width: 100%; height: auto; display: block; }
+.how-fig .v { display: none; }
+.how-cols { grid-column: 1 / -1; margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.how-cols h3 { font-size: var(--t-lead); line-height: 1.3; font-weight: 700; margin-bottom: 8px; }
+.how-cols p { max-width: 24em; }
+
+/* ---------- schedule: banded agenda ---------- */
+.sch { background: var(--surface); }
+.sch-head { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; }
+.sch-head .h2 span { display: block; color: var(--muted); }
+.sch-body { grid-column: 1 / -1; margin-top: 56px; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 40px; align-items: start; }
+.zones { display: grid; gap: 6px; }
+.zone { appearance: none; border: 0; width: 150px; min-height: 64px; padding: 10px 16px; text-align: left; font: inherit; background: var(--stone); color: var(--ink); cursor: pointer; display: grid; transition: background-color 180ms ease, color 180ms ease; }
+.zone b { font-size: var(--t-body); font-weight: 700; }
+.zone span { font-size: var(--t-small); }
+.zone[aria-selected="true"] { background: var(--ink); color: var(--on-navy); }
+.bands { display: grid; gap: 4px; }
+.band { display: grid; grid-template-columns: 210px minmax(0, 1fr) auto; align-items: center; gap: 24px; min-height: 76px; padding: 14px 20px; background: var(--bg); }
+.band:nth-child(even) { background: var(--stone); }
+.band time { font-size: var(--t-lead); font-variant-numeric: tabular-nums; font-weight: 500; }
+.band time b { font-weight: 700; margin-right: 12px; }
+.band h3 { font-size: var(--t-lead); font-weight: 500; line-height: 1.3; }
+.band p { font-size: var(--t-small); color: var(--muted); }
+.band .who { font-size: var(--t-small); text-align: right; }
+.sch-note { margin-top: 20px; }
+
+/* ---------- tours: mosaic + plans as a large table ---------- */
+.tours { padding-bottom: 152px; }
+.tours + .sec { padding-top: 40px; }
+.mos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.mos > * { aspect-ratio: 4 / 3; }
+.mos .pic img { transition: transform 1200ms var(--ease-soft); }
+.tile { display: flex; flex-direction: column; justify-content: flex-end; gap: 14px; padding: 40px; color: var(--on-navy); }
+.tile.navy { background: var(--ink); }
+.tile.red { background: var(--accent); }
+.tile .fig { font-size: var(--t-display); line-height: 0.9; font-weight: 700; letter-spacing: -0.03em; }
+.tile p { max-width: 22em; }
+.cmp-wrap { grid-column: 1 / -1; margin-top: 96px; }
+.cmp { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.cmp th, .cmp td { padding: 20px 20px; text-align: left; vertical-align: top; font-size: var(--t-lead); line-height: 1.45; font-weight: 400; }
+.cmp col.k { width: 31%; }
+.cmp thead th { vertical-align: bottom; padding-bottom: 28px; }
+.cmp thead .plan { font-size: var(--t-h2); line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; display: block; }
+.cmp thead .price { font-size: var(--t-h2); line-height: 1.12; font-weight: 400; display: block; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.cmp thead .per { display: block; margin-top: 8px; font-size: var(--t-small); color: var(--muted); font-weight: 400; }
+.cmp tbody th { color: var(--muted); }
+.cmp tbody tr:nth-child(odd) > * { background: var(--surface); }
+.cmp tfoot td { padding-top: 32px; }
+.cmp tfoot .btn { width: 100%; }
+.cmp tfoot .btn.alt { background: var(--ink); }
+@media (hover: hover) and (pointer: fine) { .cmp tfoot .btn.alt:hover { background: var(--navy-2); } }
+.cmp-m { display: none; }
+.tours-note { grid-column: 1 / -1; margin-top: 28px; }
+
+/* ---------- faculty: profile cards (round grey avatars on a grey field) ---------- */
+.team-sec { background: var(--li); }
+.tours + .sec.team-sec { padding-top: 152px; }
+.team-head { grid-column: 1 / -1; }
+.team { grid-column: 1 / -1; margin-top: 40px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.person { background: #FFFFFF; padding-bottom: 24px; }
+.person .cover { height: 92px; overflow: clip; background: #B9BEC5; }
+.person .cover img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); opacity: 0.85; transition: transform 1200ms var(--ease-soft); }
+.person .av { width: 116px; height: 116px; margin: -58px 0 0 20px; border-radius: 50%; border: 4px solid #FFFFFF; overflow: clip; position: relative; background: #C2C7CE; }
+.person .av svg { display: block; width: 100%; height: 100%; }
+.person .pb { padding: 12px 20px 0; }
+.person h3 { font-size: var(--t-lead); line-height: 1.3; font-weight: 700; }
+.person h3 span { font-weight: 400; color: var(--muted); font-size: var(--t-small); margin-left: 10px; }
+.person .hl { margin-top: 4px; font-weight: 700; }
+.person .org { margin-top: 2px; font-size: var(--t-small); color: var(--muted); }
+.person .say { margin-top: 14px; }
+.person .tags { margin-top: 10px; font-size: var(--t-small); color: var(--muted); }
+.person .tags span { white-space: nowrap; }
+
+/* ---------- catalog: courses as a table ---------- */
+.cat { background: var(--bg); }
+.cat-head { grid-column: 1 / 8; }
+.cat-head .h2 span { display: block; padding-left: 28%; }
+.cat-wrap { grid-column: 1 / -1; margin-top: 72px; }
+.list { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.list col.c1 { width: 16.6%; } .list col.c2 { width: 33.4%; } .list col.c3 { width: 33.4%; } .list col.c4 { width: 16.6%; }
+.list th, .list td { padding: 14px 16px; font-size: var(--t-body); line-height: 1.5; text-align: left; vertical-align: top; font-weight: 400; }
+.list tbody tr.r:nth-child(even) > * { background: var(--bg); }
+.list tbody tr.gap > * { padding: 14px 0; background: none; }
+.list .grp { font-weight: 700; }
+.list .code { color: var(--muted); margin-right: 10px; font-variant-numeric: tabular-nums; }
+.list td:last-child { text-align: right; }
+.list a { font-weight: 500; }
+
+/* ---------- join: the idea again, inverted ---------- */
+.join { background: var(--ink); color: var(--on-navy); }
+.join .g { min-height: 90svh; padding-block: 120px 40px; grid-template-rows: 1fr auto; }
+.join h2 { grid-column: 1 / -1; align-self: start; font-size: var(--t-display); line-height: 0.98; font-weight: 700; letter-spacing: -0.03em; }
+.join p { grid-column: 1 / 6; align-self: end; color: var(--on-navy); }
+.join .btn { grid-column: 10 / 13; align-self: end; justify-self: end; min-width: 100%; }
+
+/* ---------- faq: answers as reading text ---------- */
+.faq-head { grid-column: 1 / 4; align-self: start; }
+.faq-text { grid-column: 5 / 13; columns: 2; column-gap: 56px; }
+.faq-text p { break-inside: avoid; margin-bottom: 22px; line-height: 1.6; }
+.faq-text b { font-weight: 700; }
+
+/* ---------- footer: name first, places under it ---------- */
+.foot { background: var(--ink); color: var(--on-navy); padding-top: 96px; }
+.foot .name { grid-column: 1 / -1; font-size: var(--t-display); line-height: 0.95; font-weight: 700; letter-spacing: -0.04em; white-space: nowrap; }
+.foot .name br { display: none; }
+.places { grid-column: 1 / 6; margin-top: 72px; display: grid; gap: 6px; }
+.places a { font-size: var(--t-h2); line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; text-decoration: none; }
+.places a span { display: block; font-size: var(--t-small); font-weight: 400; letter-spacing: 0; color: var(--on-navy-muted); margin-bottom: 10px; }
+.fcols { grid-column: 7 / 13; margin-top: 72px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.fcols h3 { font-size: var(--t-small); font-weight: 700; margin-bottom: 10px; }
+.fcols li { margin-bottom: 6px; }
+.fcols a { font-size: var(--t-small); text-decoration: none; color: var(--on-navy-muted); }
+@media (hover: hover) and (pointer: fine) { .fcols a:hover, .places a:hover { text-decoration: underline; color: var(--on-navy); } }
+.legal { grid-column: 1 / -1; margin-top: 96px; padding-block: 28px 36px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; font-size: var(--t-small); color: var(--on-navy-muted); }
+.legal a { color: var(--on-navy); }
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero [data-line] { transform: translateY(105%); animation: line-up 900ms var(--ease-expo) forwards; animation-delay: calc(var(--i) * 110ms + 150ms); }
+  .js .hero [data-load] { opacity: 0; transform: translateY(12px); animation: rise 520ms var(--ease-out) forwards; animation-delay: var(--d); }
+  .js .hero-pic { clip-path: inset(0 0 100% 0); animation: open 1000ms var(--ease-in-out) 200ms forwards; }
+  .js .hero-pic img { transform: scale(1.1); animation: settle 1300ms var(--ease-expo) 150ms forwards, drift 26s var(--ease-soft) 1.6s infinite alternate; }
+  @media (min-width: 761px) {
+    .js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-out); transition-delay: calc(var(--s, 0) * 80ms); }
+    .js [data-reveal].is-in { opacity: 1; transform: none; }
+  }
+  .js .dec-fig.on .pic img { animation: plate 900ms var(--ease-expo); }
+  .js .dec-panel.on { animation: rise 520ms var(--ease-out); }
+  @media (hover: hover) and (pointer: fine) {
+    .mos .pic:hover img, .person:hover .cover img { transform: scale(1.04); }
+  }
+}
+@keyframes line-up { to { transform: none; } }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes open { to { clip-path: inset(0); } }
+@keyframes settle { to { transform: none; } }
+@keyframes drift { from { transform: scale(1); } to { transform: scale(1.06) translate(-1.2%, -1%); } }
+@keyframes plate { from { transform: scale(1.06); } to { transform: none; } }
+
+/* ---------- tablet ---------- */
+@media (max-width: 1100px) {
+  .nav { gap: 8px 24px; }
+  .dec-figs { grid-column: 1 / 6; }
+  .dec-side { grid-column: 6 / 13; }
+  .band { grid-template-columns: 170px minmax(0, 1fr); }
+  .band .who { grid-column: 2; text-align: left; }
+  .team { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .faq-head { grid-column: 1 / -1; margin-bottom: 40px; }
+  .faq-text { grid-column: 1 / -1; }
+  .places { grid-column: 1 / -1; }
+  .fcols { grid-column: 1 / -1; margin-top: 56px; }
+  .join .g { min-height: 70svh; }
+  .join p { grid-column: 1 / 8; }
+  .join .btn { grid-column: 8 / 13; }
+  .hero h1 { grid-column: 6 / 13; }
+  .hero-talk { display: contents; }
+  .hero-talk .lead { grid-column: 1 / 6; grid-row: 2; margin-top: calc(clamp(40px, 9svh, 110px) + 12px); margin-bottom: 0; max-width: none; }
+  .hero-talk .btn { white-space: nowrap; }
+  .next { grid-column: 1 / 13; grid-row: 3; margin-top: 48px; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 32px; grid-auto-flow: row dense; }
+  .next-h, .next-when { grid-column: 1; }
+  .next-when { grid-row: span 3; align-self: start; }
+  .next-meta, .next-topic, .next-count, .next-acts { grid-column: 2; }
+  .hero-pic { grid-column: 1 / 13; grid-row: 4; margin-top: 0; height: 50svh; }
+  .cmp tfoot .btn { padding-inline: 8px; white-space: nowrap; }
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 760px) {
+  :root { --m: 20px; --gap: 16px; }
+  .g { grid-template-columns: minmax(0, 1fr); }
+  .g > * { grid-column: 1 / -1 !important; }
+  .sec { padding-block: 112px; }
+  .hero { padding-top: 16px; }
+  .hero-top { min-height: 0; grid-template-rows: auto; }
+  .brand { grid-row: 1; }
+  .brand svg { height: 40px; }
+  .menu-btn { display: inline-flex; grid-row: 1; justify-self: end; align-self: center; appearance: none; border: 0; background: var(--ink); color: var(--on-navy); font: inherit; font-weight: 700; min-height: 44px; padding: 0 18px; cursor: pointer; }
+  .nav { grid-row: 2; display: none; flex-direction: column; align-items: flex-start; gap: 0; margin-top: 12px; background: var(--surface); padding: 8px 20px; }
+  .nav.open { display: flex; }
+  .nav a { padding: 12px 0; font-size: var(--t-lead); }
+  .nav a[lang] { margin-left: 0; }
+  .hero h1 { grid-row: 3; margin-top: 48px; }
+  .hero-talk .lead { grid-column: 1 / -1; grid-row: 4; margin-top: 24px; }
+  .next { grid-column: 1 / -1; grid-row: 5; margin-top: 28px; grid-template-columns: minmax(0, 1fr); margin-inline: calc(var(--m) * -1); padding: 28px var(--m); }
+  .next > * { grid-column: 1 !important; grid-row: auto !important; }
+  .next-acts .btn { width: 100%; }
+  .hero-pic { grid-row: 6; margin-top: 0; margin-inline: calc(var(--m) * -1); height: auto; min-height: 0; aspect-ratio: 4 / 3; }
+  .dec .g { min-height: 0; padding-block: 72px; row-gap: 28px; }
+  .dec-figs { padding-right: 0; }
+  .dec-side { gap: 28px; }
+  .tabs { gap: 4px 20px; }
+  .dec-acts { grid-template-columns: 1fr; }
+  .dec-acts a { min-height: 60px; }
+  .how-text { margin-top: 20px; }
+  .how-fig { margin-top: 40px; }
+  .how-fig .h { display: none; }
+  .how-fig .v { display: block; width: 58%; }
+  .how-fig { display: grid; grid-template-columns: 58% 1fr; gap: 16px; }
+  .how-cols { display: none; }
+  .how-side { display: grid; align-content: space-around; gap: 16px; }
+  .sch-body { grid-template-columns: 1fr; gap: 16px; margin-top: 32px; }
+  .zones { grid-template-columns: 1fr 1fr; position: sticky; top: 0; z-index: 3; }
+  .zone { width: 100%; }
+  .band { grid-template-columns: 1fr; gap: 4px; padding: 16px; }
+  .band .who { grid-column: 1; }
+  .sch-head .btn { width: 100%; }
+  .mos { grid-template-columns: 1fr 1fr; }
+  .mos .tile { aspect-ratio: auto; grid-column: 1 / -1; padding: 28px 20px; }
+  .mos > .pic:first-child, .mos > .pic:last-child { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+  .tours + .sec { padding-top: 24px; }
+  .tours + .sec.team-sec { padding-top: 88px; }
+  .tile .fig { font-size: var(--t-display); }
+  .cmp { display: none; }
+  .cmp-m { display: grid; gap: 16px; }
+  .plan-b { padding: 24px 20px; background: var(--surface); }
+  .plan-b h3 { font-size: var(--t-h2); line-height: 1.15; font-weight: 700; }
+  .plan-b .price { font-size: var(--t-h2); line-height: 1.15; margin-top: 4px; }
+  .plan-b dl { margin-top: 16px; display: grid; gap: 12px; }
+  .plan-b dt { font-size: var(--t-small); color: var(--muted); }
+  .plan-b .btn { width: 100%; margin-top: 20px; }
+  .plan-b .btn.alt { background: var(--ink); }
+  .cmp-wrap { margin-top: 64px; }
+  .team { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .person .cover { height: 72px; }
+  .person .av { width: 96px; height: 96px; margin-top: -48px; }
+  .cat-head .h2 span { padding-left: 0; }
+  .cat-wrap { margin-top: 40px; }
+  .list, .list tbody, .list tr, .list th, .list td { display: block; width: 100%; }
+  .list colgroup, .list thead { display: none; }
+  .list tr.r { padding: 12px 14px; }
+  .list tr.r > * { padding: 0; background: none !important; text-align: left !important; }
+  .list tr.r:nth-child(even) { background: var(--bg); }
+  .list tr.r td:nth-child(3), .list tr.r td:nth-child(4) { display: inline; color: var(--muted); font-size: var(--t-small); }
+  .list tr.r td:nth-child(3)::after { content: " · "; }
+  .list .grp { font-size: var(--t-lead); padding: 20px 14px 6px !important; }
+  .list .grp:empty { display: none; }
+  .list tr.gap { display: none; }
+  .join .g { min-height: 80svh; padding-block: 88px 20px; }
+  .join .btn { width: 100%; justify-self: stretch; margin-top: 24px; }
+  .faq-text { columns: 1; }
+  .foot .name { white-space: normal; }
+  .foot .name br { display: inline; }
+  .fcols { grid-template-columns: 1fr 1fr; }
+  .legal { margin-top: 64px; }
+}
+@media (min-width: 761px) { .how-side { display: none; } }
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "EducationalOrganization", "name": "金融城研学社 City Study London", "url": "https://sternalanguage.github.io/city-study-london-site/", "description": "伦敦金融城的交易方法与策略思路课程，用白话读懂每一条市场信息。只讲方法与历史案例，不提供投资建议或交易服务。", "inLanguage": "zh-CN"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "零基础能学交易吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。核心课从读懂一条市场信息讲起，全程中文，不需要金融学位，也不需要英语基础。"}}, {"@type": "Question", "name": "你们会推荐股票、带单，或者给投资建议吗？", "acceptedAnswer": {"@type": "Answer", "text": "不会。我们只讲交易方法、策略思路和历史案例，不推荐具体品种，不给买卖点，不提供交易服务，也不会把学员介绍给任何交易平台。"}}, {"@type": "Question", "name": "学完能保证赚钱吗？", "acceptedAnswer": {"@type": "Answer", "text": "不能，也没有人能保证。交易可能亏损，使用杠杆会放大亏损。课程教的是做计划、控风险和复盘。"}}, {"@type": "Question", "name": "课堂会分析现在的行情吗？", "acceptedAnswer": {"@type": "Answer", "text": "不会。案例都用已经有结果的历史行情，不对当下任何品种做走势判断。"}}, {"@type": "Question", "name": "想做外汇交易，这里能学什么？", "acceptedAnswer": {"@type": "Answer", "text": "学读懂汇率：CSL 150「外汇与宏观」专题讲利率、通胀、央行议息和非农数据怎样推动美元、英镑和黄金，用历史行情复盘；8 周核心课教交易计划、仓位与止损；另有杠杆风险和骗局识别两门免费课。我们不开外汇实操课，不开户、不带单、不推荐平台。"}}, {"@type": "Question", "name": "外汇保证金交易在国内合法吗？", "acceptedAnswer": {"@type": "Answer", "text": "中国境内没有任何机构获准向个人提供外汇保证金交易，境外平台不受国内监管，出了纠纷权益很难保障。所以我们只讲原理、风险和历史案例，也教你认出打着外汇旗号的骗局。"}}, {"@type": "Question", "name": "免费公开课怎么参加？", "acceptedAnswer": {"@type": "Answer", "text": "留下姓名和手机号，我们用短信把直播链接发给你。每周四北京时间 20:00，错过可以回看 7 天。"}}, {"@type": "Question", "name": "留了手机号会接到推销电话吗？", "acceptedAnswer": {"@type": "Answer", "text": "不会。我们永不来电，报名确认只发短信；你说不需要，我们就不再发送，也可以随时要求删除信息。"}}, {"@type": "Question", "name": "伦敦和香港研修有什么不同？", "acceptedAnswer": {"@type": "Answer", "text": "两地同一套标准。伦敦十天九晚，侧重全球市场与欧洲金融中心；香港五天四晚，侧重亚洲市场与联系汇率。"}}, {"@type": "Question", "name": "研修价格包含什么？", "acceptedAnswer": {"@type": "Answer", "text": "伦敦早鸟价含往返公务舱、九晚五星酒店、全部课程与列明的参访和晚宴；香港早鸟价含四晚五星酒店与列明的参访、课程和晚宴，不含往返大交通。以合同为准。"}}, {"@type": "Question", "name": "证书是谁发的？", "acceptedAnswer": {"@type": "Answer", "text": "本社只发结业证明，证明你完成了课程。CISI 等证书由颁发机构独立颁发，须通过其考试；我们不代考，不承诺通过率。"}}]}</script>
+<!--seo-->
+<link rel="alternate" hreflang="zh-CN" href="https://sternalanguage.github.io/city-study-london-site/">
+<link rel="alternate" hreflang="en" href="https://sternalanguage.github.io/city-study-london-site/en/">
+<link rel="alternate" hreflang="x-default" href="https://sternalanguage.github.io/city-study-london-site/">
+<meta name="keywords" content="外汇入门,外汇基础知识,汇率怎么看,汇率为什么涨跌,外汇交易学习,非农数据,央行议息,外汇杠杆风险,外汇骗局识别,交易入门课">
+<meta name="twitter:title" content="外汇入门与交易方法课｜用白话读懂汇率和每一条市场信息 - 金融城研学社">
+<meta name="twitter:description" content="想做外汇交易，先学会读懂汇率：央行议息、非农数据怎样影响美元、英镑和黄金，杠杆亏损怎么算，外汇骗局怎么认。伦敦专家中文直播，每周四免费公开课。不开户、不荐单、不带单。">
+<!--/seo-->
+</head>
+<body>
+<a class="skip" href="#main" title="跳到正文">跳到正文</a>
+<main id="main" tabindex="-1">
+<section class="hero" aria-labelledby="hero-h">
+<div class="g hero-top">
+<a class="brand" href="index.html" aria-label="金融城研学社首页" title="首页：在伦敦金融城，用白话读懂每一条市场信息"><svg class="csl-lockup" height="48" viewBox="0 0 235.3 64" aria-hidden="true"><rect x="1.5" y="6" width="112.0" height="52" fill="none" stroke="#0B1E3F" stroke-width="2.2"/><path d="M28 46.5C34.4 46.5 39.2 42.5 40.1 36.4H35.1C34.3 40 31.7 42 28.1 42C22.9 42 19.9 38 19.9 32C19.9 26 23 22 28.1 22C31.7 22 34.3 24 35.1 27.6H40.1C39.2 21.5 34.4 17.5 28 17.5C20.3 17.5 14.9 23.2 14.9 32C14.9 40.8 20.3 46.5 28 46.5ZM55.4 46.5C62 46.5 66.2 43.1 66.2 37.9C66.2 33.8 63.6 31.4 57.8 30.1L54.9 29.4C51.3 28.6 49.8 27.5 49.8 25.6C49.8 23.4 52 21.8 55.1 21.8C58.4 21.8 60.5 23.5 60.7 26.5H65.5C65.3 20.9 61.4 17.5 55.1 17.5C49 17.5 44.8 20.9 44.8 25.9C44.8 29.8 47.4 32.3 53 33.6L56 34.2C59.8 35.1 61.2 36.2 61.2 38.2C61.2 40.7 58.9 42.3 55.4 42.3C51.5 42.3 49.2 40.2 49.2 36.9H44.3C44.3 42.9 48.5 46.5 55.4 46.5Z" fill="#0B1E3F"/><rect x="79.54" y="32.88" width="4.6" height="9.52" fill="#0B1E3F"/><rect x="87.14" y="25.04" width="4.6" height="17.36" fill="#0B1E3F"/><rect x="94.74" y="16.64" width="4.6" height="25.76" fill="#0B1E3F"/><rect x="71.54" y="42.40" width="30.00" height="3.6" fill="#B3122E"/><rect x="71.54" y="0" width="5.0" height="64" fill="#B3122E"/><g transform="translate(127.00 9.70)"><path d="M5.9 11.5C8.4 11.5 10.3 9.9 10.7 7.4H8.7C8.4 8.9 7.3 9.7 5.9 9.7C3.8 9.7 2.6 8.1 2.6 5.6C2.6 3.2 3.8 1.6 5.9 1.6C7.3 1.6 8.4 2.4 8.7 3.9H10.7C10.3 1.4 8.4 -0.2 5.9 -0.2C2.7 -0.2 0.5 2.1 0.5 5.6C0.5 9.2 2.7 11.5 5.9 11.5ZM16 0H14V11.3H16ZM19.2 1.7H22.7V11.3H24.7V1.7H28.2V0H19.2ZM34.7 11.3H36.6V6.9L40.8 0H38.5L36.5 3.5C36.2 4 35.9 4.5 35.7 4.9C35.4 4.5 35.1 4 34.8 3.5L32.8 0H30.5L34.7 6.9ZM53.1 11.5C55.8 11.5 57.4 10.1 57.4 8C57.4 6.4 56.4 5.4 54.1 4.9L52.9 4.6C51.4 4.3 50.9 3.8 50.9 3.1C50.9 2.2 51.7 1.5 53 1.5C54.3 1.5 55.2 2.2 55.3 3.4H57.2C57.1 1.2 55.5 -0.2 53 -0.2C50.5 -0.2 48.9 1.2 48.9 3.2C48.9 4.8 49.9 5.8 52.1 6.3L53.4 6.5C54.9 6.9 55.5 7.3 55.5 8.1C55.5 9.1 54.5 9.8 53.1 9.8C51.5 9.8 50.6 9 50.6 7.6H48.6C48.6 10 50.3 11.5 53.1 11.5ZM60.2 1.7H63.7V11.3H65.7V1.7H69.2V0H60.2ZM76.9 11.5C79.6 11.5 81.4 9.8 81.4 7.4V0H79.5V7.2C79.5 8.7 78.5 9.7 76.9 9.7C75.3 9.7 74.3 8.7 74.3 7.2V0H72.3V7.4C72.3 9.8 74.1 11.5 76.9 11.5ZM88.9 11.3C92.4 11.3 94.5 9.1 94.5 5.6C94.5 2.2 92.4 0 89 0H85.1V11.3ZM87.1 9.6V1.7H88.9C91.3 1.7 92.4 3.1 92.4 5.6C92.4 8.1 91.3 9.6 88.8 9.6ZM101.1 11.3H103.1V6.9L107.2 0H104.9L102.9 3.5C102.7 4 102.4 4.5 102.1 4.9C101.9 4.5 101.6 4 101.3 3.5L99.3 0H97L101.1 6.9Z" fill="#0B1E3F"/><path d="M0.9 29.1H8.2V27.3H2.9V17.8H0.9ZM16.2 29.2C19.2 29.2 21.4 27 21.4 23.4C21.4 19.9 19.2 17.6 16.2 17.6C13.2 17.6 10.9 19.9 10.9 23.4C10.9 26.9 13.2 29.2 16.2 29.2ZM16.2 27.5C14.3 27.5 12.9 26 12.9 23.4C12.9 20.9 14.3 19.4 16.2 19.4C18 19.4 19.4 20.9 19.4 23.4C19.4 26 18 27.5 16.2 27.5ZM24.8 29.1H26.8V23.4C26.8 22.9 26.8 21.9 26.7 20.7C27.4 21.9 28 22.9 28.3 23.4L31.9 29.1H34.1V17.8H32.1V23.9C32.1 24.4 32.1 25.3 32.1 26.2C31.7 25.4 31.2 24.5 30.9 24.1L26.9 17.8H24.8ZM41.6 29.1C45.1 29.1 47.1 26.9 47.1 23.4C47.1 19.9 45 17.8 41.7 17.8H37.8V29.1ZM39.8 27.4V19.5H41.6C43.9 19.5 45.1 20.9 45.1 23.4C45.1 25.9 44 27.4 41.5 27.4ZM55.3 29.2C58.3 29.2 60.6 27 60.6 23.4C60.6 19.9 58.3 17.6 55.3 17.6C52.3 17.6 50.1 19.9 50.1 23.4C50.1 26.9 52.3 29.2 55.3 29.2ZM55.3 27.5C53.5 27.5 52.1 26 52.1 23.4C52.1 20.9 53.5 19.4 55.3 19.4C57.2 19.4 58.6 20.9 58.6 23.4C58.6 26 57.2 27.5 55.3 27.5ZM63.9 29.1H65.9V23.4C65.9 22.9 65.9 21.9 65.9 20.7C66.6 21.9 67.2 22.9 67.5 23.4L71 29.1H73.2V17.8H71.2V23.9C71.2 24.4 71.2 25.3 71.2 26.2C70.8 25.4 70.3 24.5 70 24.1L66.1 17.8H63.9Z" fill="#0B1E3F"/><path d="M2.1 42.5C2.5 43.2 3 44 3.1 44.6L4.1 44.1C3.9 43.6 3.4 42.8 3 42.2ZM8.1 42.2C7.8 42.8 7.4 43.7 7 44.2L7.8 44.6C8.2 44.1 8.7 43.3 9.1 42.6ZM5.5 35.4C4.5 37 2.4 38.3 0.3 38.9C0.6 39.2 0.9 39.6 1 39.9C1.6 39.7 2.1 39.4 2.6 39.2V39.8H5V41.1H1.3V42.1H5V44.6H0.8V45.6H10.5V44.6H6.1V42.1H9.9V41.1H6.1V39.8H8.5V39.1C9.1 39.4 9.7 39.6 10.2 39.8C10.4 39.6 10.7 39.1 10.9 38.9C9.3 38.4 7.3 37.3 6.2 36.2L6.5 35.8ZM8 38.8H3.3C4.2 38.3 5 37.7 5.6 37C6.3 37.6 7.1 38.2 8 38.8ZM16.5 38.1H19V39H16.5ZM15.6 37.4V39.7H20V37.4ZM15.1 35.9V36.8H20.5V35.9ZM16.5 41.5C16.7 41.9 17 42.4 17 42.7L17.6 42.5C17.6 42.2 17.3 41.6 17 41.3ZM20.8 37.7V42.1H22.4V44.4L20.6 44.6L20.9 45.6C21.9 45.4 23.2 45.2 24.4 45C24.5 45.3 24.6 45.6 24.6 45.9L25.4 45.6C25.3 44.9 24.9 43.6 24.5 42.6L23.8 42.8C23.9 43.2 24.1 43.6 24.2 44.1L23.3 44.2V42.1H24.9V37.7H23.3V35.6H22.4V37.7ZM21.6 38.6H22.5V41.1H21.6ZM23.3 38.6H24.1V41.1H23.3ZM18.5 41.2C18.3 41.7 18 42.3 17.8 42.8H16.4V43.5H17.4V45.5H18.2V43.5H19.1V42.8H18.5C18.7 42.4 18.9 41.9 19.2 41.5ZM15.3 40.2V45.8H16.1V41.1H19.5V44.8C19.5 44.9 19.4 44.9 19.3 44.9C19.2 44.9 18.9 44.9 18.5 44.9C18.6 45.1 18.7 45.5 18.7 45.7C19.3 45.7 19.7 45.7 20 45.6C20.3 45.4 20.3 45.2 20.3 44.8V40.2ZM38.7 39.3C38.5 40.2 38.2 41 37.9 41.8C37.7 40.7 37.6 39.5 37.6 38.1H39.8V37.1H39.1L39.6 36.8C39.4 36.4 38.8 35.9 38.4 35.5L37.7 35.9C38 36.3 38.5 36.7 38.8 37.1H37.5C37.5 36.6 37.5 36 37.5 35.5H36.5L36.5 37.1H33.2V40.7C33.2 41.5 33.1 42.3 32.9 43.2L32.7 42.2L31.8 42.6V39.2H32.7V38.2H31.8V35.6H30.8V38.2H29.7V39.2H30.8V42.9C30.3 43.1 29.9 43.3 29.5 43.4L29.9 44.4C30.8 44.1 31.9 43.6 32.9 43.2C32.8 43.9 32.5 44.7 31.9 45.2C32.2 45.4 32.6 45.7 32.7 45.9C33.9 44.5 34.1 42.3 34.1 40.7V40.3H35.3C35.3 42.2 35.2 42.9 35.1 43C35.1 43.1 35 43.2 34.9 43.2C34.7 43.2 34.4 43.2 34.1 43.1C34.2 43.4 34.3 43.7 34.3 44C34.7 44 35.1 44 35.3 44C35.6 43.9 35.8 43.9 35.9 43.6C36.1 43.4 36.2 42.4 36.2 39.8C36.2 39.7 36.2 39.5 36.2 39.5H34.1V38.1H36.6C36.7 40 36.8 41.7 37.1 43.1C36.5 43.9 35.8 44.6 34.9 45.1C35.2 45.3 35.5 45.7 35.7 45.8C36.3 45.4 36.9 44.9 37.4 44.2C37.8 45.2 38.2 45.7 38.8 45.7C39.6 45.7 39.9 45.2 40 43.5C39.8 43.4 39.5 43.2 39.3 43C39.2 44.2 39.1 44.8 38.9 44.8C38.6 44.8 38.4 44.2 38.1 43.3C38.8 42.2 39.3 40.9 39.7 39.4ZM52.2 37V40.1H50.7V37ZM48.5 40.1V41.1H49.6C49.6 42.5 49.3 44.2 48.3 45.3C48.5 45.4 48.9 45.7 49.1 45.9C50.3 44.7 50.6 42.8 50.6 41.1H52.2V45.9H53.3V41.1H54.5V40.1H53.3V37H54.3V36.1H48.8V37H49.7V40.1ZM44.2 36V37H45.5C45.2 38.6 44.7 40.1 44 41.1C44.2 41.4 44.4 42 44.4 42.3C44.6 42.1 44.8 41.8 44.9 41.5V45.3H45.8V44.5H48V39.5H45.9C46.1 38.7 46.3 37.9 46.5 37H48.2V36ZM45.8 40.4H47.1V43.5H45.8ZM63.3 41V41.8H58.9V42.8H63.3V44.6C63.3 44.8 63.2 44.8 63 44.8C62.8 44.8 62 44.8 61.2 44.8C61.3 45.1 61.5 45.5 61.6 45.8C62.6 45.8 63.3 45.8 63.7 45.7C64.2 45.5 64.4 45.2 64.4 44.6V42.8H68.8V41.8H64.4V41.5C65.3 41 66.3 40.4 67 39.7L66.4 39.2L66.1 39.3H60.8V40.2H64.9C64.4 40.5 63.8 40.8 63.3 41ZM62.9 35.7C63.2 36.2 63.6 36.8 63.7 37.3H61.5L61.9 37.1C61.7 36.6 61.3 36 60.9 35.6L60 36C60.3 36.4 60.7 36.9 60.9 37.3H59.1V39.6H60.1V38.2H67.6V39.6H68.7V37.3H66.9C67.3 36.9 67.6 36.4 68 35.9L66.9 35.5C66.6 36.1 66.2 36.8 65.8 37.3H64.1L64.7 37C64.6 36.6 64.2 35.9 63.9 35.4ZM74.5 35.9C74.9 36.3 75.3 37 75.5 37.4H73.4V38.3H76.1C75.4 39.6 74.2 40.9 73 41.6C73.2 41.8 73.4 42.3 73.5 42.6C74 42.3 74.4 41.9 74.9 41.5V45.8H76V41.2C76.3 41.6 76.8 42.2 77 42.5L77.6 41.6C77.4 41.4 76.6 40.5 76.1 40.1C76.7 39.4 77.1 38.6 77.5 37.7L76.9 37.3L76.7 37.4H75.5L76.4 36.9C76.2 36.5 75.7 35.9 75.3 35.4ZM80 35.5V38.9H77.6V39.9H80V44.4H77.1V45.5H83.6V44.4H81.1V39.9H83.3V38.9H81.1V35.5Z" fill="#4B5770"/></g></svg></a>
+<button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">菜单</button>
+<nav class="nav" id="nav" aria-label="主导航"><a class="lnk" href="courses.html" title="课程与课表：五级课程体系、8周交易核心课大纲、伦敦大师课、北京时间课表与仓位计算">课程</a><a class="lnk" href="#tours" title="本页：研修">研修</a><a class="lnk" href="#faculty" title="本页：专家">专家</a><a class="lnk" href="#faq" title="本页：常见问题">常见问题</a><a class="lnk" href="en/index.html" lang="en" hreflang="en" title="英文版网站 English version">English</a></nav>
+<h1 class="lines" id="hero-h"><span class="line"><span data-line style="--i:0">用白话读懂</span></span><span class="line"><span data-line style="--i:1">每一条信息</span></span></h1>
+<div class="hero-talk">
+<p class="lead" data-load style="--d:420ms">伦敦金融城的外汇与交易方法课，写给在职的你。每周北京时间晚上，伦敦专家用中文把汇率和市场信息讲成白话。</p>
+<aside class="next" data-load style="--d:540ms" aria-labelledby="next-h">
+<h2 class="next-h" id="next-h">下一场免费公开课</h2>
+<p class="next-when"><span data-next-day>每周四</span><span>20:00</span></p>
+<p class="next-meta">北京时间 · <span data-next-ldn>伦敦午间</span> · 线上直播 75 分钟</p>
+<p class="next-topic">讲这周发生的一条市场信息，比如一次议息怎样推动汇率：一张图讲清因果，再看历史上类似事件后价格怎么走，最后 15 分钟问答。</p>
+<p class="next-count" data-count hidden></p>
+<div class="next-acts"><a class="btn btn-light" href="signup.html?course=openclass" title="在线报名：周四免费公开课">免费预约这一场<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="next-more" href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息">公开课讲什么</a></div>
+</aside>
+</div>
+<figure class="hero-pic pic"><img src="images/thamescity.jpg" srcset="images/thamescity-1200.jpg 1200w, images/thamescity.jpg 2400w" sizes="(max-width: 760px) 100vw, 66vw" width="2400" height="1350" alt="泰晤士河与伦敦金融城的高楼" fetchpriority="high"></figure>
+</div>
+</section>
+<section class="dec" id="decode" aria-labelledby="dec-h">
+<div class="g">
+<div class="dec-figs" data-reveal><figure class="dec-fig on" data-k="rate"><div class="pic"><img src="images/a-boe-hall.jpg" width="1200" height="1200" alt="英格兰银行大厅，1808 年的版画" loading="lazy" decoding="async"></div><figcaption>英格兰银行大厅，1808 年的版画</figcaption></figure><figure class="dec-fig" data-k="jobs"><div class="pic"><img src="images/a-ford-line.jpg" width="1200" height="1200" alt="福特汽车装配线，1913 年" loading="lazy" decoding="async"></div><figcaption>福特汽车装配线，1913 年</figcaption></figure><figure class="dec-fig" data-k="earnings"><div class="pic"><img src="images/a-exchange-floor.jpg" width="1200" height="1200" alt="证券交易所收市后清扫地面，1908 年" loading="lazy" decoding="async"></div><figcaption>证券交易所收市后清扫地面，1908 年</figcaption></figure><figure class="dec-fig" data-k="oil"><div class="pic"><img src="images/a-oil-derrick.jpg" width="1200" height="1200" alt="油井井架，约 1900 年" loading="lazy" decoding="async"></div><figcaption>油井井架，约 1900 年</figcaption></figure></div>
+<div class="dec-side">
+<div class="tabs" role="tablist" aria-label="快讯类型" data-reveal><button class="tab" type="button" role="tab" id="tab-rate" aria-controls="panel-rate" aria-selected="true">议息</button><button class="tab" type="button" role="tab" id="tab-jobs" aria-controls="panel-jobs" aria-selected="false" tabindex="-1">非农</button><button class="tab" type="button" role="tab" id="tab-earnings" aria-controls="panel-earnings" aria-selected="false" tabindex="-1">财报</button><button class="tab" type="button" role="tab" id="tab-oil" aria-controls="panel-oil" aria-selected="false" tabindex="-1">原油库存</button></div>
+<div class="dec-text" data-reveal style="--s:1">
+<h2 class="h2" id="dec-h">一条快讯，三句白话</h2>
+<div class="dec-panel on" role="tabpanel" id="panel-rate" aria-labelledby="tab-rate" data-k="rate"><p class="flash"><span class="muted">示例快讯　</span>英国央行宣布维持基准利率不变，声明称通胀仍有上行风险，英镑短线走高。</p><dl class="plain"><div><dt>发生了什么</dt><dd>央行这次没动利率，但话里透露：物价还没压下去，暂时不急着降息。</dd></div><div><dt>价格为什么动</dt><dd>市场原本押注会快点降息，结果没等到。持有英镑能拿的利息比预想的高，于是有人买入英镑。</dd></div><div><dt>风险在哪</dt><dd>一句声明就能让汇率来回走；下一次通胀数据一出，判断可能整个翻过来。</dd></div></dl></div><div class="dec-panel" role="tabpanel" id="panel-jobs" aria-labelledby="tab-jobs" data-k="jobs"><p class="flash"><span class="muted">示例快讯　</span>美国非农就业人数高于预期，失业率持平，美元指数走强，现货黄金短线承压。</p><dl class="plain"><div><dt>发生了什么</dt><dd>美国上个月新增的工作岗位比大家估计的多，说明经济还挺有劲。</dd></div><div><dt>价格为什么动</dt><dd>经济好，美联储就不急着降息，美元的利息更有吸引力，美元涨；黄金本身不生利息，相对吃亏，所以跌。</dd></div><div><dt>风险在哪</dt><dd>这个数字常被下个月修正；公布后的头几分钟波动最大，追进去很容易两头挨打。</dd></div></dl></div><div class="dec-panel" role="tabpanel" id="panel-earnings" aria-labelledby="tab-earnings" data-k="earnings"><p class="flash"><span class="muted">示例快讯　</span>某科技公司季度营收与利润均超预期，但下季度指引低于市场预估，盘后股价下跌。</p><dl class="plain"><div><dt>发生了什么</dt><dd>这个季度赚得比预想的多，但公司自己说，下个季度会差一些。</dd></div><div><dt>价格为什么动</dt><dd>股价反映的是对未来的预期。好消息早被算进价格里，真正的新信息是“下季度会变差”，所以跌。</dd></div><div><dt>风险在哪</dt><dd>盘后成交少、波动大；第二天开盘可能完全是另一个方向。</dd></div></dl></div><div class="dec-panel" role="tabpanel" id="panel-oil" aria-labelledby="tab-oil" data-k="oil"><p class="flash"><span class="muted">示例快讯　</span>美国原油库存意外增加，汽油库存下降，国际油价小幅回落。</p><dl class="plain"><div><dt>发生了什么</dt><dd>仓库里的原油比预期多了，说明需求没那么旺，或者供应多了。</dd></div><div><dt>价格为什么动</dt><dd>库存多，短期不缺油，买家不急，油价往下走；汽油库存下降又说明消费还在，所以跌得不多。</dd></div><div><dt>风险在哪</dt><dd>每周数据波动大，单周一个数字说明不了趋势，还要看产油国的消息。</dd></div></dl></div>
+</div>
+<div class="dec-acts" data-reveal style="--s:2"><a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息">免费听周四公开课</a><a href="courses.html#syllabus" title="课程与课表：看 8 周大纲">看 8 周大纲</a></div>
+</div>
+</div>
+</section>
+<section class="sec" id="method" aria-labelledby="how-h">
+<div class="g">
+<div class="how-head" data-reveal><h2 class="h2" id="how-h">从一堆消息，<br>到一份交易计划</h2></div>
+<p class="how-text lead" data-reveal style="--s:1">交易核心课八周，每周一次 90 分钟直播。先学会把零散的消息理成一条因果链，再把因果链写成有止损、有仓位的计划。全程只用历史行情做案例，不荐股，不带单。</p>
+<div class="how-fig" data-reveal style="--s:1"><svg class="h" viewBox="0 0 1800 400" role="img" aria-label="零散的方块被收拢成一条带，再排成整齐的红色方阵：从杂乱的消息到一份交易计划"><rect x="188" y="71" width="16" height="16" fill="#CFC8B8"/><rect x="50" y="202" width="16" height="16" fill="#AEB6C6"/><rect x="42" y="193" width="16" height="16" fill="#AEB6C6"/><rect x="249" y="44" width="16" height="16" fill="#AEB6C6"/><rect x="243" y="301" width="16" height="16" fill="#AEB6C6"/><rect x="133" y="233" width="16" height="16" fill="#CFC8B8"/><rect x="327" y="155" width="16" height="16" fill="#CFC8B8"/><rect x="36" y="312" width="16" height="16" fill="#AEB6C6"/><rect x="89" y="60" width="16" height="16" fill="#AEB6C6"/><rect x="459" y="81" width="16" height="16" fill="#CFC8B8"/><rect x="361" y="147" width="16" height="16" fill="#CFC8B8"/><rect x="45" y="40" width="16" height="16" fill="#AEB6C6"/><rect x="384" y="165" width="16" height="16" fill="#AEB6C6"/><rect x="332" y="174" width="16" height="16" fill="#AEB6C6"/><rect x="447" y="258" width="16" height="16" fill="#AEB6C6"/><rect x="326" y="199" width="16" height="16" fill="#CFC8B8"/><rect x="411" y="118" width="16" height="16" fill="#CFC8B8"/><rect x="75" y="162" width="16" height="16" fill="#CFC8B8"/><rect x="94" y="186" width="16" height="16" fill="#AEB6C6"/><rect x="378" y="280" width="16" height="16" fill="#CFC8B8"/><rect x="492" y="127" width="16" height="16" fill="#CFC8B8"/><rect x="337" y="217" width="16" height="16" fill="#AEB6C6"/><rect x="472" y="341" width="16" height="16" fill="#AEB6C6"/><rect x="375" y="41" width="16" height="16" fill="#CFC8B8"/><rect x="366" y="358" width="16" height="16" fill="#CFC8B8"/><rect x="167" y="151" width="16" height="16" fill="#CFC8B8"/><rect x="22" y="177" width="16" height="16" fill="#AEB6C6"/><rect x="74" y="40" width="16" height="16" fill="#CFC8B8"/><rect x="81" y="104" width="16" height="16" fill="#AEB6C6"/><rect x="489" y="47" width="16" height="16" fill="#AEB6C6"/><rect x="312" y="320" width="16" height="16" fill="#CFC8B8"/><rect x="485" y="115" width="16" height="16" fill="#AEB6C6"/><rect x="207" y="321" width="16" height="16" fill="#CFC8B8"/><rect x="93" y="80" width="16" height="16" fill="#AEB6C6"/><rect x="138" y="185" width="16" height="16" fill="#CFC8B8"/><rect x="155" y="21" width="16" height="16" fill="#AEB6C6"/><rect x="213" y="213" width="16" height="16" fill="#CFC8B8"/><rect x="390" y="195" width="16" height="16" fill="#CFC8B8"/><rect x="382" y="38" width="16" height="16" fill="#CFC8B8"/><rect x="439" y="317" width="16" height="16" fill="#CFC8B8"/><rect x="226" y="156" width="16" height="16" fill="#AEB6C6"/><rect x="359" y="41" width="16" height="16" fill="#AEB6C6"/><rect x="125" y="75" width="16" height="16" fill="#AEB6C6"/><rect x="39" y="20" width="16" height="16" fill="#AEB6C6"/><rect x="66" y="144" width="16" height="16" fill="#AEB6C6"/><rect x="491" y="229" width="16" height="16" fill="#AEB6C6"/><rect x="720" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="720" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="720" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="739" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="739" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="739" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="758" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="758" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="758" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="777" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="777" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="777" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="796" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="796" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="796" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="815" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="815" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="815" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="834" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="834" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="834" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="853" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="853" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="853" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="872" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="872" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="872" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="891" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="891" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="891" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="910" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="910" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="910" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="929" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="929" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="929" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="948" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="948" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="948" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="967" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="967" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="967" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="986" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="986" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="986" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="1005" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="1005" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="1005" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="1024" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="1024" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="1024" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="1043" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="1043" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="1043" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="1062" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="1062" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="1062" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="1081" y="170" width="16" height="16" fill="#0B1E3F"/><rect x="1081" y="189" width="16" height="16" fill="#0B1E3F"/><rect x="1081" y="208" width="16" height="16" fill="#0B1E3F"/><rect x="1290" y="60" width="16" height="16" fill="#B3122E"/><rect x="1290" y="116" width="16" height="16" fill="#B3122E"/><rect x="1290" y="172" width="16" height="16" fill="#B3122E"/><rect x="1290" y="228" width="16" height="16" fill="#B3122E"/><rect x="1290" y="284" width="16" height="16" fill="#B3122E"/><rect x="1290" y="340" width="16" height="16" fill="#B3122E"/><rect x="1348" y="60" width="16" height="16" fill="#B3122E"/><rect x="1348" y="116" width="16" height="16" fill="#B3122E"/><rect x="1348" y="172" width="16" height="16" fill="#B3122E"/><rect x="1348" y="228" width="16" height="16" fill="#B3122E"/><rect x="1348" y="284" width="16" height="16" fill="#B3122E"/><rect x="1348" y="340" width="16" height="16" fill="#B3122E"/><rect x="1406" y="60" width="16" height="16" fill="#B3122E"/><rect x="1406" y="116" width="16" height="16" fill="#B3122E"/><rect x="1406" y="172" width="16" height="16" fill="#B3122E"/><rect x="1406" y="228" width="16" height="16" fill="#B3122E"/><rect x="1406" y="284" width="16" height="16" fill="#B3122E"/><rect x="1406" y="340" width="16" height="16" fill="#B3122E"/><rect x="1464" y="60" width="16" height="16" fill="#B3122E"/><rect x="1464" y="116" width="16" height="16" fill="#B3122E"/><rect x="1464" y="172" width="16" height="16" fill="#B3122E"/><rect x="1464" y="228" width="16" height="16" fill="#B3122E"/><rect x="1464" y="284" width="16" height="16" fill="#B3122E"/><rect x="1464" y="340" width="16" height="16" fill="#B3122E"/><rect x="1522" y="60" width="16" height="16" fill="#B3122E"/><rect x="1522" y="116" width="16" height="16" fill="#B3122E"/><rect x="1522" y="172" width="16" height="16" fill="#B3122E"/><rect x="1522" y="228" width="16" height="16" fill="#B3122E"/><rect x="1522" y="284" width="16" height="16" fill="#B3122E"/><rect x="1522" y="340" width="16" height="16" fill="#B3122E"/><rect x="1580" y="60" width="16" height="16" fill="#B3122E"/><rect x="1580" y="116" width="16" height="16" fill="#B3122E"/><rect x="1580" y="172" width="16" height="16" fill="#B3122E"/><rect x="1580" y="228" width="16" height="16" fill="#B3122E"/><rect x="1580" y="284" width="16" height="16" fill="#B3122E"/><rect x="1580" y="340" width="16" height="16" fill="#B3122E"/><rect x="1638" y="60" width="16" height="16" fill="#B3122E"/><rect x="1638" y="116" width="16" height="16" fill="#B3122E"/><rect x="1638" y="172" width="16" height="16" fill="#B3122E"/><rect x="1638" y="228" width="16" height="16" fill="#B3122E"/><rect x="1638" y="284" width="16" height="16" fill="#B3122E"/><rect x="1638" y="340" width="16" height="16" fill="#B3122E"/><rect x="1696" y="60" width="16" height="16" fill="#B3122E"/><rect x="1696" y="116" width="16" height="16" fill="#B3122E"/><rect x="1696" y="172" width="16" height="16" fill="#B3122E"/><rect x="1696" y="228" width="16" height="16" fill="#B3122E"/><rect x="1696" y="284" width="16" height="16" fill="#B3122E"/><rect x="1696" y="340" width="16" height="16" fill="#B3122E"/><rect x="1754" y="60" width="16" height="16" fill="#B3122E"/><rect x="1754" y="116" width="16" height="16" fill="#B3122E"/><rect x="1754" y="172" width="16" height="16" fill="#B3122E"/><rect x="1754" y="228" width="16" height="16" fill="#B3122E"/><rect x="1754" y="284" width="16" height="16" fill="#B3122E"/><rect x="1754" y="340" width="16" height="16" fill="#B3122E"/></svg><svg class="v" viewBox="0 0 600 800" role="img" aria-label="零散的方块被收拢成一条带，再排成整齐的红色方阵：从杂乱的消息到一份交易计划"><rect x="195" y="43" width="16" height="16" fill="#CFC8B8"/><rect x="59" y="128" width="16" height="16" fill="#AEB6C6"/><rect x="51" y="122" width="16" height="16" fill="#AEB6C6"/><rect x="254" y="25" width="16" height="16" fill="#AEB6C6"/><rect x="249" y="192" width="16" height="16" fill="#AEB6C6"/><rect x="141" y="148" width="16" height="16" fill="#CFC8B8"/><rect x="332" y="97" width="16" height="16" fill="#CFC8B8"/><rect x="45" y="199" width="16" height="16" fill="#AEB6C6"/><rect x="98" y="36" width="16" height="16" fill="#AEB6C6"/><rect x="461" y="50" width="16" height="16" fill="#CFC8B8"/><rect x="365" y="92" width="16" height="16" fill="#CFC8B8"/><rect x="54" y="23" width="16" height="16" fill="#AEB6C6"/><rect x="387" y="104" width="16" height="16" fill="#AEB6C6"/><rect x="336" y="110" width="16" height="16" fill="#AEB6C6"/><rect x="449" y="164" width="16" height="16" fill="#AEB6C6"/><rect x="330" y="126" width="16" height="16" fill="#CFC8B8"/><rect x="414" y="73" width="16" height="16" fill="#CFC8B8"/><rect x="84" y="102" width="16" height="16" fill="#CFC8B8"/><rect x="102" y="118" width="16" height="16" fill="#AEB6C6"/><rect x="381" y="178" width="16" height="16" fill="#CFC8B8"/><rect x="493" y="79" width="16" height="16" fill="#CFC8B8"/><rect x="341" y="138" width="16" height="16" fill="#AEB6C6"/><rect x="474" y="218" width="16" height="16" fill="#AEB6C6"/><rect x="379" y="23" width="16" height="16" fill="#CFC8B8"/><rect x="369" y="228" width="16" height="16" fill="#CFC8B8"/><rect x="174" y="95" width="16" height="16" fill="#CFC8B8"/><rect x="32" y="112" width="16" height="16" fill="#AEB6C6"/><rect x="83" y="23" width="16" height="16" fill="#CFC8B8"/><rect x="90" y="64" width="16" height="16" fill="#AEB6C6"/><rect x="491" y="28" width="16" height="16" fill="#AEB6C6"/><rect x="317" y="204" width="16" height="16" fill="#CFC8B8"/><rect x="487" y="71" width="16" height="16" fill="#AEB6C6"/><rect x="214" y="205" width="16" height="16" fill="#CFC8B8"/><rect x="101" y="49" width="16" height="16" fill="#AEB6C6"/><rect x="146" y="117" width="16" height="16" fill="#CFC8B8"/><rect x="162" y="11" width="16" height="16" fill="#AEB6C6"/><rect x="219" y="135" width="16" height="16" fill="#CFC8B8"/><rect x="393" y="123" width="16" height="16" fill="#CFC8B8"/><rect x="385" y="22" width="16" height="16" fill="#CFC8B8"/><rect x="441" y="202" width="16" height="16" fill="#CFC8B8"/><rect x="232" y="98" width="16" height="16" fill="#AEB6C6"/><rect x="363" y="24" width="16" height="16" fill="#AEB6C6"/><rect x="133" y="46" width="16" height="16" fill="#AEB6C6"/><rect x="48" y="10" width="16" height="16" fill="#AEB6C6"/><rect x="276" y="262" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="262" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="262" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="276" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="276" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="276" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="289" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="289" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="289" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="302" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="302" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="302" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="316" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="316" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="316" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="330" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="330" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="330" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="343" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="343" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="343" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="356" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="356" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="356" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="370" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="370" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="370" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="384" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="384" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="384" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="397" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="397" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="397" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="410" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="410" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="410" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="424" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="424" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="424" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="438" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="438" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="438" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="451" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="451" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="451" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="464" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="464" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="464" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="478" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="478" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="478" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="492" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="492" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="492" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="505" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="505" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="505" width="16" height="16" fill="#0B1E3F"/><rect x="276" y="518" width="16" height="16" fill="#0B1E3F"/><rect x="292" y="518" width="16" height="16" fill="#0B1E3F"/><rect x="308" y="518" width="16" height="16" fill="#0B1E3F"/><rect x="40" y="580" width="16" height="16" fill="#B3122E"/><rect x="104" y="580" width="16" height="16" fill="#B3122E"/><rect x="168" y="580" width="16" height="16" fill="#B3122E"/><rect x="232" y="580" width="16" height="16" fill="#B3122E"/><rect x="296" y="580" width="16" height="16" fill="#B3122E"/><rect x="360" y="580" width="16" height="16" fill="#B3122E"/><rect x="424" y="580" width="16" height="16" fill="#B3122E"/><rect x="488" y="580" width="16" height="16" fill="#B3122E"/><rect x="552" y="580" width="16" height="16" fill="#B3122E"/><rect x="40" y="616" width="16" height="16" fill="#B3122E"/><rect x="104" y="616" width="16" height="16" fill="#B3122E"/><rect x="168" y="616" width="16" height="16" fill="#B3122E"/><rect x="232" y="616" width="16" height="16" fill="#B3122E"/><rect x="296" y="616" width="16" height="16" fill="#B3122E"/><rect x="360" y="616" width="16" height="16" fill="#B3122E"/><rect x="424" y="616" width="16" height="16" fill="#B3122E"/><rect x="488" y="616" width="16" height="16" fill="#B3122E"/><rect x="552" y="616" width="16" height="16" fill="#B3122E"/><rect x="40" y="652" width="16" height="16" fill="#B3122E"/><rect x="104" y="652" width="16" height="16" fill="#B3122E"/><rect x="168" y="652" width="16" height="16" fill="#B3122E"/><rect x="232" y="652" width="16" height="16" fill="#B3122E"/><rect x="296" y="652" width="16" height="16" fill="#B3122E"/><rect x="360" y="652" width="16" height="16" fill="#B3122E"/><rect x="424" y="652" width="16" height="16" fill="#B3122E"/><rect x="488" y="652" width="16" height="16" fill="#B3122E"/><rect x="552" y="652" width="16" height="16" fill="#B3122E"/><rect x="40" y="688" width="16" height="16" fill="#B3122E"/><rect x="104" y="688" width="16" height="16" fill="#B3122E"/><rect x="168" y="688" width="16" height="16" fill="#B3122E"/><rect x="232" y="688" width="16" height="16" fill="#B3122E"/><rect x="296" y="688" width="16" height="16" fill="#B3122E"/><rect x="360" y="688" width="16" height="16" fill="#B3122E"/><rect x="424" y="688" width="16" height="16" fill="#B3122E"/><rect x="488" y="688" width="16" height="16" fill="#B3122E"/><rect x="552" y="688" width="16" height="16" fill="#B3122E"/><rect x="40" y="724" width="16" height="16" fill="#B3122E"/><rect x="104" y="724" width="16" height="16" fill="#B3122E"/><rect x="168" y="724" width="16" height="16" fill="#B3122E"/><rect x="232" y="724" width="16" height="16" fill="#B3122E"/><rect x="296" y="724" width="16" height="16" fill="#B3122E"/><rect x="360" y="724" width="16" height="16" fill="#B3122E"/><rect x="424" y="724" width="16" height="16" fill="#B3122E"/><rect x="488" y="724" width="16" height="16" fill="#B3122E"/><rect x="552" y="724" width="16" height="16" fill="#B3122E"/><rect x="40" y="760" width="16" height="16" fill="#B3122E"/><rect x="104" y="760" width="16" height="16" fill="#B3122E"/><rect x="168" y="760" width="16" height="16" fill="#B3122E"/><rect x="232" y="760" width="16" height="16" fill="#B3122E"/><rect x="296" y="760" width="16" height="16" fill="#B3122E"/><rect x="360" y="760" width="16" height="16" fill="#B3122E"/><rect x="424" y="760" width="16" height="16" fill="#B3122E"/><rect x="488" y="760" width="16" height="16" fill="#B3122E"/><rect x="552" y="760" width="16" height="16" fill="#B3122E"/></svg><div class="how-side"><div><h3 class="lead" style="font-weight:700">读信息</h3><p class="small">数据、央行声明、公司财报，先看和预期差多少。核心课第一、二周。</p></div><div><h3 class="lead" style="font-weight:700">理因果</h3><p class="small">宏观汇率、股指、大宗商品三条线，顺着利率和资金推到价格。第三到第五周。</p></div><div><h3 class="lead" style="font-weight:700">定计划</h3><p class="small">仓位、止损、回测，写成一份能执行的计划，专家逐一点评。第六到第八周。</p></div></div></div>
+<div class="how-cols"><div data-reveal style="--s:0"><h3>读信息</h3><p>数据、央行声明、公司财报，先看和预期差多少。核心课第一、二周。</p></div><div data-reveal style="--s:1"><h3>理因果</h3><p>宏观汇率、股指、大宗商品三条线，顺着利率和资金推到价格。第三到第五周。</p></div><div data-reveal style="--s:2"><h3>定计划</h3><p>仓位、止损、回测，写成一份能执行的计划，专家逐一点评。第六到第八周。</p></div></div>
+</div>
+</section>
+<section class="sec sch" id="schedule" aria-labelledby="sch-h">
+<div class="g">
+<div class="sch-head" data-reveal><h2 class="h2" id="sch-h"><span>下班以后，</span>正好是伦敦的午后</h2><a class="btn" href="signup.html?course=openclass" title="在线报名：周四免费公开课">免费预约公开课<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div class="sch-body">
+<div class="zones" role="tablist" aria-label="时区">
+<button class="zone" type="button" role="tab" aria-selected="true" data-zone="bj"><b>北京时间</b><span>UTC+8</span></button>
+<button class="zone" type="button" role="tab" aria-selected="false" tabindex="-1" data-zone="ldn"><b>伦敦时间</b><span data-ldn-label>冬令时 GMT</span></button>
+</div>
+<div><ol class="bands" aria-live="polite"><li class="band" data-reveal style="--s:0"><time data-bj="20:00-21:30"><b>周二</b><span class="t">20:00–21:30</span></time><div><h3>交易核心课 · 8周</h3><p>方法讲解与历史行情案例，课后有作业</p></div><span class="who">学术总监</span></li><li class="band" data-reveal style="--s:1"><time data-bj="20:30-21:00"><b>周三</b><span class="t">20:30–21:00</span></time><div><h3>数据日历带读</h3><p>下周有哪些数据和议息，各自该看什么</p></div><span class="who">首席分析师</span></li><li class="band" data-reveal style="--s:2"><time data-bj="20:00-21:15"><b>周四</b><span class="t">20:00–21:15</span></time><div><h3>免费公开课</h3><p>一条市场信息加问答，登记即可参加</p></div><span class="who">学术总监</span></li><li class="band" data-reveal style="--s:3"><time data-bj="20:00-22:00"><b>周五</b><span class="t">20:00–22:00</span></time><div><h3>伦敦大师课</h3><p>每月一期，一种策略思路讲透</p></div><span class="who">主讲当期公布</span></li><li class="band" data-reveal style="--s:4"><time data-bj="20:00-21:30"><b>周六</b><span class="t">20:00–21:30</span></time><div><h3>学习小组</h3><p>用历史行情做课题，汇报与点评</p></div><span class="who">学术总监</span></li><li class="band" data-reveal style="--s:5"><time data-bj="16:00-17:00"><b>周日</b><span class="t">16:00–17:00</span></time><div><h3>专家答疑</h3><p>问题提前提交，记录全班共享</p></div><span class="who">风控专家</span></li></ol>
+<p class="sch-note small muted">英国冬令时比北京晚 8 小时，夏令时晚 7 小时。核心课与大师课班期在招生前公布。</p></div>
+</div>
+</div>
+</section>
+<section class="tours" id="tours" aria-labelledby="tours-h">
+<div class="mos">
+<div class="pic" data-reveal><img src="images/a-royal-exchange.jpg" width="1200" height="903" alt="伦敦皇家交易所，约翰·莫勒 1741 年的版画" loading="lazy" decoding="async"></div>
+<div class="tile navy" data-reveal style="--s:1"><h2 class="h2" id="tours-h">海外研修</h2><p>伦敦和香港两条线同等重要：课堂、机构参访、学术日、住宿与结业答辩，用同一套标准。</p></div>
+<div class="pic" data-reveal style="--s:2"><img src="images/bank.jpg" width="1600" height="1067" alt="今天的伦敦金融城：皇家交易所与英格兰银行" loading="lazy" decoding="async"></div>
+<div class="pic" data-reveal><img src="images/a-hk-1870.jpg" width="1200" height="745" alt="约 1870 年的香港维多利亚港" loading="lazy" decoding="async"></div>
+<div class="tile red" data-reveal style="--s:1"><p class="fig">20 人</p><p>每期名额上限，伦敦和香港相同。2027年2月1日前报名享早鸟价。</p></div>
+<div class="pic" data-reveal style="--s:2"><img src="images/hkharbour.jpg" width="2400" height="1350" alt="今天的维多利亚港与中环金融区" loading="lazy" decoding="async"></div>
+</div>
+<div class="g">
+<div class="cmp-wrap" data-reveal>
+<table class="cmp"><colgroup><col class="k"><col><col><col></colgroup>
+<thead><tr><th scope="col"><span class="plan">两地对照</span></th><th scope="col"><span class="plan">伦敦十日</span><span class="price">£2,000</span><span class="per">早鸟价 / 人 · 2027年2月1日前报名</span></th><th scope="col"><span class="plan">香港五日</span><span class="price">¥10,000</span><span class="per">早鸟价 / 人 · 2027年2月1日前报名</span></th><th scope="col"><span class="plan">更多城市</span><span class="price">筹备中</span><span class="per">开放前先用短信通知登记的同学</span></th></tr></thead>
+<tbody><tr><th scope="row">天数</th><td>10 天 9 晚</td><td>5 天 4 晚</td><td>开放时公布</td></tr><tr><th scope="row">课时</th><td>27 课时，6 个模块</td><td>15 课时，4 个模块</td><td>同一套标准</td></tr><tr><th scope="row">2027年2月1日起</th><td>£10,000 / 人</td><td>¥35,000 / 人</td><td>开放时公布</td></tr><tr><th scope="row">交通</th><td>含往返公务舱</td><td>不含往返大交通</td><td>开放时公布</td></tr><tr><th scope="row">住宿</th><td>9 晚五星酒店单人间</td><td>4 晚五星酒店</td><td>开放时公布</td></tr><tr><th scope="row">机构参访</th><td>英格兰银行博物馆、伦敦证券交易所（申请中）、劳合社</td><td>香港金管局资讯中心、香港交易所、中环金融街</td><td>以各机构批准为准</td></tr><tr><th scope="row">学术日</th><td>牛津学术日</td><td>香港本地大学学术日</td><td>同一套标准</td></tr><tr><th scope="row">晚宴与活动</th><td>金匠大厅晚宴、泰晤士河游船、英超主场官方款待</td><td>维港游船晚宴、会所晚宴</td><td>开放时公布</td></tr><tr><th scope="row">名额</th><td>每期 20 人以内</td><td>每期 20 人以内</td><td>每期 20 人以内</td></tr></tbody>
+<tfoot><tr><td></td><td><a class="btn " href="executive.html" title="伦敦金融城十日研修：十日行程、课程模块与费用">看十日行程</a></td><td><a class="btn " href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用">看五日行程</a></td><td><a class="btn alt" href="signup.html?course=moretours" title="在线报名：更多城市研修 · 意向登记">登记意向</a></td></tr></tfoot>
+</table>
+<div class="cmp-m"><h3 class="h2">两地对照</h3><div class="plan-b"><h3>伦敦十日</h3><p class="price">£2,000</p><p class="small muted">早鸟价 / 人 · 2027年2月1日前报名</p><dl><div><dt>天数</dt><dd>10 天 9 晚</dd></div><div><dt>课时</dt><dd>27 课时，6 个模块</dd></div><div><dt>2027年2月1日起</dt><dd>£10,000 / 人</dd></div><div><dt>交通</dt><dd>含往返公务舱</dd></div><div><dt>住宿</dt><dd>9 晚五星酒店单人间</dd></div><div><dt>机构参访</dt><dd>英格兰银行博物馆、伦敦证券交易所（申请中）、劳合社</dd></div><div><dt>学术日</dt><dd>牛津学术日</dd></div><div><dt>晚宴与活动</dt><dd>金匠大厅晚宴、泰晤士河游船、英超主场官方款待</dd></div><div><dt>名额</dt><dd>每期 20 人以内</dd></div></dl><a class="btn " href="executive.html" title="伦敦金融城十日研修：十日行程、课程模块与费用">看十日行程</a></div><div class="plan-b"><h3>香港五日</h3><p class="price">¥10,000</p><p class="small muted">早鸟价 / 人 · 2027年2月1日前报名</p><dl><div><dt>天数</dt><dd>5 天 4 晚</dd></div><div><dt>课时</dt><dd>15 课时，4 个模块</dd></div><div><dt>2027年2月1日起</dt><dd>¥35,000 / 人</dd></div><div><dt>交通</dt><dd>不含往返大交通</dd></div><div><dt>住宿</dt><dd>4 晚五星酒店</dd></div><div><dt>机构参访</dt><dd>香港金管局资讯中心、香港交易所、中环金融街</dd></div><div><dt>学术日</dt><dd>香港本地大学学术日</dd></div><div><dt>晚宴与活动</dt><dd>维港游船晚宴、会所晚宴</dd></div><div><dt>名额</dt><dd>每期 20 人以内</dd></div></dl><a class="btn " href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用">看五日行程</a></div><div class="plan-b"><h3>更多城市</h3><p class="price">筹备中</p><p class="small muted">开放前先用短信通知登记的同学</p><dl></dl><a class="btn alt" href="signup.html?course=moretours" title="在线报名：更多城市研修 · 意向登记">登记意向</a></div></div>
+</div>
+<p class="tours-note small muted">机票、酒店等行程服务由持有出境旅游业务经营许可的合作旅行社承办；参访以各机构批准为准；最终以合同为准。</p>
+</div>
+</section>
+<section class="sec team-sec" id="faculty" aria-labelledby="fac-h">
+<div class="g">
+<h2 class="h2 team-head" id="fac-h" data-reveal>一位学术总监，三位专家</h2>
+<div class="team"><article class="person" data-reveal style="--s:0"><div class="cover"><img src="images/lecture.jpg" width="800" height="1000" alt="" loading="lazy" decoding="async"></div>
+<div class="av"><svg class="li-av" viewBox="0 0 120 120" role="img" aria-label="头像：签约后换成本人照片"><rect width="120" height="120" fill="#C2C7CE"/><circle cx="60" cy="47" r="22" fill="#EDEFF2"/><ellipse cx="60" cy="118" rx="42" ry="37" fill="#EDEFF2"/></svg></div>
+<div class="pb"><h3>学术总监<span>拟邀</span></h3><p class="hl">全球市场与交易方法</p><p class="org">伦敦系统重要性银行 · 前宏观研究主管</p><p class="say">先读懂信息，再谈交易。</p><p class="tags"><span>G5 金融硕士</span> · <span>港大 / 港科大 / 港中大 MBA</span> · <span>15 年+</span></p></div></article><article class="person" data-reveal style="--s:1"><div class="cover"><img src="images/lloyds.jpg" width="800" height="1000" alt="" loading="lazy" decoding="async"></div>
+<div class="av"><svg class="li-av" viewBox="0 0 120 120" role="img" aria-label="头像：签约后换成本人照片"><rect width="120" height="120" fill="#C2C7CE"/><circle cx="60" cy="47" r="22" fill="#EDEFF2"/><ellipse cx="60" cy="118" rx="42" ry="37" fill="#EDEFF2"/></svg></div>
+<div class="pb"><h3>风控专家<span>拟邀</span></h3><p class="hl">风险管理与杠杆</p><p class="org">全球百强银行 · 前风控总监</p><p class="say">先算清能亏多少，再谈能赚多少。</p><p class="tags"><span>LSE / 帝国理工 / 华威 风险管理硕士</span> · <span>FRM</span> · <span>12 年+ 风控</span></p></div></article><article class="person" data-reveal style="--s:2"><div class="cover"><img src="images/charts.jpg" width="800" height="1000" alt="" loading="lazy" decoding="async"></div>
+<div class="av"><svg class="li-av" viewBox="0 0 120 120" role="img" aria-label="头像：签约后换成本人照片"><rect width="120" height="120" fill="#C2C7CE"/><circle cx="60" cy="47" r="22" fill="#EDEFF2"/><ellipse cx="60" cy="118" rx="42" ry="37" fill="#EDEFF2"/></svg></div>
+<div class="pb"><h3>量化专家<span>拟邀</span></h3><p class="hl">量化交易与策略回测</p><p class="org">伦敦量化对冲基金 · 前量化交易负责人</p><p class="say">一个交易想法，先过历史数据这一关。</p><p class="tags"><span>帝国理工 / UCL / 牛津 / 剑桥</span> · <span>计算金融</span> · <span>10 年+ 量化</span></p></div></article><article class="person" data-reveal style="--s:3"><div class="cover"><img src="images/boe.jpg" width="800" height="1000" alt="" loading="lazy" decoding="async"></div>
+<div class="av"><svg class="li-av" viewBox="0 0 120 120" role="img" aria-label="头像：签约后换成本人照片"><rect width="120" height="120" fill="#C2C7CE"/><circle cx="60" cy="47" r="22" fill="#EDEFF2"/><ellipse cx="60" cy="118" rx="42" ry="37" fill="#EDEFF2"/></svg></div>
+<div class="pb"><h3>首席分析师<span>拟邀</span></h3><p class="hl">宏观、央行与汇率研究</p><p class="org">国际资产管理机构 · 首席分析师</p><p class="say">数据出来那一刻，先看和预期差多少。</p><p class="tags"><span>LSE / 剑桥 / 国王学院 经济学</span> · <span>CFA</span> · <span>15 年+ 研究</span></p></div></article></div>
+</div>
+</section>
+<section class="sec cat" id="catalog" aria-labelledby="cat-h">
+<div class="g">
+<div class="cat-head" data-reveal><h2 class="h2" id="cat-h">全部课程，<span>一张表看完</span></h2></div>
+<div class="cat-wrap" data-reveal style="--s:1">
+<table class="list"><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>
+<thead><tr><th scope="col" class="small muted">类别</th><th scope="col" class="small muted">课程</th><th scope="col" class="small muted">形式</th><th scope="col" class="small muted">费用</th></tr></thead>
+<tbody><tr class="r"><th scope="row" class="grp">免费入门</th><td><span class="code">CSL 001</span><a class="lnk" href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息">周四免费公开课</a></td><td>每周四 20:00 · 75 分钟直播</td><td>免费</td></tr><tr class="r"><th scope="row" class="grp"></th><td><span class="code">CSL 002</span><a class="lnk" href="signup.html?course=pack" title="在线报名：交易入门速读包">交易入门速读包</a></td><td>PDF · 自学约 2 小时</td><td>免费</td></tr><tr class="r"><th scope="row" class="grp"></th><td><span class="code">CSL 003</span><a class="lnk" href="open-antifraud.html" title="免费公开课专题页：识别金融骗局公益课">识别金融骗局</a></td><td>每月一场 · 60 分钟</td><td>免费</td></tr><tr class="r"><th scope="row" class="grp"></th><td><span class="code">CSL 004</span><a class="lnk" href="open-leverage.html" title="免费公开课专题页：杠杆与风险公益课">杠杆与风险</a></td><td>每月一场 · 60 分钟</td><td>免费</td></tr><tr class="gap" aria-hidden="true"><td colspan="4"></td></tr><tr class="r"><th scope="row" class="grp">系统课程</th><td><span class="code">CSL 101</span><a class="lnk" href="courses.html#syllabus" title="课程与课表：交易核心课 · 8周">交易核心课 · 8周</a></td><td>每周二 20:00 · 90 分钟直播</td><td>班期待公布</td></tr><tr class="r"><th scope="row" class="grp"></th><td><span class="code">CSL 210</span><a class="lnk" href="courses.html#masterclass" title="课程与课表：伦敦大师课 · 策略专题">伦敦大师课 · 策略专题</a></td><td>每月一期 · 120 分钟</td><td>班期待公布</td></tr><tr class="gap" aria-hidden="true"><td colspan="4"></td></tr><tr class="r"><th scope="row" class="grp">市场专题</th><td><span class="code">CSL 150</span><a class="lnk" href="signup.html?course=macro" title="在线报名：外汇与宏观：汇率、利率与黄金">外汇与宏观：汇率、利率与黄金</a></td><td>4 次课 · 每次 90 分钟</td><td>登记意向</td></tr><tr class="r"><th scope="row" class="grp"></th><td><span class="code">CSL 160</span><a class="lnk" href="signup.html?course=equity" title="在线报名：股指与美股港股">股指与美股港股</a></td><td>4 次课 · 每次 90 分钟</td><td>登记意向</td></tr><tr class="r"><th scope="row" class="grp"></th><td><span class="code">CSL 170</span><a class="lnk" href="signup.html?course=commod" title="在线报名：大宗商品与期货">大宗商品与期货</a></td><td>4 次课 · 每次 90 分钟</td><td>登记意向</td></tr><tr class="r"><th scope="row" class="grp"></th><td><span class="code">CSL 180</span><a class="lnk" href="signup.html?course=quant" title="在线报名：量化入门：策略回测">量化入门：策略回测</a></td><td>3 次课 · Python 演示</td><td>登记意向</td></tr><tr class="r"><th scope="row" class="grp"></th><td><span class="code">CSL 190</span><a class="lnk" href="signup.html?course=journal" title="在线报名：交易心理与复盘">交易心理与复盘</a></td><td>2 次课 · 每次 90 分钟</td><td>登记意向</td></tr><tr class="gap" aria-hidden="true"><td colspan="4"></td></tr><tr class="r"><th scope="row" class="grp">证书备考</th><td><span class="code">CSL 301</span><a class="lnk" href="courses.html#certificates" title="课程与课表：CISI ICWIM 中文备考">CISI ICWIM 中文备考</a></td><td>可用普通话考 · 班期待公布</td><td>登记意向</td></tr><tr class="r"><th scope="row" class="grp"></th><td><span class="code">CSL 310</span><a class="lnk" href="signup.html?course=cisisec" title="在线报名：CISI 证券与衍生品证书备考">CISI 证券与衍生品证书</a></td><td>规划中</td><td>登记意向</td></tr></tbody></table>
+</div>
+</div>
+</section>
+<section class="join" id="join" aria-labelledby="join-h">
+<div class="g">
+<h2 id="join-h" data-reveal>下一条信息<br>你自己读懂</h2>
+<p class="lead" data-reveal style="--s:1">每周四北京时间 20:00，免费公开课。留下手机号，我们只发短信确认，永不来电。</p>
+<a class="btn" href="signup.html?course=openclass" data-reveal style="--s:2" title="在线报名：周四免费公开课">免费预约公开课<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+</section>
+<section class="sec" id="faq" aria-labelledby="faq-h">
+<div class="g">
+<h2 class="h2 faq-head" id="faq-h" data-reveal>报名前常问</h2>
+<div class="faq-text" data-reveal style="--s:1"><p><b>零基础能学交易吗？</b>可以。核心课从读懂一条市场信息讲起，全程中文，不需要金融学位，也不需要英语基础。</p><p><b>你们会推荐股票、带单，或者给投资建议吗？</b>不会。我们只讲交易方法、策略思路和历史案例，不推荐具体品种，不给买卖点，不提供交易服务，也不会把学员介绍给任何交易平台。</p><p><b>学完能保证赚钱吗？</b>不能，也没有人能保证。交易可能亏损，使用杠杆会放大亏损。课程教的是做计划、控风险和复盘。</p><p><b>课堂会分析现在的行情吗？</b>不会。案例都用已经有结果的历史行情，不对当下任何品种做走势判断。</p><p><b>想做外汇交易，这里能学什么？</b>学读懂汇率：CSL 150「外汇与宏观」专题讲利率、通胀、央行议息和非农数据怎样推动美元、英镑和黄金，用历史行情复盘；8 周核心课教交易计划、仓位与止损；另有杠杆风险和骗局识别两门免费课。我们不开外汇实操课，不开户、不带单、不推荐平台。</p><p><b>外汇保证金交易在国内合法吗？</b>中国境内没有任何机构获准向个人提供外汇保证金交易，境外平台不受国内监管，出了纠纷权益很难保障。所以我们只讲原理、风险和历史案例，也教你认出打着外汇旗号的骗局。</p><p><b>免费公开课怎么参加？</b>留下姓名和手机号，我们用短信把直播链接发给你。每周四北京时间 20:00，错过可以回看 7 天。</p><p><b>留了手机号会接到推销电话吗？</b>不会。我们永不来电，报名确认只发短信；你说不需要，我们就不再发送，也可以随时要求删除信息。</p><p><b>伦敦和香港研修有什么不同？</b>两地同一套标准。伦敦十天九晚，侧重全球市场与欧洲金融中心；香港五天四晚，侧重亚洲市场与联系汇率。</p><p><b>研修价格包含什么？</b>伦敦早鸟价含往返公务舱、九晚五星酒店、全部课程与列明的参访和晚宴；香港早鸟价含四晚五星酒店与列明的参访、课程和晚宴，不含往返大交通。以合同为准。</p><p><b>证书是谁发的？</b>本社只发结业证明，证明你完成了课程。CISI 等证书由颁发机构独立颁发，须通过其考试；我们不代考，不承诺通过率。</p></div>
+</div>
+</section>
+</main>
+<footer class="foot" aria-label="页脚">
+<div class="g">
+<p class="name" lang="en">City Study<br> London</p>
+<div class="places">
+<a href="executive.html" title="伦敦金融城十日研修：十日行程、课程模块与费用"><span>51°30′N · 0°05′W</span>伦敦金融城</a>
+<a href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用"><span>22°17′N · 114°10′E</span>香港中环</a>
+<a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息"><span>每周四 20:00 北京时间</span>线上直播课堂</a>
+</div>
+<nav class="fcols" aria-label="页脚链接"><div><h3>课程</h3><ul><li><a href="courses.html" title="课程与课表：五级课程体系、8周交易核心课大纲、伦敦大师课、北京时间课表与仓位计算">课程与课表</a></li><li><a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息">周四免费公开课</a></li><li><a href="open-antifraud.html" title="免费公开课专题页：识别金融骗局公益课">识别金融骗局</a></li><li><a href="open-leverage.html" title="免费公开课专题页：杠杆与风险公益课">杠杆与风险</a></li></ul></div><div><h3>研修</h3><ul><li><a href="executive.html" title="伦敦金融城十日研修：十日行程、课程模块与费用">伦敦十日研修</a></li><li><a href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用">香港五日研修</a></li><li><a href="open-studytour.html" title="免费公开课专题页：伦敦与香港海外研修说明会">海外研修说明会</a></li></ul></div><div><h3>关于</h3><ul><li><a href="about.html#faculty" title="关于我们：授课团队">授课团队</a></li><li><a href="about.html#privacy" title="关于我们：隐私政策">隐私政策</a></li><li><a href="about.html#terms" title="关于我们：用户协议">用户协议</a></li><li><a href="signup.html" title="在线报名：留下手机号，短信确认，永不来电">在线报名</a></li></ul></div></nav>
+<div class="legal"><p>本站内容为交易方法与金融知识教育，不构成投资建议，不提供任何交易服务。交易可能亏损。© 2026 金融城研学社</p><a href="#top" title="本页：回到顶部">回到顶部</a></div>
+</div>
+</footer>
+<script>
+(function () {
+  var d = document;
+  // reveals, once
+  var els = d.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add('is-in'); }); }
+  // mobile menu
+  var mb = d.querySelector('.menu-btn'), nav = d.getElementById('nav');
+  if (mb) mb.addEventListener('click', function () { var o = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.textContent = o ? '收起' : '菜单'; });
+  // tabs helper
+  function tabs(list, onSel) {
+    var bs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+    function sel(b, focus) {
+      bs.forEach(function (x) { var on = x === b; x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1; });
+      if (focus) b.focus(); onSel(b);
+    }
+    bs.forEach(function (b, i) {
+      b.addEventListener('click', function () { sel(b); });
+      b.addEventListener('keydown', function (e) {
+        var k = e.key, j = null;
+        if (k === 'ArrowRight' || k === 'ArrowDown') j = (i + 1) % bs.length;
+        if (k === 'ArrowLeft' || k === 'ArrowUp') j = (i - 1 + bs.length) % bs.length;
+        if (k === 'Home') j = 0; if (k === 'End') j = bs.length - 1;
+        if (j !== null) { e.preventDefault(); sel(bs[j], true); }
+      });
+    });
+  }
+  // the translator
+  var tl = d.querySelector('.dec .tabs');
+  if (tl) tabs(tl, function (b) {
+    var k = b.id.replace('tab-', '');
+    d.querySelectorAll('.dec-fig, .dec-panel').forEach(function (x) { x.classList.toggle('on', x.getAttribute('data-k') === k); });
+  });
+  // London offset now (0 in GMT, 1 in BST)
+  function ldnOffset(dt) {
+    try {
+      var p = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/London', hour: '2-digit', hour12: false }).formatToParts(dt);
+      var h = +p.filter(function (x) { return x.type === 'hour'; })[0].value % 24;
+      return (h - dt.getUTCHours() + 24) % 24;
+    } catch (e) { return 0; }
+  }
+  var off = ldnOffset(new Date());
+  var lab = d.querySelector('[data-ldn-label]'); if (lab) lab.textContent = off ? '夏令时 BST' : '冬令时 GMT';
+  function shift(t, h) { var p = t.split(':'); var m = ((+p[0] + h + 24) % 24); return (m < 10 ? '0' : '') + m + ':' + p[1]; }
+  var zl = d.querySelector('.zones');
+  if (zl) tabs(zl, function (b) {
+    var ldn = b.getAttribute('data-zone') === 'ldn';
+    d.querySelectorAll('.band time').forEach(function (t) {
+      var r = t.getAttribute('data-bj').split('-'); var s = ldn ? [shift(r[0], off - 8), shift(r[1], off - 8)] : r;
+      t.querySelector('.t').textContent = s[0] + '–' + s[1];
+    });
+  });
+  // next open class: Thursday 20:00 Beijing = 12:00 UTC, runs 75 minutes
+  var nd = d.querySelector('[data-next-day]');
+  if (nd) {
+    var cnt = d.querySelector('[data-count]'), nl = d.querySelector('[data-next-ldn]');
+    var nextStart = function (now) {
+      var t = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 12, 0, 0));
+      t = new Date(t.getTime() + ((4 - t.getUTCDay() + 7) % 7) * 864e5);
+      if (now.getTime() > t.getTime() + 75 * 6e4) t = new Date(t.getTime() + 7 * 864e5);
+      return t;
+    };
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+    var paint = function () {
+      var now = new Date(), st = nextStart(now), bj = new Date(st.getTime() + 8 * 3600e3);
+      nd.textContent = (bj.getUTCMonth() + 1) + '月' + bj.getUTCDate() + '日 周四';
+      if (nl) nl.textContent = '伦敦 ' + pad(12 + ldnOffset(st)) + ':00';
+      if (!cnt) return;
+      var ms = st.getTime() - now.getTime();
+      if (ms <= 0) { cnt.textContent = '正在直播'; }
+      else {
+        var m = Math.floor(ms / 6e4), dd = Math.floor(m / 1440), hh = Math.floor((m % 1440) / 60), mm = m % 60;
+        cnt.innerHTML = '距开讲还有 ' + (dd ? '<b>' + dd + '</b> 天 ' : '') + '<b>' + hh + '</b> 小时 <b>' + pad(mm) + '</b> 分';
+      }
+      cnt.hidden = false;
+    };
+    paint(); setInterval(paint, 30000);
+  }
+})();
+</script>
+</body>
+</html>
