@@ -19,7 +19,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<script>document.documentElement.classList.add('js')</script>
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(window.__cslUI)return;var h=document.querySelector('.hero');if(h)h.classList.add('is-ready');document.querySelectorAll('[data-reveal]').forEach(function(e){e.classList.add('is-in')});document.querySelectorAll('[data-follow]').forEach(function(e){e.classList.add('is-on')})},2500)</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <style>/* v7: Trust & Authority + Conversion, Swiss minimal; brand kept (navy, pillar red, Geist + Noto Sans SC, square corners) */
 :root {
@@ -589,6 +589,121 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
 .top-nav .btn { display: none; }
 .top-nav a.btn { color: var(--on-navy); }
 .top-nav.open .btn { display: inline-flex; margin-top: 12px; border-top: 0; justify-content: center; }
+
+/* ======================================================================
+   v7.1 · one signup button on screen + motion (UI UX Pro Max: Swiss style,
+   hover 200–250ms, transform/opacity only, reduced motion = final state)
+   ====================================================================== */
+:root { --out: cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* header: the page's signup action follows you, but only while no other signup button or form is in view */
+.top-cta { gap: 20px; }
+.top-act { transition: opacity 220ms var(--out), transform 220ms var(--out), visibility 0s linear 0s, background-color 200ms ease, border-color 200ms ease; }
+.js .top-act:not(.is-on) { opacity: 0; transform: translateY(-8px); visibility: hidden; pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease, visibility 0s linear 160ms; }
+/* scroll progress: the red meridian under the header */
+.meridian { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); pointer-events: none; }
+.top { position: sticky; }
+
+/* hero entrance */
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero [data-in] { opacity: 0; transform: translateY(16px); }
+  .js .hero.is-ready [data-in] { opacity: 1; transform: none; transition: opacity 700ms var(--out), transform 700ms var(--out); transition-delay: calc(var(--i, 0) * 90ms); }
+  .js .hero h1 .ln > span { transform: translateY(108%); }
+  .js .hero.is-ready h1 .ln > span { transform: none; transition: transform 900ms var(--out) calc(var(--i, 0) * 110ms); }
+  .js .next::before { transform: scaleY(0); }
+  .js .hero.is-ready .next::before { transform: scaleY(1); transition: transform 1100ms var(--out) 450ms; }
+}
+.hero h1 .ln { display: block; overflow: clip; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.hero h1 .ln > span { display: block; }
+/* the next class card carries the meridian on its left edge */
+.next { position: relative; }
+.next::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent); transform-origin: 50% 0; }
+.next .btn { justify-self: start; }
+.next-count b { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) {
+  .next-count b.tick { animation: tick 420ms var(--out); }
+}
+@keyframes tick { from { opacity: 0; transform: translateY(-40%); } to { opacity: 1; transform: none; } }
+.hero-tx .ctas { gap: 8px 28px; }
+.hero-pic .pic img { will-change: transform; }
+
+/* buttons: arrow nudge, press */
+.btn { transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, transform 160ms var(--out); }
+.btn:active { transform: scale(0.98); }
+
+/* tabs: one navy block slides to the chosen tab */
+.has-ind { position: relative; isolation: isolate; }
+.has-ind > [role="tab"] { position: relative; z-index: 1; background: transparent !important; }
+.has-ind > [role="tab"][aria-selected="true"] { border-color: transparent; transition: color 200ms ease 120ms, border-color 200ms ease; }
+.has-ind > .ind { position: absolute; left: 0; top: 0; width: 100px; height: 100px; background: var(--ink); transform-origin: 0 0; z-index: 0; pointer-events: none; }
+.has-ind.is-live > .ind { transition: transform 420ms var(--out); }
+.zones.has-ind > [role="tab"], .tabs.has-ind > [role="tab"], .dtabs.has-ind > [role="tab"] { background-color: transparent; }
+.tabs.has-ind, .zones.has-ind, .dtabs.has-ind { background: var(--white); }
+
+/* switching panels */
+@media (prefers-reduced-motion: no-preference) {
+  .dec-panel.on, .dec-fig.on { animation: rise 450ms var(--out); }
+  .dec-fig.on .pic img { animation: settle 900ms var(--out); }
+  .dpanel:not([hidden]) { animation: rise 450ms var(--out); }
+  [data-dir="next"] .dpanel:not([hidden]) { animation-name: from-right; }
+  [data-dir="prev"] .dpanel:not([hidden]) { animation-name: from-left; }
+  .band time .t.flip { animation: tick 380ms var(--out); }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes settle { from { transform: scale(1.06); } to { transform: none; } }
+@keyframes from-right { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+@keyframes from-left { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: none; } }
+
+/* programme ladder: the step line draws in red as each card arrives; the whole card is the link */
+.path .card .lnk.stretch::after { content: ""; position: absolute; inset: 0; }
+.path .step i { transform-origin: 0 50%; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .path .card .step i { transform: scaleX(0); transition: transform 700ms var(--out) calc(var(--s, 0) * 90ms + 250ms), background-color 300ms ease; }
+  .js .path .card.is-in .step i { transform: none; }
+}
+.path .card.is-in .step i, html:not(.js) .path .step i { background: var(--accent); }
+
+/* hover: lift and a red rule on clickable cards; photos warm up to colour */
+@media (hover: hover) and (pointer: fine) {
+  .path .card { transition: transform 250ms var(--out), border-color 250ms ease; }
+  .path .card::before { content: ""; position: absolute; left: -1px; right: -1px; top: -1px; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; transition: transform 300ms var(--out); }
+  .path .card:hover { transform: translateY(-4px); border-color: var(--ink); }
+  .path .card:hover::before { transform: scaleX(1); }
+  .path .card:hover .lnk svg { transform: translateX(3px); }
+  .path .card.flag:hover { border-color: var(--accent); }
+  .tour .pic img, .person .cover img, .stay .pic img, .mile .pic img, .wide .pic img { transition: filter 600ms ease, transform 700ms var(--out); }
+  .tour:hover .pic img, .person:hover .cover img, .stay figure:hover .pic img, .mile .card:hover .pic img, .wide:hover .pic img { filter: grayscale(0) contrast(1); transform: scale(1.04); }
+  .tbl tbody tr:not(.gap) { transition: background-color 200ms ease; }
+  .tbl tbody tr:not(.gap):hover { background: var(--surface); }
+  .band { transition: border-color 200ms ease, transform 250ms var(--out); }
+  .band:hover { border-color: var(--ink); transform: translateX(4px); }
+}
+
+/* FAQ opens smoothly where the browser can animate to height:auto */
+@supports (interpolate-size: allow-keywords) {
+  @media (prefers-reduced-motion: no-preference) {
+    .faq details { interpolate-size: allow-keywords; }
+    .faq details::details-content { height: 0; overflow: clip; transition: height 350ms var(--out), content-visibility 350ms allow-discrete; }
+    .faq details[open]::details-content { height: auto; }
+  }
+}
+
+/* phone: the follow button becomes a thumb-height bar at the bottom */
+@media (max-width: 760px) {
+  .top-cta .top-act { display: inline-flex; position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 60; min-height: 52px; font-size: 16px; justify-content: center; }
+  .js .top-cta .top-act:not(.is-on) { transform: translateY(calc(100% + 24px)); }
+  .hero-tx .ctas { gap: 4px 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .top-act, .js .top-act:not(.is-on) { transition: none; transform: none; }
+  .js .top-cta .top-act:not(.is-on) { transform: none; }
+}
+/* phone header: logo and menu on one row; the open menu drops below */
+@media (max-width: 760px) {
+  .top .g { display: flex; flex-wrap: wrap; align-items: center; align-content: flex-start; justify-content: space-between; column-gap: 12px; min-height: 64px; padding-block: 10px; }
+  .top-nav.open { order: 3; flex-basis: 100%; }
+}
 </style>
 
 <!--seo-->
@@ -606,22 +721,23 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
 <header class="top">
 <div class="g">
 <a class="top-brand" href="index.html" aria-label="金融城研学社首页" title="首页：在伦敦金融城，用白话读懂每一条市场信息"><svg class="csl-lockup" height="40" viewBox="0 0 235.3 64" aria-hidden="true"><rect x="1.5" y="6" width="112.0" height="52" fill="none" stroke="#0B1E3F" stroke-width="2.2"/><path d="M28 46.5C34.4 46.5 39.2 42.5 40.1 36.4H35.1C34.3 40 31.7 42 28.1 42C22.9 42 19.9 38 19.9 32C19.9 26 23 22 28.1 22C31.7 22 34.3 24 35.1 27.6H40.1C39.2 21.5 34.4 17.5 28 17.5C20.3 17.5 14.9 23.2 14.9 32C14.9 40.8 20.3 46.5 28 46.5ZM55.4 46.5C62 46.5 66.2 43.1 66.2 37.9C66.2 33.8 63.6 31.4 57.8 30.1L54.9 29.4C51.3 28.6 49.8 27.5 49.8 25.6C49.8 23.4 52 21.8 55.1 21.8C58.4 21.8 60.5 23.5 60.7 26.5H65.5C65.3 20.9 61.4 17.5 55.1 17.5C49 17.5 44.8 20.9 44.8 25.9C44.8 29.8 47.4 32.3 53 33.6L56 34.2C59.8 35.1 61.2 36.2 61.2 38.2C61.2 40.7 58.9 42.3 55.4 42.3C51.5 42.3 49.2 40.2 49.2 36.9H44.3C44.3 42.9 48.5 46.5 55.4 46.5Z" fill="#0B1E3F"/><rect x="79.54" y="32.88" width="4.6" height="9.52" fill="#0B1E3F"/><rect x="87.14" y="25.04" width="4.6" height="17.36" fill="#0B1E3F"/><rect x="94.74" y="16.64" width="4.6" height="25.76" fill="#0B1E3F"/><rect x="71.54" y="42.40" width="30.00" height="3.6" fill="#B3122E"/><rect x="71.54" y="0" width="5.0" height="64" fill="#B3122E"/><g transform="translate(127.00 9.70)"><path d="M5.9 11.5C8.4 11.5 10.3 9.9 10.7 7.4H8.7C8.4 8.9 7.3 9.7 5.9 9.7C3.8 9.7 2.6 8.1 2.6 5.6C2.6 3.2 3.8 1.6 5.9 1.6C7.3 1.6 8.4 2.4 8.7 3.9H10.7C10.3 1.4 8.4 -0.2 5.9 -0.2C2.7 -0.2 0.5 2.1 0.5 5.6C0.5 9.2 2.7 11.5 5.9 11.5ZM16 0H14V11.3H16ZM19.2 1.7H22.7V11.3H24.7V1.7H28.2V0H19.2ZM34.7 11.3H36.6V6.9L40.8 0H38.5L36.5 3.5C36.2 4 35.9 4.5 35.7 4.9C35.4 4.5 35.1 4 34.8 3.5L32.8 0H30.5L34.7 6.9ZM53.1 11.5C55.8 11.5 57.4 10.1 57.4 8C57.4 6.4 56.4 5.4 54.1 4.9L52.9 4.6C51.4 4.3 50.9 3.8 50.9 3.1C50.9 2.2 51.7 1.5 53 1.5C54.3 1.5 55.2 2.2 55.3 3.4H57.2C57.1 1.2 55.5 -0.2 53 -0.2C50.5 -0.2 48.9 1.2 48.9 3.2C48.9 4.8 49.9 5.8 52.1 6.3L53.4 6.5C54.9 6.9 55.5 7.3 55.5 8.1C55.5 9.1 54.5 9.8 53.1 9.8C51.5 9.8 50.6 9 50.6 7.6H48.6C48.6 10 50.3 11.5 53.1 11.5ZM60.2 1.7H63.7V11.3H65.7V1.7H69.2V0H60.2ZM76.9 11.5C79.6 11.5 81.4 9.8 81.4 7.4V0H79.5V7.2C79.5 8.7 78.5 9.7 76.9 9.7C75.3 9.7 74.3 8.7 74.3 7.2V0H72.3V7.4C72.3 9.8 74.1 11.5 76.9 11.5ZM88.9 11.3C92.4 11.3 94.5 9.1 94.5 5.6C94.5 2.2 92.4 0 89 0H85.1V11.3ZM87.1 9.6V1.7H88.9C91.3 1.7 92.4 3.1 92.4 5.6C92.4 8.1 91.3 9.6 88.8 9.6ZM101.1 11.3H103.1V6.9L107.2 0H104.9L102.9 3.5C102.7 4 102.4 4.5 102.1 4.9C101.9 4.5 101.6 4 101.3 3.5L99.3 0H97L101.1 6.9Z" fill="#0B1E3F"/><path d="M0.9 29.1H8.2V27.3H2.9V17.8H0.9ZM16.2 29.2C19.2 29.2 21.4 27 21.4 23.4C21.4 19.9 19.2 17.6 16.2 17.6C13.2 17.6 10.9 19.9 10.9 23.4C10.9 26.9 13.2 29.2 16.2 29.2ZM16.2 27.5C14.3 27.5 12.9 26 12.9 23.4C12.9 20.9 14.3 19.4 16.2 19.4C18 19.4 19.4 20.9 19.4 23.4C19.4 26 18 27.5 16.2 27.5ZM24.8 29.1H26.8V23.4C26.8 22.9 26.8 21.9 26.7 20.7C27.4 21.9 28 22.9 28.3 23.4L31.9 29.1H34.1V17.8H32.1V23.9C32.1 24.4 32.1 25.3 32.1 26.2C31.7 25.4 31.2 24.5 30.9 24.1L26.9 17.8H24.8ZM41.6 29.1C45.1 29.1 47.1 26.9 47.1 23.4C47.1 19.9 45 17.8 41.7 17.8H37.8V29.1ZM39.8 27.4V19.5H41.6C43.9 19.5 45.1 20.9 45.1 23.4C45.1 25.9 44 27.4 41.5 27.4ZM55.3 29.2C58.3 29.2 60.6 27 60.6 23.4C60.6 19.9 58.3 17.6 55.3 17.6C52.3 17.6 50.1 19.9 50.1 23.4C50.1 26.9 52.3 29.2 55.3 29.2ZM55.3 27.5C53.5 27.5 52.1 26 52.1 23.4C52.1 20.9 53.5 19.4 55.3 19.4C57.2 19.4 58.6 20.9 58.6 23.4C58.6 26 57.2 27.5 55.3 27.5ZM63.9 29.1H65.9V23.4C65.9 22.9 65.9 21.9 65.9 20.7C66.6 21.9 67.2 22.9 67.5 23.4L71 29.1H73.2V17.8H71.2V23.9C71.2 24.4 71.2 25.3 71.2 26.2C70.8 25.4 70.3 24.5 70 24.1L66.1 17.8H63.9Z" fill="#0B1E3F"/><path d="M2.1 42.5C2.5 43.2 3 44 3.1 44.6L4.1 44.1C3.9 43.6 3.4 42.8 3 42.2ZM8.1 42.2C7.8 42.8 7.4 43.7 7 44.2L7.8 44.6C8.2 44.1 8.7 43.3 9.1 42.6ZM5.5 35.4C4.5 37 2.4 38.3 0.3 38.9C0.6 39.2 0.9 39.6 1 39.9C1.6 39.7 2.1 39.4 2.6 39.2V39.8H5V41.1H1.3V42.1H5V44.6H0.8V45.6H10.5V44.6H6.1V42.1H9.9V41.1H6.1V39.8H8.5V39.1C9.1 39.4 9.7 39.6 10.2 39.8C10.4 39.6 10.7 39.1 10.9 38.9C9.3 38.4 7.3 37.3 6.2 36.2L6.5 35.8ZM8 38.8H3.3C4.2 38.3 5 37.7 5.6 37C6.3 37.6 7.1 38.2 8 38.8ZM16.5 38.1H19V39H16.5ZM15.6 37.4V39.7H20V37.4ZM15.1 35.9V36.8H20.5V35.9ZM16.5 41.5C16.7 41.9 17 42.4 17 42.7L17.6 42.5C17.6 42.2 17.3 41.6 17 41.3ZM20.8 37.7V42.1H22.4V44.4L20.6 44.6L20.9 45.6C21.9 45.4 23.2 45.2 24.4 45C24.5 45.3 24.6 45.6 24.6 45.9L25.4 45.6C25.3 44.9 24.9 43.6 24.5 42.6L23.8 42.8C23.9 43.2 24.1 43.6 24.2 44.1L23.3 44.2V42.1H24.9V37.7H23.3V35.6H22.4V37.7ZM21.6 38.6H22.5V41.1H21.6ZM23.3 38.6H24.1V41.1H23.3ZM18.5 41.2C18.3 41.7 18 42.3 17.8 42.8H16.4V43.5H17.4V45.5H18.2V43.5H19.1V42.8H18.5C18.7 42.4 18.9 41.9 19.2 41.5ZM15.3 40.2V45.8H16.1V41.1H19.5V44.8C19.5 44.9 19.4 44.9 19.3 44.9C19.2 44.9 18.9 44.9 18.5 44.9C18.6 45.1 18.7 45.5 18.7 45.7C19.3 45.7 19.7 45.7 20 45.6C20.3 45.4 20.3 45.2 20.3 44.8V40.2ZM38.7 39.3C38.5 40.2 38.2 41 37.9 41.8C37.7 40.7 37.6 39.5 37.6 38.1H39.8V37.1H39.1L39.6 36.8C39.4 36.4 38.8 35.9 38.4 35.5L37.7 35.9C38 36.3 38.5 36.7 38.8 37.1H37.5C37.5 36.6 37.5 36 37.5 35.5H36.5L36.5 37.1H33.2V40.7C33.2 41.5 33.1 42.3 32.9 43.2L32.7 42.2L31.8 42.6V39.2H32.7V38.2H31.8V35.6H30.8V38.2H29.7V39.2H30.8V42.9C30.3 43.1 29.9 43.3 29.5 43.4L29.9 44.4C30.8 44.1 31.9 43.6 32.9 43.2C32.8 43.9 32.5 44.7 31.9 45.2C32.2 45.4 32.6 45.7 32.7 45.9C33.9 44.5 34.1 42.3 34.1 40.7V40.3H35.3C35.3 42.2 35.2 42.9 35.1 43C35.1 43.1 35 43.2 34.9 43.2C34.7 43.2 34.4 43.2 34.1 43.1C34.2 43.4 34.3 43.7 34.3 44C34.7 44 35.1 44 35.3 44C35.6 43.9 35.8 43.9 35.9 43.6C36.1 43.4 36.2 42.4 36.2 39.8C36.2 39.7 36.2 39.5 36.2 39.5H34.1V38.1H36.6C36.7 40 36.8 41.7 37.1 43.1C36.5 43.9 35.8 44.6 34.9 45.1C35.2 45.3 35.5 45.7 35.7 45.8C36.3 45.4 36.9 44.9 37.4 44.2C37.8 45.2 38.2 45.7 38.8 45.7C39.6 45.7 39.9 45.2 40 43.5C39.8 43.4 39.5 43.2 39.3 43C39.2 44.2 39.1 44.8 38.9 44.8C38.6 44.8 38.4 44.2 38.1 43.3C38.8 42.2 39.3 40.9 39.7 39.4ZM52.2 37V40.1H50.7V37ZM48.5 40.1V41.1H49.6C49.6 42.5 49.3 44.2 48.3 45.3C48.5 45.4 48.9 45.7 49.1 45.9C50.3 44.7 50.6 42.8 50.6 41.1H52.2V45.9H53.3V41.1H54.5V40.1H53.3V37H54.3V36.1H48.8V37H49.7V40.1ZM44.2 36V37H45.5C45.2 38.6 44.7 40.1 44 41.1C44.2 41.4 44.4 42 44.4 42.3C44.6 42.1 44.8 41.8 44.9 41.5V45.3H45.8V44.5H48V39.5H45.9C46.1 38.7 46.3 37.9 46.5 37H48.2V36ZM45.8 40.4H47.1V43.5H45.8ZM63.3 41V41.8H58.9V42.8H63.3V44.6C63.3 44.8 63.2 44.8 63 44.8C62.8 44.8 62 44.8 61.2 44.8C61.3 45.1 61.5 45.5 61.6 45.8C62.6 45.8 63.3 45.8 63.7 45.7C64.2 45.5 64.4 45.2 64.4 44.6V42.8H68.8V41.8H64.4V41.5C65.3 41 66.3 40.4 67 39.7L66.4 39.2L66.1 39.3H60.8V40.2H64.9C64.4 40.5 63.8 40.8 63.3 41ZM62.9 35.7C63.2 36.2 63.6 36.8 63.7 37.3H61.5L61.9 37.1C61.7 36.6 61.3 36 60.9 35.6L60 36C60.3 36.4 60.7 36.9 60.9 37.3H59.1V39.6H60.1V38.2H67.6V39.6H68.7V37.3H66.9C67.3 36.9 67.6 36.4 68 35.9L66.9 35.5C66.6 36.1 66.2 36.8 65.8 37.3H64.1L64.7 37C64.6 36.6 64.2 35.9 63.9 35.4ZM74.5 35.9C74.9 36.3 75.3 37 75.5 37.4H73.4V38.3H76.1C75.4 39.6 74.2 40.9 73 41.6C73.2 41.8 73.4 42.3 73.5 42.6C74 42.3 74.4 41.9 74.9 41.5V45.8H76V41.2C76.3 41.6 76.8 42.2 77 42.5L77.6 41.6C77.4 41.4 76.6 40.5 76.1 40.1C76.7 39.4 77.1 38.6 77.5 37.7L76.9 37.3L76.7 37.4H75.5L76.4 36.9C76.2 36.5 75.7 35.9 75.3 35.4ZM80 35.5V38.9H77.6V39.9H80V44.4H77.1V45.5H83.6V44.4H81.1V39.9H83.3V38.9H81.1V35.5Z" fill="#4B5770"/></g></svg></a>
-<nav class="top-nav" id="nav" aria-label="主导航"><a href="courses.html" title="课程与课表：五级课程体系、8周交易核心课大纲、伦敦大师课、北京时间课表与仓位计算">课程与课表</a><a href="executive.html" title="伦敦金融城十日研修：十日行程、课程模块与费用">伦敦十日研修</a><a href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用">香港五日研修</a><a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息">免费公开课</a><a href="about.html" aria-current="page" title="关于我们：授课团队、可考取的英国金融证书与合规承诺">关于我们</a><a class="btn sm" href="signup.html?course=openclass" title="在线报名：周四免费公开课">免费预约公开课</a></nav>
-<div class="top-cta"><a class="en" href="en/about.html" lang="en" hreflang="en" title="英文版网站 English version">English</a><a class="btn sm" href="signup.html?course=openclass" title="在线报名：周四免费公开课">免费预约公开课</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">菜单</button></div>
+<nav class="top-nav" id="nav" aria-label="主导航"><a href="courses.html" title="课程与课表：五级课程体系、8周交易核心课大纲、伦敦大师课、北京时间课表与仓位计算">课程与课表</a><a href="executive.html" title="伦敦金融城十日研修：十日行程、课程模块与费用">伦敦十日研修</a><a href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用">香港五日研修</a><a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息">免费公开课</a><a href="about.html" aria-current="page" title="关于我们：授课团队、可考取的英国金融证书与合规承诺">关于我们</a></nav>
+<div class="top-cta"><a class="btn sm top-act" data-follow href="signup.html?course=openclass" title="在线报名：周四免费公开课">免费预约公开课<svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="en" href="en/about.html" lang="en" hreflang="en" title="英文版网站 English version">English</a><button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">菜单</button></div>
 </div>
+<span class="meridian" aria-hidden="true"></span>
 </header>
 <main id="main" tabindex="-1">
 <section class="hero ch" aria-labelledby="hero-h">
 <div class="g">
 <div class="hero-tx">
-<nav class="crumb" aria-label="当前位置"><a href="index.html" title="首页：在伦敦金融城，用白话读懂每一条市场信息">首页</a><span aria-hidden="true">/</span><span aria-current="page">关于我们</span></nav>
+<nav class="crumb" aria-label="当前位置" data-in><a href="index.html" title="首页：在伦敦金融城，用白话读懂每一条市场信息">首页</a><span aria-hidden="true">/</span><span aria-current="page">关于我们</span></nav>
 
-<h1 id="hero-h">关于金融城研学社</h1>
-<p class="lead">我们只做交易方法与金融知识教育：在伦敦金融城讲课，用中文把汇率和市场信息讲成白话。收入只来自学费，不提供任何交易服务。</p>
-<div class="ctas"><a class="btn" href="signup.html?course=openclass" title="在线报名：周四免费公开课">免费预约公开课<svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn ghost" href="#faculty" title="本页：看授课团队">看授课团队</a></div>
-<ul class="trust"><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>只讲方法与历史案例</span></li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>证书由各机构独立颁发</span></li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>永不来电</span></li></ul>
+<h1 id="hero-h" data-in style="--i:2">关于金融城研学社</h1>
+<p class="lead" data-in style="--i:3">我们只做交易方法与金融知识教育：在伦敦金融城讲课，用中文把汇率和市场信息讲成白话。收入只来自学费，不提供任何交易服务。</p>
+<div class="ctas" data-in style="--i:4"><a class="btn" data-cta href="signup.html?course=openclass" title="在线报名：周四免费公开课">免费预约公开课<svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="lnk" href="#faculty" title="本页：看授课团队">看授课团队<svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<div data-in style="--i:5"><ul class="trust"><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>只讲方法与历史案例</span></li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>证书由各机构独立颁发</span></li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>永不来电</span></li></ul></div>
 </div>
-<div class="hero-side"><div class="pic"><img src="images/stpauls.jpg" alt="玻璃幕墙之间的圣保罗大教堂穹顶" fetchpriority="high"></div></div>
+<div class="hero-side" data-in style="--i:3"><div class="pic"><img src="images/stpauls.jpg" alt="玻璃幕墙之间的圣保罗大教堂穹顶" fetchpriority="high"></div></div>
 </div>
 </section>
 <nav class="pnav" aria-label="本页章节"><ol><li><a href="#promise" title="本页：合规承诺">合规承诺</a></li><li><a href="#square-mile" title="本页：一平方英里">一平方英里</a></li><li><a href="#faculty" title="本页：授课团队">授课团队</a></li><li><a href="#credentials" title="本页：英国证书">英国证书</a></li><li><a href="#faq" title="本页：常见问题">常见问题</a></li><li><a href="#privacy" title="本页：隐私与协议">隐私与协议</a></li><li><a href="#join" title="本页：报名">报名</a></li></ol></nav>
@@ -666,7 +782,7 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
 <div id="terms"><h2 class="h2">用户协议（摘要）</h2><ul><li>本站内容为交易方法与金融知识教育，不构成任何投资建议，也不提供任何交易服务。交易可能亏损，使用杠杆会放大亏损。</li><li>课程、学费、班期以双方签署的报名协议为准。</li><li>证书由各颁发机构独立颁发；本社结业证明不是职业资格或学历证书。</li><li>伦敦与香港研修的机票、酒店等行程服务由持有出境旅游业务经营许可的合作旅行社承办，以旅行社合同为准。</li></ul></div>
 </div></div>
 </section>
-<section class="sec navy cta-form" id="join" aria-labelledby="join-h">
+<section class="sec navy cta-form" id="join" aria-labelledby="join-h" data-cta>
 <div class="g">
 <div class="cta-tx" data-reveal><h2 class="h2" id="join-h">留下手机号，<br>我们按你选的方式联系</h2><p class="lead muted" style="margin-top:20px">提交后，你会收到一条确认短信。班期、学费和上课链接，按你选的方式发送给你。</p><ul class="reasons"><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>一分钟填完。</b>只要姓名和手机号。</span></li><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>永不来电。</b>报名确认只通过短信发送，课程通知可选短信、微信或 WhatsApp。</span></li><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>免费登记，不用付款。</b>确认班期后再签约缴费。</span></li><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>不推销。</b>你说不需要，我们就不再联系。</span></li></ul></div>
 <div class="cta-card"><div class="su-card" id="su-formcard">
@@ -739,6 +855,234 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
 <div class="legal"><p>本站内容为交易方法与金融知识教育，不构成投资建议，不提供任何交易服务。交易可能亏损。© 2026 金融城研学社</p><a href="#top" title="本页：回到顶部">回到顶部</a></div>
 </div>
 </footer>
+<script>
+(function () {
+  var d = document;
+  // reveals, once
+  var els = d.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add('is-in'); }); }
+  // mobile menu
+  var mb = d.querySelector('.menu-btn'), nav = d.getElementById('nav');
+  if (mb) mb.addEventListener('click', function () { var o = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.textContent = o ? '收起' : '菜单'; });
+  // tabs helper
+  function tabs(list, onSel) {
+    var bs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+    function sel(b, focus) {
+      bs.forEach(function (x) { var on = x === b; x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1; });
+      if (focus) b.focus(); onSel(b);
+    }
+    bs.forEach(function (b, i) {
+      b.addEventListener('click', function () { sel(b); });
+      b.addEventListener('keydown', function (e) {
+        var k = e.key, j = null;
+        if (k === 'ArrowRight' || k === 'ArrowDown') j = (i + 1) % bs.length;
+        if (k === 'ArrowLeft' || k === 'ArrowUp') j = (i - 1 + bs.length) % bs.length;
+        if (k === 'Home') j = 0; if (k === 'End') j = bs.length - 1;
+        if (j !== null) { e.preventDefault(); sel(bs[j], true); }
+      });
+    });
+  }
+  // the translator
+  var tl = d.querySelector('.dec .tabs');
+  if (tl) tabs(tl, function (b) {
+    var k = b.id.replace('tab-', '');
+    d.querySelectorAll('.dec-fig, .dec-panel').forEach(function (x) { x.classList.toggle('on', x.getAttribute('data-k') === k); });
+  });
+  // London offset now (0 in GMT, 1 in BST)
+  function ldnOffset(dt) {
+    try {
+      var p = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/London', hour: '2-digit', hour12: false }).formatToParts(dt);
+      var h = +p.filter(function (x) { return x.type === 'hour'; })[0].value % 24;
+      return (h - dt.getUTCHours() + 24) % 24;
+    } catch (e) { return 0; }
+  }
+  var off = ldnOffset(new Date());
+  var lab = d.querySelector('[data-ldn-label]'); if (lab) lab.textContent = off ? '夏令时 BST' : '冬令时 GMT';
+  function shift(t, h) { var p = t.split(':'); var m = ((+p[0] + h + 24) % 24); return (m < 10 ? '0' : '') + m + ':' + p[1]; }
+  var zl = d.querySelector('.zones');
+  if (zl) tabs(zl, function (b) {
+    var ldn = b.getAttribute('data-zone') === 'ldn';
+    d.querySelectorAll('.band time').forEach(function (t) {
+      var r = t.getAttribute('data-bj').split('-'); var s = ldn ? [shift(r[0], off - 8), shift(r[1], off - 8)] : r;
+      t.querySelector('.t').textContent = s[0] + '–' + s[1];
+    });
+  });
+  // next open class: Thursday 20:00 Beijing = 12:00 UTC, runs 75 minutes
+  var nd = d.querySelector('[data-next-day]');
+  if (nd) {
+    var cnt = d.querySelector('[data-count]'), nl = d.querySelector('[data-next-ldn]');
+    var nextStart = function (now) {
+      var t = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 12, 0, 0));
+      t = new Date(t.getTime() + ((4 - t.getUTCDay() + 7) % 7) * 864e5);
+      if (now.getTime() > t.getTime() + 75 * 6e4) t = new Date(t.getTime() + 7 * 864e5);
+      return t;
+    };
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+    var paint = function () {
+      var now = new Date(), st = nextStart(now), bj = new Date(st.getTime() + 8 * 3600e3);
+      nd.textContent = (bj.getUTCMonth() + 1) + '月' + bj.getUTCDate() + '日 周四';
+      if (nl) nl.textContent = '伦敦 ' + pad(12 + ldnOffset(st)) + ':00';
+      if (!cnt) return;
+      var ms = st.getTime() - now.getTime();
+      if (ms <= 0) { cnt.textContent = '正在直播'; }
+      else {
+        var m = Math.floor(ms / 6e4), dd = Math.floor(m / 1440), hh = Math.floor((m % 1440) / 60), mm = m % 60;
+        cnt.innerHTML = '距开讲还有 ' + (dd ? '<b>' + dd + '</b> 天 ' : '') + '<b>' + hh + '</b> 小时 <b>' + pad(mm) + '</b> 分';
+      }
+      cnt.hidden = false;
+    };
+    paint(); setInterval(paint, 30000);
+  }
+})();
+
+(function () {
+  var d = document;
+  // current section in the in-page nav (scroll handler throttled with requestAnimationFrame)
+  var pl = [].slice.call(d.querySelectorAll('.pnav a'));
+  if (pl.length) {
+    var secs = pl.map(function (a) { return d.getElementById(a.getAttribute('href').slice(1)); });
+    var ticking = false;
+    var mark = function () {
+      ticking = false;
+      var line = innerHeight * 0.35, cur = -1;
+      secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= line) cur = i; });
+      if (innerHeight + scrollY >= d.documentElement.scrollHeight - 2) cur = secs.length - 1;
+      pl.forEach(function (a, i) { if (i === cur) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+    };
+    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(mark); } }, { passive: true });
+    mark();
+  }
+  // itinerary day tabs
+  var box = d.querySelector('[data-days]');
+  if (box) {
+    var tabs = [].slice.call(box.querySelectorAll('[role="tab"]')), panels = [].slice.call(box.querySelectorAll('[role="tabpanel"]'));
+    var sel = function (i, focus) {
+      var was = tabs.findIndex(function (t) { return t.getAttribute('aria-selected') === 'true'; });
+      if (i !== was) box.setAttribute('data-dir', i > was ? 'next' : 'prev');
+      tabs.forEach(function (t, j) { var on = j === i; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; panels[j].hidden = !on; });
+      if (focus) tabs[i].focus();
+    };
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { sel(i); });
+      t.addEventListener('keydown', function (e) {
+        var k = e.key, j = null;
+        if (k === 'ArrowRight') j = (i + 1) % tabs.length; if (k === 'ArrowLeft') j = (i - 1 + tabs.length) % tabs.length;
+        if (k === 'Home') j = 0; if (k === 'End') j = tabs.length - 1;
+        if (j !== null) { e.preventDefault(); sel(j, true); }
+      });
+    });
+    box.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-step]'); if (!b) return;
+      var cur = tabs.findIndex(function (t) { return t.getAttribute('aria-selected') === 'true'; });
+      sel((cur + (+b.getAttribute('data-step')) + tabs.length) % tabs.length, true);
+    });
+  }
+})();
+
+(function () {
+  var d = document, w = window;
+  w.__cslUI = 1;
+  var calm = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var raf = w.requestAnimationFrame || function (f) { return setTimeout(f, 16); };
+  // hero entrance
+  var hero = d.querySelector('.hero');
+  if (hero) raf(function () { raf(function () { hero.classList.add('is-ready'); }); });
+
+  // one signup button on screen: the header copy shows only while no other signup button, form or the footer is in view
+  var fol = d.querySelector('[data-follow]');
+  if (fol) {
+    if ('IntersectionObserver' in w) {
+      var seen = new Set();
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) seen.add(e.target); else seen.delete(e.target); });
+        fol.classList.toggle('is-on', seen.size === 0);
+      }, { rootMargin: '-72px 0px 0px 0px' });
+      d.querySelectorAll('[data-cta], .foot').forEach(function (el) { io.observe(el); });
+    } else { fol.classList.add('is-on'); }
+  }
+
+  // scroll: the red meridian shows reading progress; the hero photo drifts a little
+  var mer = d.querySelector('.meridian');
+  var par = (calm || w.innerWidth < 761) ? null : d.querySelector('[data-parallax] img');
+  var busy = false;
+  var frame = function () {
+    busy = false;
+    var h = d.documentElement.scrollHeight - w.innerHeight, p = h > 0 ? Math.min(1, Math.max(0, w.scrollY / h)) : 0;
+    if (mer) mer.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+    if (par) {
+      var r = par.parentNode.getBoundingClientRect();
+      if (r.bottom > 0 && r.top < w.innerHeight) {
+        var k = (r.top + r.height / 2 - w.innerHeight / 2) / w.innerHeight;
+        par.style.transform = 'translate3d(0,' + (k * -48).toFixed(1) + 'px,0) scale(1.12)';
+      }
+    }
+  };
+  w.addEventListener('scroll', function () { if (!busy) { busy = true; raf(frame); } }, { passive: true });
+  w.addEventListener('resize', function () { if (!busy) { busy = true; raf(frame); } });
+  frame();
+
+  // numbers count up once, when they come into view
+  var nums = d.querySelectorAll('[data-to]');
+  if (nums.length && !calm && 'IntersectionObserver' in w) {
+    var co = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        co.unobserve(e.target);
+        var el = e.target, to = +el.getAttribute('data-to'), t0 = 0, dur = 1200;
+        el.style.display = 'inline-block'; el.style.minWidth = String(to).length + 'ch'; el.style.textAlign = 'right';
+        var step = function (t) {
+          if (!t0) t0 = t;
+          var k = Math.min(1, (t - t0) / dur);
+          el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3)));
+          if (k < 1) raf(step);
+        };
+        el.textContent = '0'; raf(step);
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(function (n) { co.observe(n); });
+  }
+
+  // tabs: one navy block slides to the chosen tab
+  var places = [];
+  d.querySelectorAll('.tabs[role="tablist"], .zones[role="tablist"], .dtabs[role="tablist"]').forEach(function (list) {
+    var ind = d.createElement('span'); ind.className = 'ind'; ind.setAttribute('aria-hidden', 'true');
+    list.appendChild(ind); list.classList.add('has-ind');
+    var place = function () {
+      var b = list.querySelector('[aria-selected="true"]'); if (!b) return;
+      ind.style.transform = 'translate(' + b.offsetLeft + 'px,' + b.offsetTop + 'px) scale(' + (b.offsetWidth / 100) + ',' + (b.offsetHeight / 100) + ')';
+    };
+    place(); places.push(place);
+    new MutationObserver(place).observe(list, { attributes: true, subtree: true, attributeFilter: ['aria-selected'] });
+    if (!calm) raf(function () { raf(function () { list.classList.add('is-live'); }); });
+  });
+  var replace = function () { places.forEach(function (f) { f(); }); };
+  w.addEventListener('resize', replace);
+  if (d.fonts && d.fonts.ready) d.fonts.ready.then(replace);
+
+  if (!calm) {
+    // schedule times flip when the time zone changes
+    d.querySelectorAll('.band time .t').forEach(function (t) {
+      new MutationObserver(function () { t.classList.remove('flip'); void t.offsetWidth; t.classList.add('flip'); }).observe(t, { childList: true, characterData: true, subtree: true });
+    });
+    // the countdown digit that changed rolls in
+    var cnt = d.querySelector('[data-count]');
+    if (cnt) {
+      var vals = function () { return [].map.call(cnt.querySelectorAll('b'), function (b) { return b.textContent; }); };
+      var prev = vals();
+      new MutationObserver(function () {
+        var bs = cnt.querySelectorAll('b');
+        [].forEach.call(bs, function (b, i) { if (prev[i] !== undefined && prev[i] !== b.textContent) b.classList.add('tick'); });
+        prev = vals();
+      }).observe(cnt, { childList: true });
+    }
+  }
+})();
+</script>
 <script>window.CS_COUNTRIES=[["AF","阿富汗","Afghanistan","93"],["AL","阿尔巴尼亚","Albania","355"],["DZ","阿尔及利亚","Algeria","213"],["AS","美属萨摩亚","American Samoa","1684"],["AD","安道尔","Andorra","376"],["AO","安哥拉","Angola","244"],["AI","安圭拉","Anguilla","1264"],["AG","安提瓜和巴布达","Antigua and Barbuda","1268"],["AR","阿根廷","Argentina","54"],["AM","亚美尼亚","Armenia","374"],["AW","阿鲁巴","Aruba","297"],["AU","澳大利亚","Australia","61"],["AT","奥地利","Austria","43"],["AZ","阿塞拜疆","Azerbaijan","994"],["BS","巴哈马","Bahamas","1242"],["BH","巴林","Bahrain","973"],["BD","孟加拉国","Bangladesh","880"],["BB","巴巴多斯","Barbados","1246"],["BY","白俄罗斯","Belarus","375"],["BE","比利时","Belgium","32"],["BZ","伯利兹","Belize","501"],["BJ","贝宁","Benin","229"],["BM","百慕大","Bermuda","1441"],["BT","不丹","Bhutan","975"],["BO","玻利维亚","Bolivia","591"],["BA","波斯尼亚和黑塞哥维那","Bosnia and Herzegovina","387"],["BW","博茨瓦纳","Botswana","267"],["BR","巴西","Brazil","55"],["VG","英属维尔京群岛","British Virgin Islands","1284"],["BN","文莱","Brunei","673"],["BG","保加利亚","Bulgaria","359"],["BF","布基纳法索","Burkina Faso","226"],["BI","布隆迪","Burundi","257"],["KH","柬埔寨","Cambodia","855"],["CM","喀麦隆","Cameroon","237"],["CA","加拿大","Canada","1"],["CV","佛得角","Cape Verde","238"],["KY","开曼群岛","Cayman Islands","1345"],["CF","中非","Central African Republic","236"],["TD","乍得","Chad","235"],["CL","智利","Chile","56"],["CN","中国大陆","Chinese Mainland","86"],["HK","中国香港","Hong Kong, China","852"],["MO","中国澳门","Macao, China","853"],["TW","中国台湾","Taiwan, China","886"],["CO","哥伦比亚","Colombia","57"],["KM","科摩罗","Comoros","269"],["CG","刚果（布）","Congo","242"],["CD","刚果（金）","DR Congo","243"],["CK","库克群岛","Cook Islands","682"],["CR","哥斯达黎加","Costa Rica","506"],["CI","科特迪瓦","Côte d'Ivoire","225"],["HR","克罗地亚","Croatia","385"],["CU","古巴","Cuba","53"],["CW","库拉索","Curaçao","599"],["CY","塞浦路斯","Cyprus","357"],["CZ","捷克","Czechia","420"],["DK","丹麦","Denmark","45"],["DJ","吉布提","Djibouti","253"],["DM","多米尼克","Dominica","1767"],["DO","多米尼加","Dominican Republic","1809"],["EC","厄瓜多尔","Ecuador","593"],["EG","埃及","Egypt","20"],["SV","萨尔瓦多","El Salvador","503"],["GQ","赤道几内亚","Equatorial Guinea","240"],["ER","厄立特里亚","Eritrea","291"],["EE","爱沙尼亚","Estonia","372"],["SZ","斯威士兰","Eswatini","268"],["ET","埃塞俄比亚","Ethiopia","251"],["FO","法罗群岛","Faroe Islands","298"],["FJ","斐济","Fiji","679"],["FI","芬兰","Finland","358"],["FR","法国","France","33"],["GF","法属圭亚那","French Guiana","594"],["PF","法属波利尼西亚","French Polynesia","689"],["GA","加蓬","Gabon","241"],["GM","冈比亚","Gambia","220"],["GE","格鲁吉亚","Georgia","995"],["DE","德国","Germany","49"],["GH","加纳","Ghana","233"],["GI","直布罗陀","Gibraltar","350"],["GR","希腊","Greece","30"],["GL","格陵兰","Greenland","299"],["GD","格林纳达","Grenada","1473"],["GP","瓜德罗普","Guadeloupe","590"],["GU","关岛","Guam","1671"],["GT","危地马拉","Guatemala","502"],["GN","几内亚","Guinea","224"],["GW","几内亚比绍","Guinea-Bissau","245"],["GY","圭亚那","Guyana","592"],["HT","海地","Haiti","509"],["HN","洪都拉斯","Honduras","504"],["HU","匈牙利","Hungary","36"],["IS","冰岛","Iceland","354"],["IN","印度","India","91"],["ID","印度尼西亚","Indonesia","62"],["IR","伊朗","Iran","98"],["IQ","伊拉克","Iraq","964"],["IE","爱尔兰","Ireland","353"],["IL","以色列","Israel","972"],["IT","意大利","Italy","39"],["JM","牙买加","Jamaica","1876"],["JP","日本","Japan","81"],["JO","约旦","Jordan","962"],["KZ","哈萨克斯坦","Kazakhstan","7"],["KE","肯尼亚","Kenya","254"],["KI","基里巴斯","Kiribati","686"],["KP","朝鲜","North Korea","850"],["KR","韩国","South Korea","82"],["KW","科威特","Kuwait","965"],["KG","吉尔吉斯斯坦","Kyrgyzstan","996"],["LA","老挝","Laos","856"],["LV","拉脱维亚","Latvia","371"],["LB","黎巴嫩","Lebanon","961"],["LS","莱索托","Lesotho","266"],["LR","利比里亚","Liberia","231"],["LY","利比亚","Libya","218"],["LI","列支敦士登","Liechtenstein","423"],["LT","立陶宛","Lithuania","370"],["LU","卢森堡","Luxembourg","352"],["MG","马达加斯加","Madagascar","261"],["MW","马拉维","Malawi","265"],["MY","马来西亚","Malaysia","60"],["MV","马尔代夫","Maldives","960"],["ML","马里","Mali","223"],["MT","马耳他","Malta","356"],["MH","马绍尔群岛","Marshall Islands","692"],["MQ","马提尼克","Martinique","596"],["MR","毛里塔尼亚","Mauritania","222"],["MU","毛里求斯","Mauritius","230"],["YT","马约特","Mayotte","262"],["MX","墨西哥","Mexico","52"],["FM","密克罗尼西亚联邦","Micronesia","691"],["MD","摩尔多瓦","Moldova","373"],["MC","摩纳哥","Monaco","377"],["MN","蒙古","Mongolia","976"],["ME","黑山","Montenegro","382"],["MS","蒙特塞拉特","Montserrat","1664"],["MA","摩洛哥","Morocco","212"],["MZ","莫桑比克","Mozambique","258"],["MM","缅甸","Myanmar","95"],["NA","纳米比亚","Namibia","264"],["NR","瑙鲁","Nauru","674"],["NP","尼泊尔","Nepal","977"],["NL","荷兰","Netherlands","31"],["NC","新喀里多尼亚","New Caledonia","687"],["NZ","新西兰","New Zealand","64"],["NI","尼加拉瓜","Nicaragua","505"],["NE","尼日尔","Niger","227"],["NG","尼日利亚","Nigeria","234"],["NU","纽埃","Niue","683"],["MK","北马其顿","North Macedonia","389"],["MP","北马里亚纳群岛","Northern Mariana Islands","1670"],["NO","挪威","Norway","47"],["OM","阿曼","Oman","968"],["PK","巴基斯坦","Pakistan","92"],["PW","帕劳","Palau","680"],["PS","巴勒斯坦","Palestine","970"],["PA","巴拿马","Panama","507"],["PG","巴布亚新几内亚","Papua New Guinea","675"],["PY","巴拉圭","Paraguay","595"],["PE","秘鲁","Peru","51"],["PH","菲律宾","Philippines","63"],["PL","波兰","Poland","48"],["PT","葡萄牙","Portugal","351"],["PR","波多黎各","Puerto Rico","1787"],["QA","卡塔尔","Qatar","974"],["RE","留尼汪","Réunion","262"],["RO","罗马尼亚","Romania","40"],["RU","俄罗斯","Russia","7"],["RW","卢旺达","Rwanda","250"],["KN","圣基茨和尼维斯","Saint Kitts and Nevis","1869"],["LC","圣卢西亚","Saint Lucia","1758"],["PM","圣皮埃尔和密克隆","Saint Pierre and Miquelon","508"],["VC","圣文森特和格林纳丁斯","Saint Vincent and the Grenadines","1784"],["WS","萨摩亚","Samoa","685"],["SM","圣马力诺","San Marino","378"],["ST","圣多美和普林西比","São Tomé and Príncipe","239"],["SA","沙特阿拉伯","Saudi Arabia","966"],["SN","塞内加尔","Senegal","221"],["RS","塞尔维亚","Serbia","381"],["SC","塞舌尔","Seychelles","248"],["SL","塞拉利昂","Sierra Leone","232"],["SG","新加坡","Singapore","65"],["SX","荷属圣马丁","Sint Maarten","1721"],["SK","斯洛伐克","Slovakia","421"],["SI","斯洛文尼亚","Slovenia","386"],["SB","所罗门群岛","Solomon Islands","677"],["SO","索马里","Somalia","252"],["ZA","南非","South Africa","27"],["SS","南苏丹","South Sudan","211"],["ES","西班牙","Spain","34"],["LK","斯里兰卡","Sri Lanka","94"],["SD","苏丹","Sudan","249"],["SR","苏里南","Suriname","597"],["SE","瑞典","Sweden","46"],["CH","瑞士","Switzerland","41"],["SY","叙利亚","Syria","963"],["TJ","塔吉克斯坦","Tajikistan","992"],["TZ","坦桑尼亚","Tanzania","255"],["TH","泰国","Thailand","66"],["TL","东帝汶","Timor-Leste","670"],["TG","多哥","Togo","228"],["TO","汤加","Tonga","676"],["TT","特立尼达和多巴哥","Trinidad and Tobago","1868"],["TN","突尼斯","Tunisia","216"],["TR","土耳其","Türkiye","90"],["TM","土库曼斯坦","Turkmenistan","993"],["TC","特克斯和凯科斯群岛","Turks and Caicos Islands","1649"],["TV","图瓦卢","Tuvalu","688"],["UG","乌干达","Uganda","256"],["UA","乌克兰","Ukraine","380"],["AE","阿联酋","United Arab Emirates","971"],["GB","英国","United Kingdom","44"],["US","美国","United States","1"],["VI","美属维尔京群岛","U.S. Virgin Islands","1340"],["UY","乌拉圭","Uruguay","598"],["UZ","乌兹别克斯坦","Uzbekistan","998"],["VU","瓦努阿图","Vanuatu","678"],["VE","委内瑞拉","Venezuela","58"],["VN","越南","Vietnam","84"],["WF","瓦利斯和富图纳","Wallis and Futuna","681"],["YE","也门","Yemen","967"],["ZM","赞比亚","Zambia","260"],["ZW","津巴布韦","Zimbabwe","263"]];
 window.CS_PINNED=["CN", "HK", "MO", "TW", "GB", "US", "CA", "AU", "NZ", "SG", "MY", "JP", "KR", "AE", "IE", "FR", "DE"];
 window.CS_COURSES={"openclass":["周四免费公开课","live"],"pack":["交易入门速读包","live"],"core":["交易核心课 · 8周","live"],"masterclass":["伦敦大师课 · 策略专题","live"],"macro":["外汇与宏观：汇率、利率与黄金","workshop"],"equity":["股指与美股港股","workshop"],"commod":["大宗商品与期货","workshop"],"quant":["量化入门：策略回测","workshop"],"journal":["交易心理与复盘","workshop"],"antifraud":["识别金融骗局","workshop"],"fxrisk":["杠杆与风险公益课","workshop"],"cisi":["CISI ICWIM 中文备考","cert"],"cisisec":["CISI 证券与衍生品证书备考","cert"],"executive":["伦敦金融城十日研修","london"],"hongkong":["香港金融五日研修","london"],"studytour":["海外研修说明会","london"],"moretours":["更多城市研修 · 意向登记","london"]};
@@ -940,133 +1284,6 @@ window.CS_COURSES={"openclass":["周四免费公开课","live"],"pack":["交易�
   });
   $('su-again').addEventListener('click', function () { $('su-done').hidden = true; $('su-formcard').hidden = false; nameIn.focus(); });
   setLabel(); syncWay();
-})();
-
-
-(function () {
-  var d = document;
-  // reveals, once
-  var els = d.querySelectorAll('[data-reveal]');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
-    els.forEach(function (el) { io.observe(el); });
-  } else { els.forEach(function (el) { el.classList.add('is-in'); }); }
-  // mobile menu
-  var mb = d.querySelector('.menu-btn'), nav = d.getElementById('nav');
-  if (mb) mb.addEventListener('click', function () { var o = nav.classList.toggle('open'); mb.setAttribute('aria-expanded', o ? 'true' : 'false'); mb.textContent = o ? '收起' : '菜单'; });
-  // tabs helper
-  function tabs(list, onSel) {
-    var bs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
-    function sel(b, focus) {
-      bs.forEach(function (x) { var on = x === b; x.setAttribute('aria-selected', on ? 'true' : 'false'); x.tabIndex = on ? 0 : -1; });
-      if (focus) b.focus(); onSel(b);
-    }
-    bs.forEach(function (b, i) {
-      b.addEventListener('click', function () { sel(b); });
-      b.addEventListener('keydown', function (e) {
-        var k = e.key, j = null;
-        if (k === 'ArrowRight' || k === 'ArrowDown') j = (i + 1) % bs.length;
-        if (k === 'ArrowLeft' || k === 'ArrowUp') j = (i - 1 + bs.length) % bs.length;
-        if (k === 'Home') j = 0; if (k === 'End') j = bs.length - 1;
-        if (j !== null) { e.preventDefault(); sel(bs[j], true); }
-      });
-    });
-  }
-  // the translator
-  var tl = d.querySelector('.dec .tabs');
-  if (tl) tabs(tl, function (b) {
-    var k = b.id.replace('tab-', '');
-    d.querySelectorAll('.dec-fig, .dec-panel').forEach(function (x) { x.classList.toggle('on', x.getAttribute('data-k') === k); });
-  });
-  // London offset now (0 in GMT, 1 in BST)
-  function ldnOffset(dt) {
-    try {
-      var p = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/London', hour: '2-digit', hour12: false }).formatToParts(dt);
-      var h = +p.filter(function (x) { return x.type === 'hour'; })[0].value % 24;
-      return (h - dt.getUTCHours() + 24) % 24;
-    } catch (e) { return 0; }
-  }
-  var off = ldnOffset(new Date());
-  var lab = d.querySelector('[data-ldn-label]'); if (lab) lab.textContent = off ? '夏令时 BST' : '冬令时 GMT';
-  function shift(t, h) { var p = t.split(':'); var m = ((+p[0] + h + 24) % 24); return (m < 10 ? '0' : '') + m + ':' + p[1]; }
-  var zl = d.querySelector('.zones');
-  if (zl) tabs(zl, function (b) {
-    var ldn = b.getAttribute('data-zone') === 'ldn';
-    d.querySelectorAll('.band time').forEach(function (t) {
-      var r = t.getAttribute('data-bj').split('-'); var s = ldn ? [shift(r[0], off - 8), shift(r[1], off - 8)] : r;
-      t.querySelector('.t').textContent = s[0] + '–' + s[1];
-    });
-  });
-  // next open class: Thursday 20:00 Beijing = 12:00 UTC, runs 75 minutes
-  var nd = d.querySelector('[data-next-day]');
-  if (nd) {
-    var cnt = d.querySelector('[data-count]'), nl = d.querySelector('[data-next-ldn]');
-    var nextStart = function (now) {
-      var t = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 12, 0, 0));
-      t = new Date(t.getTime() + ((4 - t.getUTCDay() + 7) % 7) * 864e5);
-      if (now.getTime() > t.getTime() + 75 * 6e4) t = new Date(t.getTime() + 7 * 864e5);
-      return t;
-    };
-    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
-    var paint = function () {
-      var now = new Date(), st = nextStart(now), bj = new Date(st.getTime() + 8 * 3600e3);
-      nd.textContent = (bj.getUTCMonth() + 1) + '月' + bj.getUTCDate() + '日 周四';
-      if (nl) nl.textContent = '伦敦 ' + pad(12 + ldnOffset(st)) + ':00';
-      if (!cnt) return;
-      var ms = st.getTime() - now.getTime();
-      if (ms <= 0) { cnt.textContent = '正在直播'; }
-      else {
-        var m = Math.floor(ms / 6e4), dd = Math.floor(m / 1440), hh = Math.floor((m % 1440) / 60), mm = m % 60;
-        cnt.innerHTML = '距开讲还有 ' + (dd ? '<b>' + dd + '</b> 天 ' : '') + '<b>' + hh + '</b> 小时 <b>' + pad(mm) + '</b> 分';
-      }
-      cnt.hidden = false;
-    };
-    paint(); setInterval(paint, 30000);
-  }
-})();
-
-(function () {
-  var d = document;
-  // current section in the in-page nav (scroll handler throttled with requestAnimationFrame)
-  var pl = [].slice.call(d.querySelectorAll('.pnav a'));
-  if (pl.length) {
-    var secs = pl.map(function (a) { return d.getElementById(a.getAttribute('href').slice(1)); });
-    var ticking = false;
-    var mark = function () {
-      ticking = false;
-      var line = innerHeight * 0.35, cur = -1;
-      secs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top <= line) cur = i; });
-      if (innerHeight + scrollY >= d.documentElement.scrollHeight - 2) cur = secs.length - 1;
-      pl.forEach(function (a, i) { if (i === cur) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
-    };
-    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(mark); } }, { passive: true });
-    mark();
-  }
-  // itinerary day tabs
-  var box = d.querySelector('[data-days]');
-  if (box) {
-    var tabs = [].slice.call(box.querySelectorAll('[role="tab"]')), panels = [].slice.call(box.querySelectorAll('[role="tabpanel"]'));
-    var sel = function (i, focus) {
-      tabs.forEach(function (t, j) { var on = j === i; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; panels[j].hidden = !on; });
-      if (focus) tabs[i].focus();
-    };
-    tabs.forEach(function (t, i) {
-      t.addEventListener('click', function () { sel(i); });
-      t.addEventListener('keydown', function (e) {
-        var k = e.key, j = null;
-        if (k === 'ArrowRight') j = (i + 1) % tabs.length; if (k === 'ArrowLeft') j = (i - 1 + tabs.length) % tabs.length;
-        if (k === 'Home') j = 0; if (k === 'End') j = tabs.length - 1;
-        if (j !== null) { e.preventDefault(); sel(j, true); }
-      });
-    });
-    box.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-step]'); if (!b) return;
-      var cur = tabs.findIndex(function (t) { return t.getAttribute('aria-selected') === 'true'; });
-      sel((cur + (+b.getAttribute('data-step')) + tabs.length) % tabs.length, true);
-    });
-  }
 })();
 </script>
 </body>
