@@ -703,6 +703,133 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
   .top .g { display: flex; flex-wrap: wrap; align-items: center; align-content: flex-start; justify-content: space-between; column-gap: 12px; min-height: 64px; padding-block: 10px; }
   .top-nav.open { order: 3; flex-basis: 100%; }
 }
+
+/* ---------- v7.2 (2026-11-24): enquiry form v2, official panel, two prices, visit status ---------- */
+.su-group { border: 0; margin: 0; padding: 16px; min-width: 0; background: var(--surface); display: grid; gap: 14px; }
+.su-group > legend { float: left; width: 100%; padding: 0; margin: 0; }
+.su-group > legend + .su-hint { margin-top: -8px; }
+.su-plain { border: 0; margin: 0; padding: 0; min-width: 0; }
+.su-plain > legend { padding: 0; margin-bottom: 8px; }
+.su-lab.sub, .su-field > label.sub { font-weight: 600; }
+.opt { font-weight: 400; color: var(--muted); }
+.su-ways.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.su-ways.four + .su-hint { margin-top: 10px; }
+.su-ta { min-height: 96px; padding: 12px 16px; resize: vertical; line-height: 1.6; }
+.su-why { font-size: var(--t-small); }
+.su-why summary { display: inline-flex; min-height: 44px; align-items: center; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; list-style: none; }
+.su-why summary::-webkit-details-marker { display: none; }
+.su-why ul { display: grid; gap: 6px; padding: 4px 0 4px 16px; color: var(--muted); border-left: 2px solid var(--line); }
+.su-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.su-ref { padding: 12px 16px; background: var(--surface); font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.su-ref:empty { display: none; }
+#su-confirmation { overflow-wrap: anywhere; }
+#su-confirmation:empty { display: none; }
+.su-done .su-tick { display: grid; place-items: center; width: 48px; height: 48px; background: var(--ink); }
+.su-next-h { font-size: var(--t-body); font-weight: 700; }
+.su-next { display: grid; gap: 10px; counter-reset: n; }
+.su-next li { counter-increment: n; display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 8px; font-size: 15px; overflow-wrap: anywhere; }
+.su-next li::before { content: counter(n, decimal-leading-zero); font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+
+.official { padding: 28px; background: var(--white); border: 1px solid var(--line); display: grid; gap: 18px; }
+.official h2 { font-size: var(--t-h3); }
+.official dl { display: grid; gap: 12px; }
+.official dl div { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: 12px; }
+.official dt { color: var(--muted); font-size: var(--t-small); padding-top: 2px; }
+.official dd { font-weight: 700; overflow-wrap: anywhere; }
+.official dd small { display: block; font-weight: 400; font-size: var(--t-small); color: var(--muted); }
+.official ul { display: grid; gap: 8px; padding-top: 16px; border-top: 1px solid var(--line); }
+.official li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; font-size: 15px; }
+.official li svg { width: 18px; height: 18px; color: var(--accent); margin-top: 3px; }
+.foot-official { display: block; margin-bottom: 8px; color: var(--on-navy); font-size: var(--t-small); overflow-wrap: anywhere; }
+.foot-official a { color: var(--on-navy); }
+
+/* signup page */
+.su-page { padding-block: 56px 96px; background: var(--white); }
+.su-page .g { row-gap: 40px; align-items: start; }
+.su-intro { grid-column: 1 / 7; display: grid; gap: 28px; }
+.su-intro .lead { max-width: 28em; }
+.su-intro h1 { font-size: var(--t-h1); line-height: 1.08; font-weight: 700; letter-spacing: -0.03em; }
+.su-col { grid-column: 7 / 13; grid-row: 1 / span 2; }
+.su-col .su-card { border: 1px solid var(--line); }
+.su-aside { grid-column: 1 / 7; display: grid; gap: var(--gap); }
+.su-steps { display: grid; gap: 0; border-top: 2px solid var(--ink); }
+.su-steps li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 4px 12px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.su-steps .n { grid-row: 1 / span 2; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.su-steps b { font-size: var(--t-body); }
+.su-steps span:not(.n) { grid-column: 2; font-size: var(--t-small); color: var(--muted); }
+
+/* tour prices at equal weight, visit status beside them */
+.price-card.two { gap: 0; padding: 0; background: none; }
+.prow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 16px; align-items: baseline; padding: 14px 20px; background: var(--surface); }
+.prow + .prow { margin-top: 2px; }
+.prow b { font-size: clamp(26px, 2.4vw, 34px); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.prow .pl { font-weight: 700; font-size: var(--t-body); color: var(--ink); }
+.navy .prow .pl, .navy .prow b { color: var(--on-navy); }
+.navy .price-note { color: var(--on-navy-muted); }
+.hero.ch.open h1 { font-size: clamp(36px, 4.2vw, 60px); }
+.prow .pd { grid-column: 1 / -1; font-size: var(--t-small); color: var(--muted); }
+.price-note { margin-top: 8px; font-size: var(--t-small); color: var(--muted); }
+.visits { margin-top: 16px; padding: 18px 20px; border: 1px solid var(--line); display: grid; gap: 12px; background: var(--white); }
+.visits h3 { font-size: var(--t-small); font-weight: 700; }
+.visits ul { display: grid; gap: 10px; }
+.visits li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; font-size: 15px; }
+.visits .st { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; font-size: 13px; font-weight: 700; white-space: nowrap; align-self: start; }
+.visits .st::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.st.open { background: #E7F0EA; color: #1F5A35; }
+.st.wait { background: #FBEDEF; color: var(--accent-strong); }
+.st.book { background: var(--surface); color: var(--muted); }
+.visits .vn { font-size: 15px; }
+.visits .vs { grid-column: 2; font-size: 13px; color: var(--muted); }
+.visits .vfoot { font-size: 13px; color: var(--muted); }
+.navy .visits { background: transparent; border-color: var(--line-navy); }
+.navy .visits .vs, .navy .visits .vfoot { color: var(--on-navy-muted); }
+.navy .st.book { background: var(--navy-2); color: var(--on-navy-muted); }
+.navy .prow { background: var(--navy-2); }
+.navy .prow .pd { color: var(--on-navy-muted); }
+
+/* open-class pages */
+.facts-card { margin-top: 16px; padding: 4px 24px; background: var(--surface); display: grid; }
+.facts-card div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 14px 0; align-items: baseline; }
+.facts-card div + div { border-top: 1px solid var(--line); }
+.facts-card b { font-size: 20px; font-variant-numeric: tabular-nums; }
+.facts-card span { font-size: var(--t-small); color: var(--muted); text-align: right; }
+.learn { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); }
+.learn li { display: grid; gap: 12px; align-content: start; padding: 24px; background: var(--white); border: 1px solid var(--line); }
+.learn h3 { font-size: var(--t-body); }
+.learn p { font-size: 15px; color: var(--muted); }
+.flow { border-top: 2px solid var(--ink); }
+.flow li { display: grid; grid-template-columns: 9em minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.flow time { font-weight: 700; font-variant-numeric: tabular-nums; }
+.spk { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 32px; align-items: start; }
+.spk .li-ring { width: 160px; height: 160px; }
+.spk h3 { font-size: var(--t-h3); margin-top: 6px; }
+.spk p { margin-top: 8px; color: var(--muted); }
+.spk .role { display: inline-flex; gap: 8px; align-items: center; font-size: var(--t-small); color: var(--muted); }
+.spk .role em { font-style: normal; padding: 1px 8px; border: 1px solid var(--line); }
+.more-open { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.more-open a { display: grid; gap: 6px; padding: 24px; background: var(--white); border: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: border-color 200ms ease, transform 300ms var(--ease); }
+.more-open small { font-size: 13px; color: var(--muted); }
+.more-open b { font-size: var(--t-h3); }
+.more-open span { font-size: var(--t-small); color: var(--muted); }
+@media (hover: hover) and (pointer: fine) { .more-open a:hover { border-color: var(--ink); transform: translateY(-2px); } }
+
+@media (max-width: 1100px) {
+  .su-intro, .su-col, .su-aside { grid-column: 1 / -1; grid-row: auto; }
+  .learn { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .more-open { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .su-ways.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .su-group { padding: 14px; }
+  .su-page { padding-top: 40px; }
+  .official { padding: 20px; }
+  .official dl div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .learn { grid-template-columns: minmax(0, 1fr); }
+  .flow li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .spk { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .spk .li-ring { width: 120px; height: 120px; }
+  .prow { padding: 12px 16px; }
+}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "EducationalOrganization", "name": "金融城研学社 City Study London", "url": "https://sternalanguage.github.io/city-study-london-site/", "description": "伦敦金融城的交易方法与策略思路课程，用白话读懂每一条市场信息。只讲方法与历史案例，不提供投资建议或交易服务。", "inLanguage": "zh-CN"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "零基础能学交易吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。核心课从读懂一条市场信息讲起，全程中文，不需要金融学位，也不需要英语基础。"}}, {"@type": "Question", "name": "你们会推荐股票、带单，或者给投资建议吗？", "acceptedAnswer": {"@type": "Answer", "text": "不会。我们只讲交易方法、策略思路和历史案例，不推荐具体品种，不给买卖点，不提供交易服务，也不会把学员介绍给任何交易平台。"}}, {"@type": "Question", "name": "学完能保证赚钱吗？", "acceptedAnswer": {"@type": "Answer", "text": "不能，也没有人能保证。交易可能亏损，使用杠杆会放大亏损。课程教的是做计划、控风险和复盘。"}}, {"@type": "Question", "name": "课堂会分析现在的行情吗？", "acceptedAnswer": {"@type": "Answer", "text": "不会。案例都用已经有结果的历史行情，不对当下任何品种做走势判断。"}}, {"@type": "Question", "name": "想做外汇交易，这里能学什么？", "acceptedAnswer": {"@type": "Answer", "text": "学读懂汇率：CSL 150「外汇与宏观」专题讲利率、通胀、央行议息和非农数据怎样推动美元、英镑和黄金，用历史行情复盘；8 周核心课教交易计划、仓位与止损；另有杠杆风险和骗局识别两门免费课。我们不开外汇实操课，不开户、不带单、不推荐平台。"}}, {"@type": "Question", "name": "外汇保证金交易在国内合法吗？", "acceptedAnswer": {"@type": "Answer", "text": "中国境内没有任何机构获准向个人提供外汇保证金交易，境外平台不受国内监管，出了纠纷权益很难保障。所以我们只讲原理、风险和历史案例，也教你认出打着外汇旗号的骗局。"}}, {"@type": "Question", "name": "免费公开课怎么参加？", "acceptedAnswer": {"@type": "Answer", "text": "留下姓名和手机号，我们用短信把直播链接发给你。每周四北京时间 20:00，错过可以回看 7 天。"}}, {"@type": "Question", "name": "留了手机号会接到推销电话吗？", "acceptedAnswer": {"@type": "Answer", "text": "不会。我们永不来电，报名确认只发短信；你说不需要，我们就不再发送，也可以随时要求删除信息。"}}, {"@type": "Question", "name": "伦敦和香港研修有什么不同？", "acceptedAnswer": {"@type": "Answer", "text": "两地同一套标准。伦敦十天九晚，侧重全球市场与欧洲金融中心；香港五天四晚，侧重亚洲市场与联系汇率。"}}, {"@type": "Question", "name": "研修价格包含什么？", "acceptedAnswer": {"@type": "Answer", "text": "伦敦早鸟价含往返公务舱、九晚五星酒店、全部课程与列明的参访和晚宴；香港早鸟价含四晚五星酒店与列明的参访、课程和晚宴，不含往返大交通。以合同为准。"}}, {"@type": "Question", "name": "证书是谁发的？", "acceptedAnswer": {"@type": "Answer", "text": "本社只发结业证明，证明你完成了课程。CISI 等证书由颁发机构独立颁发，须通过其考试；我们不代考，不承诺通过率。"}}]}</script>
 <!--seo-->
@@ -750,7 +877,7 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
 </section>
 <section class="sec navy promise" id="promise" aria-labelledby="pr-h">
 <div class="g sh"><h2 class="h2" id="pr-h" data-reveal>我们只教三件事：<br>读信息、讲策略、控风险</h2><p class="lead muted" data-reveal style="--s:1">这是我们对每一位学员的承诺，也是这门课和“带单群”最大的不同。</p></div>
-<div class="g"><div class="items"><div class="item" data-reveal><span class="ic-box"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>不荐股、不带单</h3><p>不推荐任何具体品种，不给买卖点，不喊单，不晒收益。</p></div><div class="item" data-reveal style="--s:1"><span class="ic-box"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 4l9 5.5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span><h3>不开户、不推荐平台</h3><p>不提供开户、代客操作或任何交易服务，也不把学员介绍给任何交易平台。</p></div><div class="item" data-reveal style="--s:2"><span class="ic-box"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9 16.5H3z"/><path d="M12 10v4M12 17v.5"/></svg></span><h3>不承诺收益</h3><p>交易可能亏损，使用杠杆会放大亏损。课程教的是做计划、控风险和复盘。</p></div><div class="item" data-reveal style="--s:3"><span class="ic-box"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg></span><h3>永不来电</h3><p>我们不打电话，只按你选的短信、微信或 WhatsApp 联系；你说不需要，我们就不再联系，也可以随时删除信息。</p></div></div></div>
+<div class="g"><div class="items"><div class="item" data-reveal><span class="ic-box"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>不荐股、不带单</h3><p>不推荐任何具体品种，不给买卖点，不喊单，不晒收益。</p></div><div class="item" data-reveal style="--s:1"><span class="ic-box"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 4l9 5.5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg></span><h3>不开户、不推荐平台</h3><p>不提供开户、代客操作或任何交易服务，也不把学员介绍给任何交易平台。</p></div><div class="item" data-reveal style="--s:2"><span class="ic-box"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9 16.5H3z"/><path d="M12 10v4M12 17v.5"/></svg></span><h3>不承诺收益</h3><p>交易可能亏损，使用杠杆会放大亏损。课程教的是做计划、控风险和复盘。</p></div><div class="item" data-reveal style="--s:3"><span class="ic-box"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg></span><h3>永不来电</h3><p>我们不打电话，只按你选的短信、微信、WhatsApp 或邮件联系；你说不需要，我们就不再联系，也可以随时删除信息。</p></div></div></div>
 </section>
 <section class="sec" id="programmes" aria-labelledby="pg-h">
 <div class="g sh"><h2 class="h2" id="pg-h" data-reveal>五级课程，<br>从一节免费课到海外研修</h2><p class="lead" data-reveal style="--s:1">先学会读信息和控制风险，再学策略思路，最后到金融中心实地研修。每一级都可以单独报名。</p></div>
@@ -829,7 +956,7 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
 <div class="g">
 <div class="cta-tx" data-reveal><h2 class="h2" id="join-h">三步开始，<br>先听一节免费课</h2><p class="lead muted">每周四北京时间 20:00，线上直播 75 分钟。讲这周发生的一条市场信息，最后 15 分钟问答。</p>
 <div class="ctas"><a class="btn" data-cta href="signup.html?course=openclass" title="在线报名：周四免费公开课">免费预约周四公开课<svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
-<ol class="cta-steps" data-reveal style="--s:1"><li><span><b>预约周四公开课</b><span>留下姓名和手机号，一分钟填完，不用付款。</span></span></li><li><span><b>按你选的方式收到通知</b><span>直播时间和链接用短信、微信或 WhatsApp 发给你。我们不打电话。</span></span></li><li><span><b>听完再决定</b><span>想系统学，再报 8 周核心课；不想学，我们不再联系。</span></span></li></ol>
+<ol class="cta-steps" data-reveal style="--s:1"><li><span><b>预约周四公开课</b><span>留下姓名，加上手机号或邮箱，一分钟填完，不用付款。</span></span></li><li><span><b>按你选的方式收到通知</b><span>直播时间和链接用短信、微信、WhatsApp 或邮件发给你。我们不打电话。</span></span></li><li><span><b>听完再决定</b><span>想系统学，再报 8 周核心课；不想学，我们不再联系。</span></span></li></ol>
 </div>
 </section>
 </main>
@@ -841,8 +968,8 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
 <a href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用"><span>22°17′N · 114°10′E</span>香港中环</a>
 <a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息"><span>每周四 20:00 北京时间</span>线上直播课堂</a>
 </div>
-<nav class="fcols" aria-label="页脚链接"><div><h3>课程</h3><ul><li><a href="courses.html" title="课程与课表：五级课程体系、8周交易核心课大纲、伦敦大师课、北京时间课表与仓位计算">课程与课表</a></li><li><a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息">周四免费公开课</a></li><li><a href="open-antifraud.html" title="免费公开课专题页：识别金融骗局公益课">识别金融骗局</a></li><li><a href="open-leverage.html" title="免费公开课专题页：杠杆与风险公益课">杠杆与风险</a></li></ul></div><div><h3>研修</h3><ul><li><a href="executive.html" title="伦敦金融城十日研修：十日行程、课程模块与费用">伦敦十日研修</a></li><li><a href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用">香港五日研修</a></li><li><a href="open-studytour.html" title="免费公开课专题页：伦敦与香港海外研修说明会">海外研修说明会</a></li></ul></div><div><h3>关于</h3><ul><li><a href="about.html#faculty" title="关于我们：授课团队">授课团队</a></li><li><a href="about.html#privacy" title="关于我们：隐私政策">隐私政策</a></li><li><a href="about.html#terms" title="关于我们：用户协议">用户协议</a></li><li><a href="signup.html" title="在线报名：留下手机号，短信确认，永不来电">在线报名</a></li></ul></div></nav>
-<div class="legal"><p>本站内容为交易方法与金融知识教育，不构成投资建议，不提供任何交易服务。交易可能亏损。© 2026 金融城研学社</p><a href="#top" title="本页：回到顶部">回到顶部</a></div>
+<nav class="fcols" aria-label="页脚链接"><div><h3>课程</h3><ul><li><a href="courses.html" title="课程与课表：五级课程体系、8周交易核心课大纲、伦敦大师课、北京时间课表与仓位计算">课程与课表</a></li><li><a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息">周四免费公开课</a></li><li><a href="open-antifraud.html" title="免费公开课专题页：识别金融骗局公益课">识别金融骗局</a></li><li><a href="open-leverage.html" title="免费公开课专题页：杠杆与风险公益课">杠杆与风险</a></li></ul></div><div><h3>研修</h3><ul><li><a href="executive.html" title="伦敦金融城十日研修：十日行程、课程模块与费用">伦敦十日研修</a></li><li><a href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用">香港五日研修</a></li><li><a href="open-studytour.html" title="免费公开课专题页：伦敦与香港海外研修说明会">海外研修说明会</a></li></ul></div><div><h3>关于</h3><ul><li><a href="about.html#faculty" title="关于我们：授课团队">授课团队</a></li><li><a href="about.html#privacy" title="关于我们：隐私政策">隐私政策</a></li><li><a href="about.html#terms" title="关于我们：用户协议">用户协议</a></li><li><a href="signup.html" title="在线报名：留下手机号或邮箱，团队按所选方式联系，永不来电">在线报名</a></li></ul></div></nav>
+<div class="legal"><p><span class="foot-official">官方网站 citystudylondon.com · 官方邮箱 <a href="mailto:info@citystudylondon.com" title="发邮件：info@citystudylondon.com">info@citystudylondon.com</a></span>本站内容为交易方法与金融知识教育，不构成投资建议，不提供任何交易服务。交易可能亏损。© 2026 金融城研学社</p><a href="#top" title="本页：回到顶部">回到顶部</a></div>
 </div>
 </footer>
 <script>

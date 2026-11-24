@@ -704,6 +704,133 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
   .top .g { display: flex; flex-wrap: wrap; align-items: center; align-content: flex-start; justify-content: space-between; column-gap: 12px; min-height: 64px; padding-block: 10px; }
   .top-nav.open { order: 3; flex-basis: 100%; }
 }
+
+/* ---------- v7.2 (2026-11-24): enquiry form v2, official panel, two prices, visit status ---------- */
+.su-group { border: 0; margin: 0; padding: 16px; min-width: 0; background: var(--surface); display: grid; gap: 14px; }
+.su-group > legend { float: left; width: 100%; padding: 0; margin: 0; }
+.su-group > legend + .su-hint { margin-top: -8px; }
+.su-plain { border: 0; margin: 0; padding: 0; min-width: 0; }
+.su-plain > legend { padding: 0; margin-bottom: 8px; }
+.su-lab.sub, .su-field > label.sub { font-weight: 600; }
+.opt { font-weight: 400; color: var(--muted); }
+.su-ways.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.su-ways.four + .su-hint { margin-top: 10px; }
+.su-ta { min-height: 96px; padding: 12px 16px; resize: vertical; line-height: 1.6; }
+.su-why { font-size: var(--t-small); }
+.su-why summary { display: inline-flex; min-height: 44px; align-items: center; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; list-style: none; }
+.su-why summary::-webkit-details-marker { display: none; }
+.su-why ul { display: grid; gap: 6px; padding: 4px 0 4px 16px; color: var(--muted); border-left: 2px solid var(--line); }
+.su-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.su-ref { padding: 12px 16px; background: var(--surface); font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.su-ref:empty { display: none; }
+#su-confirmation { overflow-wrap: anywhere; }
+#su-confirmation:empty { display: none; }
+.su-done .su-tick { display: grid; place-items: center; width: 48px; height: 48px; background: var(--ink); }
+.su-next-h { font-size: var(--t-body); font-weight: 700; }
+.su-next { display: grid; gap: 10px; counter-reset: n; }
+.su-next li { counter-increment: n; display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 8px; font-size: 15px; overflow-wrap: anywhere; }
+.su-next li::before { content: counter(n, decimal-leading-zero); font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+
+.official { padding: 28px; background: var(--white); border: 1px solid var(--line); display: grid; gap: 18px; }
+.official h2 { font-size: var(--t-h3); }
+.official dl { display: grid; gap: 12px; }
+.official dl div { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: 12px; }
+.official dt { color: var(--muted); font-size: var(--t-small); padding-top: 2px; }
+.official dd { font-weight: 700; overflow-wrap: anywhere; }
+.official dd small { display: block; font-weight: 400; font-size: var(--t-small); color: var(--muted); }
+.official ul { display: grid; gap: 8px; padding-top: 16px; border-top: 1px solid var(--line); }
+.official li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; font-size: 15px; }
+.official li svg { width: 18px; height: 18px; color: var(--accent); margin-top: 3px; }
+.foot-official { display: block; margin-bottom: 8px; color: var(--on-navy); font-size: var(--t-small); overflow-wrap: anywhere; }
+.foot-official a { color: var(--on-navy); }
+
+/* signup page */
+.su-page { padding-block: 56px 96px; background: var(--white); }
+.su-page .g { row-gap: 40px; align-items: start; }
+.su-intro { grid-column: 1 / 7; display: grid; gap: 28px; }
+.su-intro .lead { max-width: 28em; }
+.su-intro h1 { font-size: var(--t-h1); line-height: 1.08; font-weight: 700; letter-spacing: -0.03em; }
+.su-col { grid-column: 7 / 13; grid-row: 1 / span 2; }
+.su-col .su-card { border: 1px solid var(--line); }
+.su-aside { grid-column: 1 / 7; display: grid; gap: var(--gap); }
+.su-steps { display: grid; gap: 0; border-top: 2px solid var(--ink); }
+.su-steps li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 4px 12px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.su-steps .n { grid-row: 1 / span 2; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.su-steps b { font-size: var(--t-body); }
+.su-steps span:not(.n) { grid-column: 2; font-size: var(--t-small); color: var(--muted); }
+
+/* tour prices at equal weight, visit status beside them */
+.price-card.two { gap: 0; padding: 0; background: none; }
+.prow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 16px; align-items: baseline; padding: 14px 20px; background: var(--surface); }
+.prow + .prow { margin-top: 2px; }
+.prow b { font-size: clamp(26px, 2.4vw, 34px); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.prow .pl { font-weight: 700; font-size: var(--t-body); color: var(--ink); }
+.navy .prow .pl, .navy .prow b { color: var(--on-navy); }
+.navy .price-note { color: var(--on-navy-muted); }
+.hero.ch.open h1 { font-size: clamp(36px, 4.2vw, 60px); }
+.prow .pd { grid-column: 1 / -1; font-size: var(--t-small); color: var(--muted); }
+.price-note { margin-top: 8px; font-size: var(--t-small); color: var(--muted); }
+.visits { margin-top: 16px; padding: 18px 20px; border: 1px solid var(--line); display: grid; gap: 12px; background: var(--white); }
+.visits h3 { font-size: var(--t-small); font-weight: 700; }
+.visits ul { display: grid; gap: 10px; }
+.visits li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2px 10px; font-size: 15px; }
+.visits .st { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; font-size: 13px; font-weight: 700; white-space: nowrap; align-self: start; }
+.visits .st::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.st.open { background: #E7F0EA; color: #1F5A35; }
+.st.wait { background: #FBEDEF; color: var(--accent-strong); }
+.st.book { background: var(--surface); color: var(--muted); }
+.visits .vn { font-size: 15px; }
+.visits .vs { grid-column: 2; font-size: 13px; color: var(--muted); }
+.visits .vfoot { font-size: 13px; color: var(--muted); }
+.navy .visits { background: transparent; border-color: var(--line-navy); }
+.navy .visits .vs, .navy .visits .vfoot { color: var(--on-navy-muted); }
+.navy .st.book { background: var(--navy-2); color: var(--on-navy-muted); }
+.navy .prow { background: var(--navy-2); }
+.navy .prow .pd { color: var(--on-navy-muted); }
+
+/* open-class pages */
+.facts-card { margin-top: 16px; padding: 4px 24px; background: var(--surface); display: grid; }
+.facts-card div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 14px 0; align-items: baseline; }
+.facts-card div + div { border-top: 1px solid var(--line); }
+.facts-card b { font-size: 20px; font-variant-numeric: tabular-nums; }
+.facts-card span { font-size: var(--t-small); color: var(--muted); text-align: right; }
+.learn { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); }
+.learn li { display: grid; gap: 12px; align-content: start; padding: 24px; background: var(--white); border: 1px solid var(--line); }
+.learn h3 { font-size: var(--t-body); }
+.learn p { font-size: 15px; color: var(--muted); }
+.flow { border-top: 2px solid var(--ink); }
+.flow li { display: grid; grid-template-columns: 9em minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.flow time { font-weight: 700; font-variant-numeric: tabular-nums; }
+.spk { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 32px; align-items: start; }
+.spk .li-ring { width: 160px; height: 160px; }
+.spk h3 { font-size: var(--t-h3); margin-top: 6px; }
+.spk p { margin-top: 8px; color: var(--muted); }
+.spk .role { display: inline-flex; gap: 8px; align-items: center; font-size: var(--t-small); color: var(--muted); }
+.spk .role em { font-style: normal; padding: 1px 8px; border: 1px solid var(--line); }
+.more-open { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap); }
+.more-open a { display: grid; gap: 6px; padding: 24px; background: var(--white); border: 1px solid var(--line); text-decoration: none; color: var(--ink); transition: border-color 200ms ease, transform 300ms var(--ease); }
+.more-open small { font-size: 13px; color: var(--muted); }
+.more-open b { font-size: var(--t-h3); }
+.more-open span { font-size: var(--t-small); color: var(--muted); }
+@media (hover: hover) and (pointer: fine) { .more-open a:hover { border-color: var(--ink); transform: translateY(-2px); } }
+
+@media (max-width: 1100px) {
+  .su-intro, .su-col, .su-aside { grid-column: 1 / -1; grid-row: auto; }
+  .learn { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .more-open { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .su-ways.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .su-group { padding: 14px; }
+  .su-page { padding-top: 40px; }
+  .official { padding: 20px; }
+  .official dl div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .learn { grid-template-columns: minmax(0, 1fr); }
+  .flow li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .spk { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .spk .li-ring { width: 120px; height: 120px; }
+  .prow { padding: 12px 16px; }
+}
 </style>
 
 <!--seo-->
@@ -735,12 +862,12 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
 <div class="ctas" data-in style="--i:4"><a class="btn" data-cta href="#join" title="本页：预约研修咨询">预约研修咨询<svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="lnk" href="#itinerary" title="本页：看五日行程">看五日行程<svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 <div data-in style="--i:5"><ul class="trust"><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>每期 20 人以内</span></li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>参访以各机构批准为准</span></li><li><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>机票酒店由持牌旅行社承办</span></li></ul></div>
 </div>
-<div class="hero-side" data-in style="--i:3"><div class="pic"><img src="images/hkharbour.jpg" alt="" fetchpriority="high"></div><div class="price-card"><span>早鸟价 / 人 · 2027年2月1日前报名</span><b>¥10,000</b><span>2027年2月1日起 ¥35,000 / 人 · 两种价格包含的项目相同</span></div></div>
+<div class="hero-side" data-in style="--i:3"><div class="pic" style="aspect-ratio:2 / 1"><img src="images/hkharbour.jpg" alt="" fetchpriority="high"></div><div class="price-card two"><div class="prow"><span class="pl">早鸟价</span><b>¥10,000</b><span class="pd">2027年2月1日前报名并签约 · 每人</span></div><div class="prow"><span class="pl">常规价</span><b>¥35,000</b><span class="pd">2027年2月1日起报名 · 每人</span></div></div><p class="price-note">两种价格包含的项目完全相同，最终以合同为准。</p><div class="visits"><h3>参访与活动 · 目前状态</h3><ul><li><span class="st open">可公开预约</span><span class="vn">香港金融管理局资讯中心</span><span class="vs">面向公众的团体项目，按出发日期预约</span></li><li><span class="st wait">待对方安排</span><span class="vn">香港交易所 · 大学课堂</span><span class="vs">需对方安排；不成行时换成同级参访，提前告知</span></li><li><span class="st book">出发前预订</span><span class="vn">维港游船晚宴 · 中环会所晚宴</span><span class="vs">按出发日期预订，以合同为准</span></li></ul><a class="lnk" href="#itinerary" title="本页：看每天的安排">看每天的安排<svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
 </div>
 </section>
 <nav class="pnav" aria-label="本页章节"><ol><li><a href="#overview" title="本页：概览">概览</a></li><li><a href="#itinerary" title="本页：五日行程">五日行程</a></li><li><a href="#modules" title="本页：课程模块">课程模块</a></li><li><a href="#stay" title="本页：住宿与出行">住宿与出行</a></li><li><a href="#fees" title="本页：费用">费用</a></li><li><a href="#apply" title="本页：申请流程">申请流程</a></li><li><a href="#efaq" title="本页：常见问题">常见问题</a></li><li><a href="#join" title="本页：报名">报名</a></li></ol></nav>
 <section class="sec tight proof bg" aria-labelledby="proof-h">
-<div class="g"><h2 class="h2" id="proof-h" style="font-size:var(--t-h3);margin-bottom:20px">这一期研修</h2><div class="cells"><div class="cell" data-reveal><b><span data-to="5">5</span><em></em></b><h3>天 · 4 晚</h3><p>课堂、机构参访、学术日与结业答辩。</p></div><div class="cell" data-reveal style="--s:1"><b><span data-to="20">20</span><em></em></b><h3>人以内 · 每期</h3><p>按报名顺序确认名额。</p></div><div class="cell" data-reveal style="--s:2"><b><span data-to="15">15</span><em></em></b><h3>课时 · 4 个模块</h3><p>只讲方法、历史行情和公开资料。</p></div><div class="cell" data-reveal style="--s:3"><b>¥10,000<em></em></b><h3>早鸟价 / 人</h3><p>2027年2月1日前报名；之后 ¥35,000。</p></div></div></div>
+<div class="g"><h2 class="h2" id="proof-h" style="font-size:var(--t-h3);margin-bottom:20px">这一期研修</h2><div class="cells"><div class="cell" data-reveal><b><span data-to="5">5</span><em></em></b><h3>天 · 4 晚</h3><p>课堂、机构参访、学术日与结业答辩。</p></div><div class="cell" data-reveal style="--s:1"><b><span data-to="20">20</span><em></em></b><h3>人以内 · 每期</h3><p>按报名顺序确认名额。</p></div><div class="cell" data-reveal style="--s:2"><b><span data-to="15">15</span><em></em></b><h3>课时 · 4 个模块</h3><p>只讲方法、历史行情和公开资料。</p></div><div class="cell" data-reveal style="--s:3"><b><span data-to="2">2</span><em>档</em></b><h3>早鸟价与常规价</h3><p>¥10,000（2027年2月1日前）或 ¥35,000（之后），包含项目相同。</p></div></div></div>
 </section>
 <section class="sec" id="overview" aria-labelledby="ov-h">
 <div class="g sh"><h2 class="h2" id="ov-h" data-reveal>伦敦研修的标准，<br>五天在香港</h2><p class="lead" data-reveal style="--s:1">和伦敦十日研修同一套标准：高校课堂、机构参访、高管对话、学术日、正式晚宴、五星住宿与结业。</p></div>
@@ -785,16 +912,15 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
 </section>
 <section class="sec navy fees" id="fees" aria-labelledby="fe-h">
 <div class="g">
-<div class="fee-price" data-reveal><p class="k">早鸟价 · 2027年2月1日前报名</p><h2 class="p" id="fe-h">¥10,000<small>/ 人</small></h2>
-<p class="std"><span class="muted">2027年2月1日起</span><b class="num">¥35,000 / 人</b></p>
-<p class="muted">两种价格包含的项目完全相同，逐项列在右边。最终以合同为准。</p>
+<div class="fee-price" data-reveal><h2 class="h2" id="fe-h">费用：两档价格，<br>包含的项目相同</h2>
+<div class="price-card two"><div class="prow"><span class="pl">早鸟价</span><b>¥10,000</b><span class="pd">2027年2月1日前报名并签约 · 每人</span></div><div class="prow"><span class="pl">常规价</span><b>¥35,000</b><span class="pd">2027年2月1日起报名 · 每人</span></div></div><p class="price-note">两种价格包含的项目完全相同，最终以合同为准。</p><div class="visits"><h3>参访与活动 · 目前状态</h3><ul><li><span class="st open">可公开预约</span><span class="vn">香港金融管理局资讯中心</span><span class="vs">面向公众的团体项目，按出发日期预约</span></li><li><span class="st wait">待对方安排</span><span class="vn">香港交易所 · 大学课堂</span><span class="vs">需对方安排；不成行时换成同级参访，提前告知</span></li><li><span class="st book">出发前预订</span><span class="vn">维港游船晚宴 · 中环会所晚宴</span><span class="vs">按出发日期预订，以合同为准</span></li></ul></div>
 <p style="margin-top:12px"><a class="btn" data-cta href="#join" title="本页：预约研修咨询">预约研修咨询<svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p></div>
 <div class="fee-cols" data-reveal style="--s:1"><div><h3><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>包含</h3><ul><li>4 晚中环或金钟五星酒店单人间，含早餐</li><li>全部课程、讲义与中文助教</li><li>文中列明的参访、导览与大学学术日</li><li>欢迎晚宴、维港游船晚宴、会所晚宴与结业午宴</li><li>全程专车与旅行保险</li><li>结业证明、结业相册与校友圈</li></ul></div><div><h3><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l9 16.5H3z"/><path d="M12 10v4M12 17v.5"/></svg>不含</h3><ul><li>往返香港的大交通（高铁或机票）</li><li>港澳通行证及签注办理</li><li>个人消费、自由活动期间餐饮</li><li>行程外的私人安排</li></ul></div></div>
 </div>
 </section>
 <section class="sec" id="apply" aria-labelledby="ap-h">
 <div class="g sh"><h2 class="h2" id="ap-h" data-reveal>四步，<br>从咨询到出发</h2><p class="lead" data-reveal style="--s:1">每期 20 人以内，按报名顺序确认名额。出发前 30 天截止报名。</p></div>
-<div class="g"><ol class="steps4"><li data-reveal><span class="n">01</span><h3>预约咨询</h3><p>留下手机号，我们用短信发送确认，并介绍班期与费用。</p></li><li data-reveal style="--s:1"><span class="n">02</span><h3>背景沟通</h3><p>一次 30 分钟线上沟通，确认职业背景与研修目标。</p></li><li data-reveal style="--s:2"><span class="n">03</span><h3>签约与证件</h3><p>与本社签研修协议、与旅行社签旅游合同，办理港澳通行证签注。</p></li><li data-reveal style="--s:3"><span class="n">04</span><h3>行前课</h3><p>出发前一次线上行前课：中环地图、礼仪与分组。</p></li></ol></div>
+<div class="g"><ol class="steps4"><li data-reveal><span class="n">01</span><h3>预约咨询</h3><p>留下手机号或邮箱，团队按你选的方式联系，介绍班期与费用。</p></li><li data-reveal style="--s:1"><span class="n">02</span><h3>背景沟通</h3><p>一次 30 分钟线上沟通，确认职业背景与研修目标。</p></li><li data-reveal style="--s:2"><span class="n">03</span><h3>签约与证件</h3><p>与本社签研修协议、与旅行社签旅游合同，办理港澳通行证签注。</p></li><li data-reveal style="--s:3"><span class="n">04</span><h3>行前课</h3><p>出发前一次线上行前课：中环地图、礼仪与分组。</p></li></ol></div>
 </section>
 <section class="sec white" id="efaq" aria-labelledby="ef-h">
 <div class="g sh one"><h2 class="h2" id="ef-h" style="grid-column:3/11" data-reveal>关于香港五日研修</h2></div>
@@ -802,58 +928,83 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
 </section>
 <section class="sec navy cta-form" id="join" aria-labelledby="join-h" data-cta>
 <div class="g">
-<div class="cta-tx" data-reveal><h2 class="h2" id="join-h">预约研修咨询，<br>我们按你选的方式联系</h2><p class="lead muted" style="margin-top:20px">提交后，你会收到一条确认短信。班期、学费和上课链接，按你选的方式发送给你。</p><ul class="reasons"><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>一分钟填完。</b>只要姓名和手机号。</span></li><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>永不来电。</b>报名确认只通过短信发送，课程通知可选短信、微信或 WhatsApp。</span></li><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>免费登记，不用付款。</b>确认班期后再签约缴费。</span></li><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>不推销。</b>你说不需要，我们就不再联系。</span></li></ul></div>
+<div class="cta-tx" data-reveal><h2 class="h2" id="join-h">预约研修咨询，<br>我们按你选的方式联系</h2><p class="lead muted" style="margin-top:20px">提交后页面会显示报名编号，填了邮箱的还会收到确认邮件。班期、学费和上课安排，按你选的方式发给你。</p><ul class="reasons"><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>一分钟填完。</b>姓名，加上手机号或邮箱。</span></li><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>永不来电。</b>只按你选的短信、微信、WhatsApp 或邮件联系。</span></li><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>免费登记，不用付款。</b>确认班期后再签约缴费。</span></li><li><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>不推销。</b>你说不需要，我们就不再联系。</span></li></ul></div>
 <div class="cta-card"><div class="su-card" id="su-formcard">
 <h2>报名信息</h2>
 <p class="su-chip" id="su-chip"><span>报名项目：<b id="su-course-name">香港金融五日研修</b></span><small>沟通时可以更改</small></p>
-<form class="su-form" id="su-form" novalidate>
+<form class="su-form" id="su-form" data-form="v2" novalidate>
 <input type="hidden" name="course" id="su-course" value="hongkong">
 <div class="su-field">
 <label for="su-name">姓名<span class="su-req" aria-hidden="true">*</span></label>
 <input class="su-in" id="su-name" name="name" type="text" autocomplete="name" maxlength="40" placeholder="怎么称呼你" required aria-describedby="su-name-err">
 <p class="su-err" id="su-name-err" hidden></p>
 </div>
+<fieldset class="su-group" aria-describedby="su-reach-hint">
+<legend class="su-lab">联系方式<span class="su-req" aria-hidden="true">*</span></legend>
+<p class="su-hint" id="su-reach-hint">手机号和电子邮箱至少填一项。</p>
 <div class="su-field">
-<span class="su-lab" id="su-tel-lab">手机号<span class="su-req" aria-hidden="true">*</span></span>
+<span class="su-lab sub" id="su-tel-lab">手机号</span>
 <div class="su-phone">
 <button class="su-cc" id="su-cc" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="cc-panel" aria-label="选择国家或地区，当前：中国大陆 +86"><span class="d">+86</span><span class="nm">中国大陆</span><span class="cr" aria-hidden="true"></span></button>
-<input class="su-in" id="su-tel" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" placeholder="手机号码" required aria-labelledby="su-tel-lab" aria-describedby="su-tel-hint su-tel-err">
+<input class="su-in" id="su-tel" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" placeholder="手机号码" aria-labelledby="su-tel-lab" aria-describedby="su-reach-hint su-tel-err">
 <div class="su-panel" id="cc-panel" hidden><input class="su-search" id="cc-q" type="search" placeholder="搜索国家/地区或区号" aria-label="搜索国家或地区" autocomplete="off" aria-controls="cc-list"><ul class="su-list" id="cc-list" role="listbox" aria-label="国家或地区"></ul></div>
 </div>
-<p class="su-hint" id="su-tel-hint">支持全球手机号。先选国家或地区，再输入号码。只用于短信确认，不会来电。</p>
 <p class="su-err" id="su-tel-err" hidden></p>
 </div>
-<fieldset class="su-field" style="border: 0; margin: 0; padding: 0; min-width: 0">
-<legend class="su-lab" style="padding: 0; margin-bottom: 8px">希望怎么收到通知<span class="su-req" aria-hidden="true">*</span></legend>
-<div class="su-ways"><label class="su-way"><input type="radio" name="way" value="sms" checked><span><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg>短信</span></label><label class="su-way"><input type="radio" name="way" value="wechat"><span><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 4C5.4 4 2 6.7 2 10c0 1.9 1.1 3.6 2.9 4.7L4.3 17l2.7-1.4c.8.2 1.6.3 2.5.3"/><path d="M15 9c3.9 0 7 2.5 7 5.5 0 1.6-.9 3.1-2.4 4.1l.5 2-2.4-1.2c-.9.3-1.8.4-2.7.4-3.9 0-7-2.5-7-5.5S11.1 9 15 9z"/></svg>微信</span></label><label class="su-way"><input type="radio" name="way" value="whatsapp"><span><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8.5 8.5 0 1 1 8 19z"/><path d="M9.2 9c.2 2.9 2.9 5.6 5.8 5.8l.9-1.4-1.9-1-.9.8a4 4 0 0 1-1.9-1.9l.8-.9-1-1.9z"/></svg>WhatsApp</span></label></div>
-<div class="su-sub" id="su-sub-sms">
-<p class="su-hint" style="margin: 0">报名确认、上课链接和班期通知，都用短信发到上面的手机号。</p>
-</div>
-<div class="su-sub" id="su-sub-wechat" hidden>
-<label for="su-wx">微信号<span style="font-weight: 400; color: #4B5770">（选填）</span></label>
-<input class="su-in" id="su-wx" name="wechat" type="text" maxlength="30" autocomplete="off" placeholder="你的微信号" aria-describedby="su-wx-hint su-wx-err">
-<p class="su-hint" id="su-wx-hint">不填的话，我们用上面的手机号搜索添加你。报名确认仍用短信发送。</p>
-<p class="su-err" id="su-wx-err" hidden></p>
-</div>
-<div class="su-sub" id="su-sub-whatsapp" hidden>
-<p class="su-hint" style="margin: 0">WhatsApp 使用上面的手机号，不用另填。中国大陆一般无法正常使用 WhatsApp，在国内建议选短信或微信。</p>
+<div class="su-field">
+<label class="sub" for="su-email">电子邮箱</label>
+<input class="su-in" id="su-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="254" placeholder="name@example.com" aria-describedby="su-email-hint su-email-err">
+<p class="su-hint" id="su-email-hint">填了邮箱，会收到一封确认邮件。</p>
+<p class="su-err" id="su-email-err" hidden></p>
 </div>
 </fieldset>
-<p class="cs-sms"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span><b>我们承诺：永不拨打你的电话。</b>报名确认只通过短信发送。</span></p>
-<div class="su-chks">
-<label class="su-chk"><input type="checkbox" id="su-c1" name="consent" required><span>我已阅读并同意<a href="about.html#privacy" title="关于我们：《隐私政策》">《隐私政策》</a>，同意你们通过短信和我选择的方式发送报名确认与课程通知。信息只用于课程咨询。</span></label>
-<label class="su-chk"><input type="checkbox" id="su-c2" name="consent_overseas" required><span>我知悉报名信息会存储在境外服务器上，并同意为课程咨询进行境外存储和处理。</span></label>
-<p class="su-err" id="su-c-err" hidden></p>
+<fieldset class="su-field su-plain">
+<legend class="su-lab">希望我们怎么联系你<span class="su-req" aria-hidden="true">*</span></legend>
+<div class="su-ways four"><label class="su-way"><input type="radio" name="way" value="sms" checked><span><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg>短信</span></label><label class="su-way"><input type="radio" name="way" value="wechat"><span><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 4C5.4 4 2 6.7 2 10c0 1.9 1.1 3.6 2.9 4.7L4.3 17l2.7-1.4c.8.2 1.6.3 2.5.3"/><path d="M15 9c3.9 0 7 2.5 7 5.5 0 1.6-.9 3.1-2.4 4.1l.5 2-2.4-1.2c-.9.3-1.8.4-2.7.4-3.9 0-7-2.5-7-5.5S11.1 9 15 9z"/></svg>微信</span></label><label class="su-way"><input type="radio" name="way" value="whatsapp"><span><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-3.9A8.5 8.5 0 1 1 8 19z"/><path d="M9.2 9c.2 2.9 2.9 5.6 5.8 5.8l.9-1.4-1.9-1-.9.8a4 4 0 0 1-1.9-1.9l.8-.9-1-1.9z"/></svg>WhatsApp</span></label><label class="su-way"><input type="radio" name="way" value="email"><span><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>邮件</span></label></div>
+<p class="su-hint" id="su-way-note" aria-live="polite">团队用短信联系你填写的手机号。</p>
+<div class="su-sub" id="su-sub-wechat" hidden>
+<label for="su-wx">微信号<span class="opt">（选填）</span></label>
+<input class="su-in" id="su-wx" name="wechat" type="text" maxlength="30" autocomplete="off" placeholder="你的微信号" aria-describedby="su-wx-err">
+<p class="su-err" id="su-wx-err" hidden></p>
 </div>
-<button class="su-submit" type="submit">提交报名</button>
-<p class="su-free">免费登记 · 无需付款 · 永不来电 · 可随时撤回登记并删除信息</p>
+<p class="su-err" id="su-way-err" hidden></p>
+</fieldset>
+<div class="su-field">
+<label for="su-message">想咨询的问题<span class="opt">（选填）</span></label>
+<textarea class="su-in su-ta" id="su-message" name="message" rows="3" maxlength="2000" aria-describedby="su-message-err"></textarea>
+<p class="su-err" id="su-message-err" hidden></p>
+</div>
+<div class="su-chks">
+<label class="su-chk"><input type="checkbox" id="su-c1" name="consent" required><span>同意<a href="about.html#privacy" title="关于我们：《隐私政策》">《隐私政策》</a>：信息只用于这次课程咨询。</span></label>
+<label class="su-chk"><input type="checkbox" id="su-c2" name="consent_overseas" required><span>同意报名信息存储在境外服务器，并用邮件转给负责报名的团队。</span></label>
+<p class="su-err" id="su-c-err" hidden></p>
+<details class="su-why"><summary>我的信息会怎么用？</summary><ul>
+<li>保存在报名系统里，只用于这次课程咨询。</li>
+<li>填了邮箱的，会收到一封确认邮件，发件人是 info@citystudylondon.com。</li>
+<li>团队只按你选的方式联系你，永不来电。</li>
+<li>不出售，也不提供给任何交易平台。</li>
+<li>写信到 info@citystudylondon.com，可以查询、更正或删除你的信息。</li>
+</ul></details>
+</div>
+<div class="su-hp" aria-hidden="true"><label>Company website<input name="hp" type="text" tabindex="-1" autocomplete="off"></label></div>
+<p class="su-err" data-registration-status tabindex="-1" role="status" hidden></p>
+<noscript><p class="su-hint">请开启 JavaScript 后提交报名。</p></noscript>
+<button class="su-submit" type="submit" data-submit>提交报名</button>
+<p class="su-free">免费登记 · 不用付款 · 永不来电</p>
 </form>
 </div><div class="su-card su-done" id="su-done" tabindex="-1" role="status" hidden>
 <span class="su-tick" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="square"/></svg></span>
-<h2>报名已提交</h2>
-<p><span id="su-d-name"></span>，我们已收到你的报名。确认短信会发送到 <span class="num" id="su-d-num"></span>，之后的课程通知通过<span id="su-d-way"></span>发送。</p>
-<p>我们不会给你打电话。</p>
-<div class="su-done-act"><button class="su-linkbtn" type="button" id="su-again">修改报名信息</button><a href="index.html" title="首页：在伦敦金融城，用白话读懂每一条市场信息">返回首页</a></div>
+<h2>报名已保存</h2>
+<p class="su-ref" id="su-reference"></p>
+<p><span id="su-d-name"></span>，团队会通过<span id="su-d-way"></span>联系你（<span class="num" id="su-d-num"></span>）。</p>
+<p class="su-hint" id="su-confirmation"></p>
+<h3 class="su-next-h">接下来</h3>
+<ol class="su-next">
+<li><span>保存好报名编号。联系我们时报上它，就能找到你的登记。</span></li>
+<li><span>要修改或取消：回复确认邮件，或写信到 <a id="su-mail" href="mailto:info@citystudylondon.com" title="发邮件：info@citystudylondon.com">info@citystudylondon.com</a>，注明报名编号。</span></li>
+<li><span>免费登记，不用付款。确认班期后再签约。</span></li>
+</ol>
+<div class="su-done-act"><button class="su-linkbtn" type="button" id="su-again">登记另一位学员</button><a href="index.html" title="首页：在伦敦金融城，用白话读懂每一条市场信息">返回首页</a></div>
 </div><section class="su-wx" id="su-wxcard" aria-label="课程顾问微信" hidden>
 <div class="su-qr"><img id="su-qr-img" src="images/wechat-qr.png" alt="课程顾问微信二维码" onload="document.getElementById('su-wxcard').hidden=false"></div>
 <div class="su-wx-t"><span>WECHAT</span><strong>添加课程顾问微信</strong><p>微信扫一扫，备注“姓名＋报名”。</p><p class="su-mob">在微信里打开本页时，长按二维码即可识别。</p></div>
@@ -869,8 +1020,8 @@ a.card { text-decoration: none; transition: border-color 200ms ease, transform 2
 <a href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用"><span>22°17′N · 114°10′E</span>香港中环</a>
 <a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息"><span>每周四 20:00 北京时间</span>线上直播课堂</a>
 </div>
-<nav class="fcols" aria-label="页脚链接"><div><h3>课程</h3><ul><li><a href="courses.html" title="课程与课表：五级课程体系、8周交易核心课大纲、伦敦大师课、北京时间课表与仓位计算">课程与课表</a></li><li><a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息">周四免费公开课</a></li><li><a href="open-antifraud.html" title="免费公开课专题页：识别金融骗局公益课">识别金融骗局</a></li><li><a href="open-leverage.html" title="免费公开课专题页：杠杆与风险公益课">杠杆与风险</a></li></ul></div><div><h3>研修</h3><ul><li><a href="executive.html" title="伦敦金融城十日研修：十日行程、课程模块与费用">伦敦十日研修</a></li><li><a href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用">香港五日研修</a></li><li><a href="open-studytour.html" title="免费公开课专题页：伦敦与香港海外研修说明会">海外研修说明会</a></li></ul></div><div><h3>关于</h3><ul><li><a href="about.html#faculty" title="关于我们：授课团队">授课团队</a></li><li><a href="about.html#privacy" title="关于我们：隐私政策">隐私政策</a></li><li><a href="about.html#terms" title="关于我们：用户协议">用户协议</a></li><li><a href="signup.html" title="在线报名：留下手机号，短信确认，永不来电">在线报名</a></li></ul></div></nav>
-<div class="legal"><p>本站内容为交易方法与金融知识教育，不构成投资建议，不提供任何交易服务。交易可能亏损。© 2026 金融城研学社</p><a href="#top" title="本页：回到顶部">回到顶部</a></div>
+<nav class="fcols" aria-label="页脚链接"><div><h3>课程</h3><ul><li><a href="courses.html" title="课程与课表：五级课程体系、8周交易核心课大纲、伦敦大师课、北京时间课表与仓位计算">课程与课表</a></li><li><a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，用白话拆解一条市场信息">周四免费公开课</a></li><li><a href="open-antifraud.html" title="免费公开课专题页：识别金融骗局公益课">识别金融骗局</a></li><li><a href="open-leverage.html" title="免费公开课专题页：杠杆与风险公益课">杠杆与风险</a></li></ul></div><div><h3>研修</h3><ul><li><a href="executive.html" title="伦敦金融城十日研修：十日行程、课程模块与费用">伦敦十日研修</a></li><li><a href="hk.html" title="香港金融五日研修：五日行程、课程模块与费用">香港五日研修</a></li><li><a href="open-studytour.html" title="免费公开课专题页：伦敦与香港海外研修说明会">海外研修说明会</a></li></ul></div><div><h3>关于</h3><ul><li><a href="about.html#faculty" title="关于我们：授课团队">授课团队</a></li><li><a href="about.html#privacy" title="关于我们：隐私政策">隐私政策</a></li><li><a href="about.html#terms" title="关于我们：用户协议">用户协议</a></li><li><a href="signup.html" title="在线报名：留下手机号或邮箱，团队按所选方式联系，永不来电">在线报名</a></li></ul></div></nav>
+<div class="legal"><p><span class="foot-official">官方网站 citystudylondon.com · 官方邮箱 <a href="mailto:info@citystudylondon.com" title="发邮件：info@citystudylondon.com">info@citystudylondon.com</a></span>本站内容为交易方法与金融知识教育，不构成投资建议，不提供任何交易服务。交易可能亏损。© 2026 金融城研学社</p><a href="#top" title="本页：回到顶部">回到顶部</a></div>
 </div>
 </footer>
 <script>
@@ -1107,115 +1258,8 @@ window.CS_COURSES={"openclass":["周四免费公开课","live"],"pack":["交易�
 (function () {
   'use strict';
   var $ = function (id) { return document.getElementById(id); };
-  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* mobile menu */
-  var mbtn = document.querySelector('.cs-menu-btn'), mnav = $('cs-mnav');
-  if (mbtn && mnav) {
-    var setMenu = function (open) { mbtn.setAttribute('aria-expanded', open); mbtn.setAttribute('aria-label', open ? '关闭菜单' : '打开菜单'); mnav.classList.toggle('open', open); document.body.style.overflow = open ? 'hidden' : ''; };
-    mbtn.addEventListener('click', function () { setMenu(mbtn.getAttribute('aria-expanded') !== 'true'); });
-    mnav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && mnav.classList.contains('open')) { setMenu(false); mbtn.focus(); } });
-  }
-
-  /* back to top */
-  var top = document.querySelector('.cs-totop');
-  if (top) {
-    var sentinel = document.createElement('div'); sentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:700px;pointer-events:none';
-    document.body.style.position = document.body.style.position || 'relative'; document.body.prepend(sentinel);
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { top.classList.toggle('show', !es[0].isIntersecting); }).observe(sentinel);
-    top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); var s = document.querySelector('.cs-skip'); if (s) s.focus({ preventScroll: true }); });
-  }
-
-  /* scroll reveal */
-  var rv = Array.prototype.slice.call(document.querySelectorAll('.rv'));
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
-    rv.forEach(function (el) { io.observe(el); });
-  } else rv.forEach(function (el) { el.classList.add('in'); });
-
-  /* tagline word reveal */
-  var words = Array.prototype.slice.call(document.querySelectorAll('.cs-tagline .w'));
-  if (words.length) {
-    if (reduce || !('IntersectionObserver' in window)) words.forEach(function (w) { w.classList.add('on'); });
-    else {
-      var wio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); wio.unobserve(e.target); } }); }, { rootMargin: '0px 0px -38% 0px' });
-      words.forEach(function (w) { wio.observe(w); });
-    }
-  }
-
-  /* London / Beijing clock + next session */
-  var lt = $('cs-lon'), bt = $('cs-bj'), nx = $('cs-next-txt');
-  if (lt && bt) {
-    var SESS = [[2, 20, 0, '核心课直播'], [3, 20, 30, '数据日历带读'], [4, 20, 0, '免费公开课'], [5, 20, 0, '伦敦大师课'], [6, 20, 0, '学习小组研讨'], [0, 16, 0, '专家答疑']];
-    var WD = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
-    var fmt = function (tz) { return new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()); };
-    var bjParts = function () { var p = {}; new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Shanghai', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date()).forEach(function (x) { p[x.type] = x.value; }); return p; };
-    var tick = function () {
-      try {
-        lt.textContent = fmt('Europe/London'); bt.textContent = fmt('Asia/Shanghai');
-        if (nx) {
-          var p = bjParts(), d = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday), now = d * 1440 + (+p.hour % 24) * 60 + (+p.minute), best = null;
-          SESS.forEach(function (s) { var t = s[0] * 1440 + s[1] * 60 + s[2], diff = (t - now + 10080) % 10080; if (!best || diff < best[0]) best = [diff, s]; });
-          var s = best[1], hh = (s[1] < 10 ? '0' : '') + s[1] + ':' + (s[2] < 10 ? '0' : '') + s[2];
-          var when = best[0] < 1440 && s[0] === d ? '今天' : WD[s[0]];
-          nx.innerHTML = '下一场：<b>' + when + ' ' + hh + '</b>（北京时间）' + s[3] + (s[3] === '免费公开课' ? '，<a href="open-thursday.html" title="免费公开课专题页：周四免费公开课，登记后短信发送直播链接">登记参加</a>' : '');
-        }
-      } catch (e) {}
-    };
-    tick(); setInterval(tick, 20000);
-  }
-
-  /* catalog filter */
-  document.querySelectorAll('[data-catalog]').forEach(function (root) {
-    var tabs = Array.prototype.slice.call(root.querySelectorAll('.cs-tab')), cards = Array.prototype.slice.call(root.querySelectorAll('.cs-card')), empty = root.querySelector('.cs-empty');
-    var apply = function (f) {
-      var n = 0;
-      cards.forEach(function (c) { var show = f === 'all' || c.dataset.cat === f; c.hidden = !show; if (show) n++; });
-      tabs.forEach(function (t) { t.setAttribute('aria-selected', t.dataset.f === f); t.tabIndex = t.dataset.f === f ? 0 : -1; });
-      if (empty) empty.hidden = n > 0;
-    };
-    tabs.forEach(function (t, i) {
-      t.addEventListener('click', function () { apply(t.dataset.f); });
-      t.addEventListener('keydown', function (e) { var j = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : null; if (j === null) return; e.preventDefault(); j = (j + tabs.length) % tabs.length; tabs[j].focus(); apply(tabs[j].dataset.f); });
-    });
-    var h = (location.hash.match(/cat=(\w+)/) || [])[1]; if (h && tabs.some(function (t) { return t.dataset.f === h; })) apply(h);
-  });
-
-  /* course finder */
-  var fq = $('cs-fq');
-  if (fq) {
-    var QS = JSON.parse(fq.dataset.q), REC = JSON.parse(fq.dataset.r), ans = [], step = 0;
-    var dots = fq.querySelectorAll('.cs-steps-dots span'), qbox = $('cs-fq-q'), rbox = $('cs-fq-r');
-    var draw = function () {
-      dots.forEach(function (d, i) { d.classList.toggle('on', i <= step); });
-      if (step < QS.length) {
-        var q = QS[step];
-        qbox.innerHTML = '<small>QUESTION ' + (step + 1) + ' / ' + QS.length + '</small><h3>' + q.t + '</h3><div class="cs-opts">' + q.o.map(function (o, i) { return '<button class="cs-opt" type="button" aria-pressed="' + (ans[step] === i) + '" data-i="' + i + '">' + o[1] + '<span>' + o[0] + '</span></button>'; }).join('') + '</div>' + (step ? '<p style="margin:16px 0 0"><button class="cs-linkbtn" type="button" data-back>上一题</button></p>' : '');
-        qbox.hidden = false; rbox.hidden = true;
-      } else {
-        var g = ans[0], b = ans[1], t = ans[2], key, alt;
-        if (g === 0) { key = b === 2 ? 'masterclass' : (t === 0 ? 'openclass' : 'core'); alt = key === 'core' ? 'openclass' : 'core'; }
-        else if (g === 1) { key = t === 0 ? 'corner' : (b === 2 ? 'ai' : 'speaking'); alt = key === 'corner' ? 'speaking' : 'corner'; }
-        else if (g === 2) { key = b === 0 ? 'linguaskill' : 'cisi'; alt = b === 0 ? 'core' : 'linguaskill'; }
-        else { key = t === 2 ? 'executive' : 'studytour'; alt = key === 'executive' ? 'studytour' : 'openclass'; }
-        var r = REC[key], a = REC[alt];
-        rbox.innerHTML = '<div class="cs-fres"><small>RECOMMENDED · 推荐你先看</small><h3>' + r.n + '</h3><p>' + r.w + '</p><div class="acts"><a class="cs-btn" href="' + r.u + '">' + r.c + '</a><button class="cs-linkbtn" type="button" data-reset>重新选择</button></div><p class="alt">也可以看看：<a href="' + a.u + '">' + a.n + '</a></p></div>';
-        qbox.hidden = true; rbox.hidden = false; var h3 = rbox.querySelector('h3'); if (h3) { h3.tabIndex = -1; h3.focus(); }
-      }
-    };
-    fq.addEventListener('click', function (e) {
-      var o = e.target.closest('.cs-opt');
-      if (o) { ans[step] = +o.dataset.i; step++; setTimeout(draw, reduce ? 0 : 180); o.setAttribute('aria-pressed', 'true'); return; }
-      if (e.target.closest('[data-back]')) { step = Math.max(0, step - 1); draw(); return; }
-      if (e.target.closest('[data-reset]')) { ans = []; step = 0; draw(); var f = fq.querySelector('.cs-opt'); if (f) f.focus(); }
-    });
-    draw();
-  }
-
-  /* ---------- signup form ---------- */
   var form = $('su-form');
-  if (!form) return;
+  if (!form || form.dataset.form !== 'v2') return;
   var C = window.CS_COUNTRIES, PIN = window.CS_PINNED, COURSES = window.CS_COURSES;
   var BY = {}; C.forEach(function (c) { BY[c[0]] = c; });
   var col; try { col = new Intl.Collator('zh-Hans-CN'); } catch (e) { col = { compare: function (a, b) { return a < b ? -1 : a > b ? 1 : 0; } }; }
@@ -1226,11 +1270,14 @@ window.CS_COURSES={"openclass":["周四免费公开课","live"],"pack":["交易�
     CA: [/^[2-9]\d{9}$/, '加拿大号码是 10 位'], AU: [/^4\d{8}$/, '澳大利亚手机号是 04 开头的 10 位号码'], SG: [/^[89]\d{7}$/, '新加坡手机号是 8 位，以 8 或 9 开头'],
     NZ: [/^2\d{7,9}$/, '新西兰手机号以 02 开头'], MY: [/^1\d{8,9}$/, '马来西亚手机号以 01 开头']
   };
-  var btn = $('su-cc'), panel = $('cc-panel'), q = $('cc-q'), list = $('cc-list'), tel = $('su-tel'), nameIn = $('su-name');
+  var NOTE = {"sms": "团队用短信联系你填写的手机号。", "wechat": "团队添加你的微信。不填微信号的话，用你的手机号搜索。", "whatsapp": "使用你填写的手机号。中国大陆一般无法使用 WhatsApp。", "email": "团队用邮件联系你，发件人是 info@citystudylondon.com。"}, NAMES = { sms: '短信', wechat: '微信', whatsapp: ' WhatsApp ', email: '邮件' };
+  var btn = $('su-cc'), panel = $('cc-panel'), q = $('cc-q'), list = $('cc-list'), tel = $('su-tel'), mail = $('su-email'), nameIn = $('su-name');
   var cur = 'CN', active = -1, opts = [];
   try { var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language]; for (var i = 0; i < langs.length; i++) { var rg = new Intl.Locale(langs[i]).region; if (rg && BY[rg]) { cur = rg; break; } } } catch (e) {}
   var course = new URLSearchParams(location.search).get('course');
   if (course && COURSES[course] && $('su-chip')) { $('su-course').value = course; $('su-course-name').textContent = COURSES[course][0]; $('su-chip').hidden = false; }
+
+  /* country picker */
   var setLabel = function () { var c = BY[cur]; btn.innerHTML = '<span class="d">+' + c[3] + '</span><span class="nm">' + c[1] + '</span><span class="cr" aria-hidden="true"></span>'; btn.setAttribute('aria-label', '选择国家或地区，当前：' + c[1] + ' +' + c[3]); };
   var li = function (c) { return '<li class="su-opt" role="option" id="cc-' + c[0] + '" data-iso="' + c[0] + '" aria-selected="' + (c[0] === cur) + '"><span class="n">' + c[1] + '</span><span class="e">' + c[2] + '</span><span class="d">+' + c[3] + '</span></li>'; };
   var setActive = function (i, center) { opts.forEach(function (o) { o.classList.remove('act'); }); active = i; if (i < 0 || !opts[i]) { q.removeAttribute('aria-activedescendant'); return; } opts[i].classList.add('act'); q.setAttribute('aria-activedescendant', opts[i].id); opts[i].scrollIntoView({ block: center ? 'center' : 'nearest' }); };
@@ -1262,45 +1309,82 @@ window.CS_COURSES={"openclass":["周四免费公开课","live"],"pack":["交易�
   list.addEventListener('mousemove', function (e) { var o = e.target.closest('.su-opt'); if (o) { var k = opts.indexOf(o); if (k !== active) setActive(k); } });
   document.addEventListener('mousedown', function (e) { if (!panel.hidden && !panel.contains(e.target) && !btn.contains(e.target)) close(false); });
 
-  /* contact method */
+  /* contact method: follows what was filled in until the visitor picks one */
+  var touched = false;
   var way = function () { var r = form.querySelector('input[name=way]:checked'); return r ? r.value : 'sms'; };
-  var syncWay = function () { ['sms', 'wechat', 'whatsapp'].forEach(function (w) { $('su-sub-' + w).hidden = way() !== w; }); };
-  form.querySelectorAll('input[name=way]').forEach(function (r) { r.addEventListener('change', syncWay); });
+  var setWay = function (v) { var r = form.querySelector('input[name=way][value=' + v + ']'); if (r) r.checked = true; };
+  var syncWay = function () { var w = way(); $('su-way-note').textContent = NOTE[w]; $('su-sub-wechat').hidden = w !== 'wechat'; if (!$('su-way-err').hidden) checkWay(); };
+  form.querySelectorAll('input[name=way]').forEach(function (r) { r.addEventListener('change', function () { touched = true; syncWay(); }); });
+  var follow = function () { if (touched) return; var w = tel.value.trim() ? 'sms' : mail.value.trim() ? 'email' : 'sms'; if (w !== way()) { setWay(w); syncWay(); } };
 
+  /* checks */
   var national = function (raw) { var t = raw.trim(), d = t.replace(/\D/g, ''), dial = BY[cur][3]; if (/^(\+|00)/.test(t)) { d = d.replace(/^00/, ''); if (d.indexOf(dial) === 0) d = d.slice(dial.length); } if (cur !== 'IT' && cur !== 'SM') d = d.replace(/^0+/, ''); return d; };
   var err = function (id, msg, input) { var p = $(id); p.textContent = msg || ''; p.hidden = !msg; if (input) input.setAttribute('aria-invalid', msg ? 'true' : 'false'); return !msg; };
-  var checkName = function () { return err('su-name-err', nameIn.value.trim() ? '' : '请填写姓名', nameIn); };
+  var has = function (el) { return !!el.value.trim(); };
+  var checkName = function () { return err('su-name-err', has(nameIn) ? '' : '请填写姓名', nameIn); };
   var checkTel = function () {
     var raw = tel.value, d = national(raw), c = BY[cur], rule = RULE[cur], msg = '';
-    if (!raw.trim()) msg = '请填写手机号';
+    if (!raw.trim()) msg = has(mail) ? '' : '手机号和电子邮箱至少填一项';
     else if (rule ? !rule[0].test(d) : (d.length < 5 || c[3].length + d.length > 15)) msg = '号码看起来不完整。' + (rule ? rule[1] : '请检查号码和所选的国家或地区') + '。';
     return err('su-tel-err', msg, tel);
   };
+  var checkMail = function () {
+    var msg = '';
+    if (!has(mail)) msg = has(tel) ? '' : '手机号和电子邮箱至少填一项';
+    else if (!mail.validity.valid) msg = '邮箱地址看起来不完整，请检查一下';
+    return err('su-email-err', msg, mail);
+  };
   var checkWay = function () {
-    var w = way(), ok = true;
-    if (w === 'wechat') { var v = $('su-wx').value.trim(); ok = err('su-wx-err', !v || /^[a-zA-Z][-_a-zA-Z0-9]{5,19}$/.test(v) || /^\+?\d{6,15}$/.test(v) ? '' : '微信号一般是 6 到 20 位，以字母开头，可含数字、下划线和减号；也可以填绑定微信的手机号。', $('su-wx')); }
+    var w = way(), msg = '', wx = $('su-wx'), v = wx.value.trim();
+    if (!has(tel) && !has(mail)) msg = '';
+    else if ((w === 'sms' || w === 'whatsapp') && !has(tel)) msg = '选' + NAMES[w].trim() + '需要填手机号；只填邮箱的话，请选邮件。';
+    else if (w === 'email' && !has(mail)) msg = '选邮件需要填电子邮箱。';
+    else if (w === 'wechat' && !has(tel) && !v) msg = '选微信，请填微信号或手机号。';
+    var ok = err('su-way-err', msg);
+    if (w === 'wechat') ok = err('su-wx-err', !v || /^[a-zA-Z][-_a-zA-Z0-9]{5,19}$/.test(v) || /^\+?\d{6,15}$/.test(v) ? '' : '微信号一般是 6 到 20 位，以字母开头，可含数字、下划线和减号；也可以填绑定微信的手机号。', wx) && ok;
+    else err('su-wx-err', '', wx);
     return ok;
   };
   var checkC = function () { return err('su-c-err', $('su-c1').checked && $('su-c2').checked ? '' : '请勾选两项同意后再提交'); };
+  var reach = function () { var a = checkTel(), b = checkMail(); return a && b; };
   nameIn.addEventListener('input', function () { if (!$('su-name-err').hidden) checkName(); });
-  tel.addEventListener('input', function () { if (!$('su-tel-err').hidden) checkTel(); });
-  ['su-wx'].forEach(function (id) { $(id).addEventListener('input', function () { if (!$(id + '-err').hidden) checkWay(); }); });
+  [tel, mail].forEach(function (el) { el.addEventListener('input', function () { follow(); if (!$('su-tel-err').hidden || !$('su-email-err').hidden) reach(); if (!$('su-way-err').hidden) checkWay(); }); });
+  $('su-wx').addEventListener('input', function () { if (!$('su-wx-err').hidden || !$('su-way-err').hidden) checkWay(); });
   ['su-c1', 'su-c2'].forEach(function (id) { $(id).addEventListener('change', function () { if (!$('su-c-err').hidden) checkC(); }); });
+  var validate = function () {
+    var ok = [checkName(), reach(), checkWay(), checkC()];
+    if (ok.indexOf(false) > -1) { var f = form.querySelector('[aria-invalid=true]') || (!$('su-way-err').hidden && form.querySelector('input[name=way]:checked')) || $('su-c1'); f.focus(); return false; }
+    return true;
+  };
+  var phone = function () { var d = national(tel.value); return d ? '+' + BY[cur][3] + d : ''; };
+  var payload = function () {
+    var w = way(), p = phone();
+    return { name: nameIn.value.trim(), phone: p, country_code: '+' + BY[cur][3], course: $('su-course').value || 'other', contact_method: w,
+      wechat: w === 'wechat' ? ($('su-wx').value.trim() || p) : '' };
+  };
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var ok = [checkName(), checkTel(), checkWay(), checkC()];
-    if (ok.indexOf(false) > -1) { var f = form.querySelector('[aria-invalid=true]') || $('su-c1'); f.focus(); return; }
-    var d = national(tel.value), dial = BY[cur][3], w = way();
-    var payload = { name: nameIn.value.trim(), phone: '+' + dial + d, region: cur, course: $('su-course').value, contact: w,
-      wechat: w === 'wechat' ? ($('su-wx').value.trim() || '+' + dial + d) : '', whatsapp: w === 'whatsapp' ? '+' + dial + d : '', sms: '+' + dial + d, noCalls: true };
-    void payload;
-    $('su-d-name').textContent = payload.name;
-    $('su-d-num').textContent = '+' + dial + ' ' + (d.length >= 8 ? d.slice(0, 3) + ' **** ' + d.slice(-4) : '**** ' + d.slice(-2));
-    $('su-d-way').textContent = { sms: '短信', wechat: '微信', whatsapp: ' WhatsApp ' }[w];
-    $('su-formcard').hidden = true; $('su-done').hidden = false; $('su-done').focus();
-  });
-  $('su-again').addEventListener('click', function () { $('su-done').hidden = true; $('su-formcard').hidden = false; nameIn.focus(); });
+  if (window.CSLRegistration) {
+    window.CSLRegistration.mountChinese({ validate: validate, payload: payload, syncWay: function () { touched = false; setWay('sms'); syncWay(); } });
+  } else {
+    /* preview site: nothing is sent or saved */
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!validate()) return;
+      var p = payload(), m = mail.value.trim();
+      $('su-d-name').textContent = p.name;
+      $('su-d-num').textContent = p.phone ? p.phone.slice(0, 3) + ' **** ' + p.phone.slice(-4) : m.replace(/^(.)[^@]*(@.*)$/, '$1***$2');
+      $('su-d-way').textContent = NAMES[p.contact_method];
+      $('su-reference').textContent = '这是预览站点，这次登记没有保存。正式报名请到 citystudylondon.com。';
+      $('su-confirmation').textContent = '';
+      $('su-formcard').hidden = true; $('su-done').hidden = false; $('su-done').focus();
+    });
+    $('su-again').addEventListener('click', function () {
+      var c = $('su-course').value; form.reset(); $('su-course').value = c; touched = false;
+      form.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
+      form.querySelectorAll('.su-err').forEach(function (el) { el.hidden = true; });
+      syncWay(); $('su-done').hidden = true; $('su-formcard').hidden = false; nameIn.focus();
+    });
+  }
   setLabel(); syncWay();
 })();
 </script>
